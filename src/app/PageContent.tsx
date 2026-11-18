@@ -87,8 +87,11 @@ export function PageContent() {
                 </h3>
                 <p>AI that reads every single-lead ECG in real time and flags the patients who need attention.</p>
               </div>
-              <svg className="ecg" viewBox="0 0 400 64" preserveAspectRatio="none">
-                <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" />
+              <svg className="ecg ecg-live" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true">
+                <g className="ecg-trace">
+                  <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" />
+                  <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" transform="translate(400 0)" />
+                </g>
               </svg>
             </div>
           </div>

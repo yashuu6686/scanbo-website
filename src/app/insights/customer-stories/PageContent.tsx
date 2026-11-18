@@ -38,7 +38,7 @@ export function PageContent() {
           <div className="pchips">
             <span>Supraja Hospitals</span>
             <span>Rushcare Hospitals</span>
-            <span>Clinic partner · diabetes reversal network, Pune</span>
+            <span>WWC Clinics — DIMBHA · Pune</span>
             <span>SGPGI MS · Neurology</span>
           </div>
         </div>
@@ -50,9 +50,14 @@ export function PageContent() {
           <div className="stories2">
             <div className="story2">
               <div>
-                <div className="k">Vitals intelligence · Workflow</div>
-                <h4>Supraja Hospitals</h4>
-                <div className="splace">Multispecialty hospital · Hyderabad, India</div>
+                <div className="shead">
+                  <img className="slog" src="/assets/logo_supraja.png" alt="Supraja Hospitals" width={120} height={40} />
+                  <div>
+                    <h4>Supraja Hospitals</h4>
+                    <div className="splace">Multispecialty hospital · Hyderabad, India</div>
+                  </div>
+                </div>
+                <span className="stag">Vitals Intelligence · Workflow</span>
                 <h3>OPD and IPD documentation time reduced across a multispecialty hospital deployment.</h3>
                 <p>Scanbo® D8 captures eight vital parameters in minutes and pushes data directly into the EMR. Supraja eliminated manual transcription across OPD and IPD, and the time recovered goes back to patient care.
                 </p>
@@ -73,9 +78,14 @@ export function PageContent() {
             </div>
             <div className="story2">
               <div>
-                <div className="k">Vitals · Metabolic · Workflow · TeleCall</div>
-                <h4>Clinic partner</h4>
-                <div className="splace">Diabetes reversal clinics · Pune, India</div>
+                <div className="shead">
+                  <img className="slog" src="/assets/logo_dimbha.png" alt="DIMBHA — WWC Clinics" width={120} height={40} />
+                  <div>
+                    <h4>WWC Clinics — DIMBHA</h4>
+                    <div className="splace">Diabetes reversal clinics · Pune, India</div>
+                  </div>
+                </div>
+                <span className="stag">Vitals · Metabolic · Workflow · TeleCall</span>
                 <h3>50 devices unified across a diabetes reversal network, with remote patient monitoring built in.</h3>
                 <p>The network deployed Scanbo® D8, Smart Scale and EMR across its chronic care clinics. Video consultation and secure messaging extended clinical reach: patients receive continuous monitoring without returning to the clinic for every check-in.
                 </p>
@@ -96,9 +106,17 @@ export function PageContent() {
             </div>
             <div className="story2">
               <div>
-                <div className="k">Vitals intelligence · Clinical documentation</div>
-                <h4>SGPGI MS · Neurology OPD</h4>
-                <div className="splace">Dr. Jogendra Kumar Bastia, Consultant Neurologist, MD</div>
+                <div className="shead">
+                  <div className="sbadge sbadge-sgpgi" aria-hidden="true">
+                    <b>SGPGI MS</b>
+                    <span>Neurology OPD</span>
+                  </div>
+                  <div>
+                    <h4>Dr. Jogendra Kumar Bastia</h4>
+                    <div className="splace">Consultant Neurologist, MD · SGPGI MS</div>
+                  </div>
+                </div>
+                <span className="stag">Vitals Intelligence · Clinical Documentation</span>
                 <h3>Instant point-of-consultation vitals with zero manual entry, improving clinical note quality in a neurology OPD.</h3>
                 <p>In a high-volume neurology outpatient setting, Scanbo® D8 delivers reliable multiparameter vitals at the moment of consultation. Every reading is recorded instantly into the EMR, with no transcription lag and no manual errors.
                 </p>
@@ -179,7 +197,7 @@ export function PageContent() {
             </div>
             <div className="sl">
               <div className="k">Chronic care · Pune</div>
-              <h4>Clinic partner</h4>
+              <h4>WWC Clinics — DIMBHA</h4>
               <p>50 devices, full platform. Remote monitoring extended clinical reach without additional visits.</p>
               <span>D8 + Smart Scale + EMR</span>
             </div>
