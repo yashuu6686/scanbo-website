@@ -1,0 +1,67 @@
+export function PageContent() {
+  return (
+    <main id="main">
+      <header className="phero lhero">
+        <div className="wrap">
+          <div className="eyebrow">
+            <a href="/legal/" style={{ color: "inherit" }}>Legal</a> · Legal · Scanbo
+          </div>
+          <h1>Disclaimer</h1>
+        </div>
+      </header>
+      <section className="white">
+        <div className="wrap lwrap">
+          <aside className="lnav">
+            <b>Legal</b>
+            <a href="/legal/privacy-policy/">Privacy Policy</a>
+            <a href="/legal/terms-conditions/">Terms &amp; Conditions</a>
+            <a href="/legal/cookie-preferences/">Cookie Preferences</a>
+            <a href="/legal/hipaa-notice/">HIPAA Notice of Privacy Practices</a>
+            <a href="/legal/gdpr-statement/">GDPR Statement</a>
+            <a href="/legal/dpdp-compliance/">DPDP Compliance Statement</a>
+            <a href="/legal/data-request/">Data Request</a>
+            <a href="/legal/instructions-for-use/">Instructions for Use</a>
+            <a href="/legal/telehealth/">Telehealth Policy</a>
+            <a href="/legal/responsible-disclosure/">Responsible Disclosure</a>
+            <a href="/legal/non-discrimination/">Non-Discrimination Policy</a>
+            <a href="/legal/disclaimer/" className="on">Disclaimer</a>
+            <a href="/legal/sitemap/">Sitemap</a>
+          </aside>
+          <article className="lbody">
+            <h3>1. Disclaimer of Liability</h3> 
+            <p>In no event shall Scanbo™ be liable for any damages (including, without limitation, lost profits, business interruption, or lost information) arising out of your use of or inability to use the product, even if Scanbo™ has been advised of the possibility of such damages. No distributor, dealer or other party is authorized to make any warranty on behalf of Scanbo™, or to assume for Scanbo™ any other liability with respect to its products, services, data storage and protection.
+            </p> 
+            <p>Scanbo™ is not liable for any inaccurate, mistaken or false results that are shown on the products. Scanbo™ is not an alternative to any medical procedure or check-up that would require qualified doctors. To the extent that the product and the information and services are provided free of charge, we will not be liable for any loss or damage of any nature.
+            </p> 
+            <p>We will not be liable to you in respect of any business losses, including (without limitation) loss of or damage to profits, income, revenue, use, production, anticipated savings, business, contracts, commercial opportunities or goodwill. We will not be liable to you in respect of any loss or corruption of any data, database or software. We will not be liable to you in respect of any special, indirect or consequential loss or damage.
+            </p> 
+            <h3>2. No Warranty</h3> 
+            <p>Except for the express warranty set forth herein, the product and software provided hereunder are provided "as is" and Scanbo™ makes no warranty as to its use or performance. Except for any warranty, condition, representation or term the extent to which cannot be excluded or limited by applicable law, Scanbo™ and its suppliers make no warranty, condition, representation, or term (express or implied, whether by statute, common law, custom, usage or otherwise) as to any matter including, without limitation, non-infringement of third party rights, merchantability, integration, or fitness for a particular purpose.
+            </p> 
+            <p>You assume responsibility for selecting the product to achieve your intended results, and for the installation of, use of, and results obtained from the product and software. Without limiting the foregoing provisions, Scanbo™ makes no warranty that the equipment or software will be error-free or free from interruptions or other failures or that the software or product will meet your requirements.
+            </p> 
+            <p>Under no circumstances and under no legal theory, whether in tort, contract, or otherwise, shall Scanbo™ or its suppliers be liable to the purchaser or to any other person for damages for gross negligence of any character including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or for any other damage or loss. In no event shall Scanbo™ or its suppliers be liable for any damages in excess of the price paid for the product and software, even if Scanbo™, or its authorized partners or suppliers have been advised of the possibility of such damages.
+            </p> 
+            <h3>3. Limited Right to Use Data; Use of Cookies</h3> 
+            <p>User grants us the right to use, copy, store, transmit and display User data solely to the extent necessary to provide the Platform and associated maintenance, for purposes of ensuring security, and for the investigation of complaints. All data submitted by User to the Platform (User Data) will remain the sole property of User. Subject to the terms of this Agreement, we shall not disclose User Data or use User data for any purpose other than to provide the Platform and as set forth herein.
+            </p> 
+            <p>The Platform uses "cookies", which are small text files placed on the User's hard disk by a Web server. Cookies contain information that can later be read by a Web server in the domain that issued the cookie to the User. One of the primary purposes of cookies is to store the User's preferences and other information on the User's computer in order to save the User's time by eliminating the need to repeatedly enter the same information and to display the User's personalized content and targeted advertising on the User's later visits to this Platform.
+            </p> 
+            <p>When the User signs in the Platform named User account, we store the User's unique ID number, and the time the User signed in, in an encrypted cookie on the User's hard disk. This cookie allows the User to move from page to page at the Platform without having to sign in again on each page. When the User signs out, these cookies are deleted from the User's computer. We also use cookies to improve the sign-in experience. User agrees that we may use Usage Statistics to provide Users with communications regarding Platform support, news and information regarding the Platform and services/products provided by us, except where such Users opt out of receiving such information.
+            </p> 
+            <h3>4. Contact</h3> 
+            <div className="lbox"> 
+              <p>For questions about this disclaimer, contact us at 
+                <strong>
+                  <a href="mailto:legal@scanbo.com">legal@scanbo.com</a>
+                </strong>
+              </p> 
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/legal/disclaimer/#webpage\", \"url\": \"https://www.scanbo.com/legal/disclaimer/\", \"name\": \"Disclaimer | Scanbo\", \"description\": \"Scanbo's disclaimer of liability and warranty terms for its products, software and services.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Legal\", \"item\": \"https://www.scanbo.com/legal/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Disclaimer\", \"item\": \"https://www.scanbo.com/legal/disclaimer/\"}]}]}";

@@ -1,6 +1,71 @@
-import { SiteHtml } from "@/components/SiteHtml";
-import { buildFooterHtml } from "@/components/shell/footerHtml";
-
 export function Footer() {
-  return <SiteHtml html={buildFooterHtml()} />;
+  return (
+    <footer>
+      <div className="wrap">
+        <div className="fgrid">
+          <div>
+            <a className="logo" href="/">
+              <img
+                loading="lazy"
+                decoding="async"
+                className="logo-st"
+                src="/assets/logo_stacked.png"
+                alt="Scanbo"
+              />
+            </a>
+            <p style={{ marginTop: "16px", maxWidth: "300px" }}>
+              A connected diagnostic platform for community healthcare.
+            </p>
+          </div>
+          <div>
+            <h5>Platform</h5>
+            <a href="/platform/scanbo-d8/">Scanbo® D8</a>
+            <a href="/platform/hridaytaal-ecg-ai/">HridayTaal®</a>
+            <a href="/platform/smart-scale/">Smart Scale</a>
+            <a href="/platform/rxshield/">RxShield</a>
+            <a href="/platform/ambient-documentation/">Ambient Documentation</a>
+            <a href="/platform/scanbo-emr/">Scanbo® EMR</a>
+          </div>
+          <div>
+            <h5>Who we serve</h5>
+            <a href="/who-we-serve/hospitals-clinics/">Hospitals & clinics</a>
+            <a href="/who-we-serve/physicians/">Physicians</a>
+            <a href="/who-we-serve/pharmacists/">Pharmacists</a>
+            <a href="/who-we-serve/community-health-workers/">
+              Community health workers
+            </a>
+            <a href="/who-we-serve/individuals/">Individuals</a>
+            <a href="/who-we-serve/accountable-care-organizations/">U.S. ACOs</a>
+          </div>
+          <div>
+            <h5>Insights</h5>
+            <a href="/insights/clinical-studies/">Clinical studies</a>
+            <a href="/insights/customer-stories/">Customer stories</a>
+            <a href="/insights/reimbursement-guide/">Reimbursement guide</a>
+            <a href="/about/newsroom/">Newsroom</a>
+          </div>
+          <div>
+            <h5>Company</h5>
+            <a href="/about/company/">About</a>
+            <a href="/about/manufacturing-quality/">Manufacturing & quality</a>
+            <a href="/about/data-philosophy/">Data philosophy</a>
+            <a href="/about/careers/">Careers</a>
+            <a href="/about/contact/">Contact</a>
+          </div>
+        </div>
+        <div className="legal">
+          <span>© 2026 Scanbo Technologies Inc. All rights reserved.</span>
+          <span className="ll">
+            <a href="/legal/privacy-policy/">Privacy</a>
+            <a href="/legal/terms-conditions/">Terms</a>
+            <a href="/legal/hipaa-notice/">HIPAA notice</a>
+            <a href="/legal/gdpr-statement/">GDPR</a>
+            <a href="/legal/dpdp-compliance/">DPDP</a>
+            <a href="/legal/cookie-preferences/">Cookies</a>
+            <a href="/legal/sitemap/">Sitemap</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
 }

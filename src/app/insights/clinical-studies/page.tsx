@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { html, jsonLd } from "./content";
+import { PageContent, jsonLd } from "./PageContent";
 
 export const metadata: Metadata = {
   title: "Clinical Studies | Peer-Reviewed Evidence | Scanbo",
@@ -24,5 +24,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <SitePage mainHtml={html} jsonLd={jsonLd} activeNav="insights" />;
+  return (
+    <SitePage jsonLd={jsonLd} activeNav="insights">
+      <PageContent />
+    </SitePage>
+  );
 }
