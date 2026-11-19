@@ -212,7 +212,7 @@ export function PageContent() {
             </a>
             <a href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
             </a>
             <a href="/platform/smart-scale/">
               <i>03</i>
@@ -226,7 +226,7 @@ export function PageContent() {
               <i>05</i>
               <b>RxShield</b>
             </a>
-            <a href="/platform/scanbo-emr/" className="on">
+            <a href="/platform/scanbo-ehr/" className="on">
               <i>06</i>
               <b>Scanbo® EMR</b>
             </a>
@@ -250,4 +250,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/platform/scanbo-emr/#webpage\", \"url\": \"https://www.scanbo.com/platform/scanbo-emr/\", \"name\": \"Scanbo® EMR | Connected Clinical Workflow\", \"description\": \"Scanbo® EMR brings scheduling, communication and FHIR-native interoperability into one connected workflow layer for care teams.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Platform\", \"item\": \"https://www.scanbo.com/platform/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Scanbo® EMR\", \"item\": \"https://www.scanbo.com/platform/scanbo-emr/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/platform/scanbo-ehr/#webpage\", \"url\": \"https://www.scanbo.com/platform/scanbo-ehr/\", \"name\": \"Scanbo® EMR | Connected Clinical Workflow\", \"description\": \"Scanbo® EMR brings scheduling, communication and FHIR-native interoperability into one connected workflow layer for care teams.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Platform\", \"item\": \"https://www.scanbo.com/platform/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Scanbo® EMR\", \"item\": \"https://www.scanbo.com/platform/scanbo-ehr/\"}]}]}";

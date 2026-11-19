@@ -15,7 +15,7 @@ export function PageContent() {
             </p>
             <div className="pstat">
               <span className="live">Live</span>
-              <span className="chip">1.2M+ ECG analyses</span>
+              <span className="chip">1M+ ECG analyses</span>
               <span className="chip">CDSCO approved</span>
             </div>
             <div className="ctas">
@@ -134,8 +134,8 @@ export function PageContent() {
           <div className="pgap"></div>
           <div className="pstats n3" style={{ marginTop: 0 }}>
             <div>
-              <b>1.2M+</b>
-              <span>AI ECG analyses completed</span>
+              <b>1M+</b>
+              <span>ECG AI analyses completed</span>
             </div>
             <div>
               <b>8</b>
@@ -264,7 +264,7 @@ export function PageContent() {
             </a>
             <a href="/platform/hridaytaal-ecg-ai/" className="on">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
             </a>
             <a href="/platform/smart-scale/">
               <i>03</i>
@@ -278,7 +278,7 @@ export function PageContent() {
               <i>05</i>
               <b>RxShield</b>
             </a>
-            <a href="/platform/scanbo-emr/">
+            <a href="/platform/scanbo-ehr/">
               <i>06</i>
               <b>Scanbo® EMR</b>
             </a>

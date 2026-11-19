@@ -5,14 +5,14 @@ import { PageContent, jsonLd } from "./PageContent";
 export const metadata: Metadata = {
   title: "Scanbo® EMR | Connected Clinical Workflow",
   description: "Scanbo® EMR brings scheduling, communication and FHIR-native interoperability into one connected workflow layer for care teams.",
-  alternates: { canonical: "/platform/scanbo-emr/" },
+  alternates: { canonical: "/platform/scanbo-ehr/" },
   openGraph: {
     type: "website",
     siteName: "Scanbo",
     locale: "en_US",
     title: "Scanbo® EMR | Connected Clinical Workflow",
     description: "Scanbo® EMR brings scheduling, communication and FHIR-native interoperability into one connected workflow layer for care teams.",
-    url: "/platform/scanbo-emr/",
+    url: "/platform/scanbo-ehr/",
     images: [{ url: "/assets/og-image.png", width: 1200, height: 630, alt: "Scanbo: healthcare starts here" }],
   },
   twitter: {

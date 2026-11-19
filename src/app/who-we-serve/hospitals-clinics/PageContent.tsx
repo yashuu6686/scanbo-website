@@ -5,7 +5,7 @@ export function PageContent() {
         <div className="wrap">
           <div>
             <div className="crumb">
-              <a href="/who-we-serve/">Who we serve</a> · 01
+              <a href="/who-we-serve/">Whom We Serve</a> · 01
             </div>
             <h1>Enterprise diagnostics
               <br />
@@ -59,12 +59,12 @@ export function PageContent() {
           <div className="pgap"></div>
           <div className="pstats n3" style={{ marginTop: 0 }}>
             <div>
-              <b>1,100+</b>
-              <span>devices operating in India</span>
+              <b>750+</b>
+              <span>devices deployed</span>
             </div>
             <div>
-              <b>8M+</b>
-              <span>assessments completed</span>
+              <b>7M+</b>
+              <span>vital tests completed</span>
             </div>
             <div>
               <b>&lt;5 min</b>
@@ -93,7 +93,7 @@ export function PageContent() {
             </a>
             <a className="plink" href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
               <span>AI that reads every ECG in real time</span>
               <em>Learn more →</em>
             </a>
@@ -103,7 +103,7 @@ export function PageContent() {
               <span>Clinic-ready notes the moment the visit ends</span>
               <em>Learn more →</em>
             </a>
-            <a className="plink" href="/platform/scanbo-emr/">
+            <a className="plink" href="/platform/scanbo-ehr/">
               <i>06</i>
               <b>Scanbo® EMR</b>
               <span>The operational hub for connected care</span>
@@ -114,7 +114,7 @@ export function PageContent() {
       </section>
       <section className="white tight">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>Six audiences. One platform.</h2>
           <div className="six">
             <a href="/who-we-serve/hospitals-clinics/" className="on">
@@ -161,4 +161,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/hospitals-clinics/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/hospitals-clinics/\", \"name\": \"Point-of-Care Diagnostics for Hospitals & Clinics | Scanbo\", \"description\": \"Eight measurements, AI interpretation and the patient record in one workflow, from the OPD to the ward. Point-of-care diagnostics for hospitals and clinics.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Who we serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Point-of-Care Diagnostics for Hospitals & Clinics\", \"item\": \"https://www.scanbo.com/who-we-serve/hospitals-clinics/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/hospitals-clinics/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/hospitals-clinics/\", \"name\": \"Point-of-Care Diagnostics for Hospitals & Clinics | Scanbo\", \"description\": \"Eight measurements, AI interpretation and the patient record in one workflow, from the OPD to the ward. Point-of-care diagnostics for hospitals and clinics.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Whom We Serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Point-of-Care Diagnostics for Hospitals & Clinics\", \"item\": \"https://www.scanbo.com/who-we-serve/hospitals-clinics/\"}]}]}";

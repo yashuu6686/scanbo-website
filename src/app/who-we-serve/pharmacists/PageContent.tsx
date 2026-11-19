@@ -5,7 +5,7 @@ export function PageContent() {
         <div className="wrap">
           <div>
             <div className="crumb">
-              <a href="/who-we-serve/">Who we serve</a> · 03
+              <a href="/who-we-serve/">Whom We Serve</a> · 03
             </div>
             <h1>Medication safety,
               <br />
@@ -104,7 +104,7 @@ export function PageContent() {
             </a>
             <a className="plink" href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
               <span>AI that reads every ECG in real time</span>
               <em>Learn more →</em>
             </a>
@@ -113,7 +113,7 @@ export function PageContent() {
       </section>
       <section className="white tight">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>Six audiences. One platform.</h2>
           <div className="six">
             <a href="/who-we-serve/hospitals-clinics/">
@@ -160,4 +160,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/pharmacists/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/pharmacists/\", \"name\": \"For Pharmacists | Medication Safety and Screening | Scanbo\", \"description\": \"Check drug interactions in seconds, see the source behind every finding and keep an auditable record, plus point-of-care screening at the counter.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Who we serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For Pharmacists\", \"item\": \"https://www.scanbo.com/who-we-serve/pharmacists/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/pharmacists/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/pharmacists/\", \"name\": \"For Pharmacists | Medication Safety and Screening | Scanbo\", \"description\": \"Check drug interactions in seconds, see the source behind every finding and keep an auditable record, plus point-of-care screening at the counter.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Whom We Serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For Pharmacists\", \"item\": \"https://www.scanbo.com/who-we-serve/pharmacists/\"}]}]}";

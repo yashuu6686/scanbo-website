@@ -3,7 +3,7 @@ export function PageContent() {
     <main id="main">
       <header className="phero">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h1>One device behind 
             <span>every door into healthcare.</span>
           </h1>
@@ -13,20 +13,6 @@ export function PageContent() {
       <section className="tight" style={{ paddingTop: "20px" }}>
         <div className="wrap">
           <div className="aud">
-            <div className="acard" id="aud-public-health-programs">
-              <div className="ic">
-                <svg viewBox="0 0 24 24">
-                  <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" />
-                </svg>
-              </div>
-              <h3>Public health programs</h3>
-              <p className="need">Governments need population-scale screening that works outside hospitals.</p>
-              <ul>
-                <li>Population-scale screening in the community</li>
-                <li>Diabetes and chronic-disease management programs</li>
-                <li>Live dashboards for program teams</li>
-              </ul>
-            </div>
             <div className="acard" id="aud-hospitals-clinics">
               <div className="ic">
                 <svg viewBox="0 0 24 24">
@@ -165,7 +151,7 @@ export function PageContent() {
           </div>
           <div className="facts" style={{ marginTop: "26px" }}>
             <span>2 ACO pilots completed: Florida and New York</span>
-            <span>FDA 510(k) filing targeted Q2 2027</span>
+            <span>FDA 510(k) filing targeted Q1 2027</span>
           </div>
           <p className="fine2">Subject to FDA clearance and payer coverage. Codes shown are for orientation, not billing advice.</p>
         </div>
@@ -188,4 +174,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/\", \"name\": \"Who We Serve | Scanbo\", \"description\": \"Hospitals, physicians, pharmacists, community health workers, individuals and U.S. ACOs: how Scanbo brings the lab to the patient and the result to the record.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Who we serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/\", \"name\": \"Whom We Serve | Scanbo\", \"description\": \"Hospitals, physicians, pharmacists, community health workers, individuals and U.S. ACOs: how Scanbo brings the lab to the patient and the result to the record.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Whom We Serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}]}]}";

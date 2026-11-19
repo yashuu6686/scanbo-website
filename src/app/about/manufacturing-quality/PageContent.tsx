@@ -16,7 +16,7 @@ export function PageContent() {
             <div className="pstat">
               <span className="chip">In-house manufacturing · Canada &amp; India</span>
               <span className="chip">ISO 13485 · MDSAP certified</span>
-              <span className="chip">FDA 510(k) filing targeted Q2 2027</span>
+              <span className="chip">FDA 510(k) filing targeted Q1 2027</span>
             </div>
           </div>
           <div className="part">
@@ -113,7 +113,7 @@ export function PageContent() {
             <div className="pcard">
               <div className="k">Regulatory readiness</div>
               <h4>U.S. FDA</h4>
-              <p>Scanbo® D8's FDA 510(k) filing is targeted for Q2 2027. The quality infrastructure built toward this submission is the same system that governs every Scanbo® device, not a separate process created for regulatory review.
+              <p>Scanbo® D8's FDA 510(k) filing is targeted for Q1 2027. The quality infrastructure built toward this submission is the same system that governs every Scanbo® device, not a separate process created for regulatory review.
               </p>
             </div>
           </div>

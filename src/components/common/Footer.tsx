@@ -1,10 +1,12 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer>
       <div className="wrap">
         <div className="fgrid">
           <div>
-            <a className="logo" href="/">
+            <Link className="logo" href="/">
               <img
                 loading="lazy"
                 decoding="async"
@@ -12,57 +14,57 @@ export function Footer() {
                 src="/assets/logo_stacked.png"
                 alt="Scanbo"
               />
-            </a>
+            </Link>
             <p style={{ marginTop: "16px", maxWidth: "300px" }}>
               A connected diagnostic platform for community healthcare.
             </p>
           </div>
           <div>
             <h5>Platform</h5>
-            <a href="/platform/scanbo-d8/">Scanbo® D8</a>
-            <a href="/platform/hridaytaal-ecg-ai/">HridayTaal®</a>
-            <a href="/platform/smart-scale/">Smart Scale</a>
-            <a href="/platform/rxshield/">RxShield</a>
-            <a href="/platform/ambient-documentation/">Ambient Documentation</a>
-            <a href="/platform/scanbo-emr/">Scanbo® EMR</a>
+            <Link href="/platform/scanbo-d8/">Scanbo® D8 (D8–D19)</Link>
+            <Link href="/platform/hridaytaal-ecg-ai/">HridayTaal® Cardiac Agent</Link>
+            <Link href="/platform/smart-scale/">Smart Scale</Link>
+            <Link href="/platform/rxshield/">RxShield</Link>
+            <Link href="/platform/ambient-documentation/">Ambient Documentation</Link>
+            <Link href="/platform/scanbo-ehr/">Scanbo® EMR</Link>
           </div>
           <div>
-            <h5>Who we serve</h5>
-            <a href="/who-we-serve/hospitals-clinics/">Hospitals & clinics</a>
-            <a href="/who-we-serve/physicians/">Physicians</a>
-            <a href="/who-we-serve/pharmacists/">Pharmacists</a>
-            <a href="/who-we-serve/community-health-workers/">
+            <h5>Whom We Serve</h5>
+            <Link href="/who-we-serve/hospitals-clinics/">Hospitals & clinics</Link>
+            <Link href="/who-we-serve/physicians/">Physicians</Link>
+            <Link href="/who-we-serve/pharmacists/">Pharmacists</Link>
+            <Link href="/who-we-serve/community-health-workers/">
               Community health workers
-            </a>
-            <a href="/who-we-serve/individuals/">Individuals</a>
-            <a href="/who-we-serve/accountable-care-organizations/">U.S. ACOs</a>
+            </Link>
+            <Link href="/who-we-serve/individuals/">Individuals</Link>
+            <Link href="/who-we-serve/accountable-care-organizations/">U.S. ACOs</Link>
           </div>
           <div>
             <h5>Insights</h5>
-            <a href="/insights/clinical-studies/">Clinical studies</a>
-            <a href="/insights/customer-stories/">Customer stories</a>
-            <a href="/insights/reimbursement-guide/">Reimbursement guide</a>
-            <a href="/about/newsroom/">Newsroom</a>
+            <Link href="/insights/clinical-studies/">Clinical studies</Link>
+            <Link href="/insights/customer-stories/">Customer stories</Link>
+            <Link href="/insights/reimbursement-guide/">Reimbursement guide</Link>
+            <Link href="/about/newsroom/">Newsroom</Link>
           </div>
           <div>
             <h5>Company</h5>
-            <a href="/about/company/">About</a>
-            <a href="/about/manufacturing-quality/">Manufacturing & quality</a>
-            <a href="/about/data-philosophy/">Data philosophy</a>
-            <a href="/about/careers/">Careers</a>
-            <a href="/about/contact/">Contact</a>
+            <Link href="/about/company/">About</Link>
+            <Link href="/about/manufacturing-quality/">Manufacturing & quality</Link>
+            <Link href="/about/data-philosophy/">Data philosophy</Link>
+            <Link href="/about/careers/">Careers</Link>
+            <Link href="/about/contact/">Contact</Link>
           </div>
         </div>
         <div className="legal">
           <span>© 2026 Scanbo Technologies Inc. All rights reserved.</span>
           <span className="ll">
-            <a href="/legal/privacy-policy/">Privacy</a>
-            <a href="/legal/terms-conditions/">Terms</a>
-            <a href="/legal/hipaa-notice/">HIPAA notice</a>
-            <a href="/legal/gdpr-statement/">GDPR</a>
-            <a href="/legal/dpdp-compliance/">DPDP</a>
-            <a href="/legal/cookie-preferences/">Cookies</a>
-            <a href="/legal/sitemap/">Sitemap</a>
+            <Link href="/legal/privacy-policy/">Privacy</Link>
+            <Link href="/legal/terms-conditions/">Terms</Link>
+            <Link href="/legal/hipaa-notice/">HIPAA notice</Link>
+            <Link href="/legal/gdpr-statement/">GDPR</Link>
+            <Link href="/legal/dpdp-compliance/">DPDP</Link>
+            <Link href="/legal/cookie-preferences/">Cookies</Link>
+            <Link href="/legal/sitemap/">Sitemap</Link>
           </span>
         </div>
       </div>

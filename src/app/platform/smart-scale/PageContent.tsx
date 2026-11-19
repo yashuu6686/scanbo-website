@@ -213,7 +213,7 @@ export function PageContent() {
             </a>
             <a href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
             </a>
             <a href="/platform/smart-scale/" className="on">
               <i>03</i>
@@ -227,7 +227,7 @@ export function PageContent() {
               <i>05</i>
               <b>RxShield</b>
             </a>
-            <a href="/platform/scanbo-emr/">
+            <a href="/platform/scanbo-ehr/">
               <i>06</i>
               <b>Scanbo® EMR</b>
             </a>

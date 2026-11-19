@@ -60,12 +60,12 @@ export function PageContent() {
                     <a href="/platform/rxshield/">RxShield</a>
                   </li>
                   <li>
-                    <a href="/platform/scanbo-emr/">Scanbo® EMR</a>
+                    <a href="/platform/scanbo-ehr/">Scanbo® EMR</a>
                   </li>
                 </ul>
               </div>
               <div className="lbox">
-                <h4>Who we serve</h4>
+                <h4>Whom We Serve</h4>
                 <ul>
                   <li>
                     <a href="/who-we-serve/">All audiences</a>

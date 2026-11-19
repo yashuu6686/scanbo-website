@@ -5,7 +5,7 @@ export function PageContent() {
         <div className="wrap">
           <div>
             <div className="crumb">
-              <a href="/who-we-serve/">Who we serve</a> · 02
+              <a href="/who-we-serve/">Whom We Serve</a> · 02
             </div>
             <h1>Diagnose faster.
               <br />
@@ -69,8 +69,8 @@ export function PageContent() {
               <span>to the first draft note</span>
             </div>
             <div>
-              <b>1.2M+</b>
-              <span>AI ECG analyses completed</span>
+              <b>1M+</b>
+              <span>ECG AI analyses completed</span>
             </div>
           </div>
           <div className="pgap"></div>
@@ -100,7 +100,7 @@ export function PageContent() {
             </a>
             <a className="plink" href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
               <span>AI that reads every ECG in real time</span>
               <em>Learn more →</em>
             </a>
@@ -121,7 +121,7 @@ export function PageContent() {
       </section>
       <section className="white tight">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>Six audiences. One platform.</h2>
           <div className="six">
             <a href="/who-we-serve/hospitals-clinics/">
@@ -168,4 +168,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/physicians/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/physicians/\", \"name\": \"For Physicians | Diagnose Faster, Document Less | Scanbo\", \"description\": \"Clinical-grade readings, AI interpretation and a finished note, all inside the consultation. Scanbo helps physicians diagnose faster and document less.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Who we serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For Physicians\", \"item\": \"https://www.scanbo.com/who-we-serve/physicians/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/physicians/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/physicians/\", \"name\": \"For Physicians | Diagnose Faster, Document Less | Scanbo\", \"description\": \"Clinical-grade readings, AI interpretation and a finished note, all inside the consultation. Scanbo helps physicians diagnose faster and document less.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Whom We Serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For Physicians\", \"item\": \"https://www.scanbo.com/who-we-serve/physicians/\"}]}]}";

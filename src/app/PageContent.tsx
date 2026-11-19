@@ -5,11 +5,11 @@ export function PageContent() {
         <div className="wrap hero-grid">
           <div>
             <div className="eyebrow">The point-of-care intelligence platform</div>
-            <h1>Healthcare
+            <h1>The Intelligence Stack for
               <br />
-              <span>Starts Here.</span>
+              <span>Clinical Decisions.</span>
             </h1>
-            <p className="lede">One connected platform: diagnostics, AI and clinical workflow at the point of care. Results in under five minutes, with no lab, no specialist and no cold chain.
+            <p className="lede">From real-time patient data acquisition to intelligent interpretation, decision making and clinical action, integrated directly at the point of care, this marks the shift toward agentic AI in healthcare.
             </p>
             <div className="ctas">
               <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
@@ -20,7 +20,7 @@ export function PageContent() {
                 <i></i>CDSCO approved in India
               </em>
               <span>·</span>
-              <em>FDA 510(k) filing targeted Q2 2027</em>
+              <em>FDA 510(k) filing targeted Q1 2027</em>
             </p>
           </div>
           <div className="hero-art">
@@ -28,23 +28,27 @@ export function PageContent() {
           </div>
         </div>
       </header>
-      <div className="stats">
+      <div className="stats n5">
         <div className="wrap">
           <div className="stat">
-            <b>1,100+</b>
-            <span>devices operating in India</span>
+            <b>750+</b>
+            <span>devices deployed</span>
           </div>
           <div className="stat">
-            <b>8M+</b>
-            <span>assessments completed</span>
+            <b>150M+</b>
+            <span>verified health signals</span>
           </div>
           <div className="stat">
-            <b>1B+</b>
-            <span>health signals captured</span>
+            <b>1M+</b>
+            <span>ECG AI analyses</span>
           </div>
           <div className="stat">
-            <b>1.2M+</b>
-            <span>AI ECG analyses</span>
+            <b>2×</b>
+            <span>YoY revenue growth</span>
+          </div>
+          <div className="stat">
+            <b>2 ACOs</b>
+            <span>US pilots — FL &amp; NY</span>
           </div>
         </div>
       </div>
@@ -71,9 +75,9 @@ export function PageContent() {
                   <span className="live">Live</span>
                 </span>
                 <h3>
-                  <a href="/platform/scanbo-d8/">Scanbo® D8</a>
+                  <a href="/platform/scanbo-d8/">Scanbo® D8 (D8–D19)</a>
                 </h3>
-                <p>Eight measurements at the point of care, including ECG and blood glucose, in under five minutes.</p>
+                <p>19 lab-grade parameters at the point of care, including ECG and blood glucose, in under five minutes.</p>
               </div>
               <img loading="lazy" decoding="async" className="dev" src="/assets/device.png" alt="Scanbo D8 point-of-care device" />
             </div>
@@ -83,7 +87,7 @@ export function PageContent() {
                   <span className="live">Live</span>
                 </span>
                 <h3>
-                  <a href="/platform/hridaytaal-ecg-ai/">HridayTaal®</a>
+                  <a href="/platform/hridaytaal-ecg-ai/">HridayTaal® Cardiac Agent</a>
                 </h3>
                 <p>AI that reads every single-lead ECG in real time and flags the patients who need attention.</p>
               </div>
@@ -172,7 +176,7 @@ export function PageContent() {
                 <div>
                   <div className="snum">06 · Workflow intelligence</div>
                   <h4>
-                    <a href="/platform/scanbo-emr/">Scanbo® EMR</a>
+                    <a href="/platform/scanbo-ehr/">Scanbo® EMR</a>
                   </h4>
                 </div>
               </div>
@@ -229,17 +233,9 @@ export function PageContent() {
       </section>
       <section id="serve" className="tight light">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>One device behind every door into healthcare.</h2>
           <div className="wtiles">
-            <a className="wtile" href="/who-we-serve/#aud-public-health-programs">
-              <div className="ic">
-                <svg viewBox="0 0 24 24">
-                  <path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6" />
-                </svg>
-              </div>
-              <b>Public health programs</b>
-            </a>
             <a className="wtile" href="/who-we-serve/hospitals-clinics/">
               <div className="ic">
                 <svg viewBox="0 0 24 24">
@@ -278,7 +274,7 @@ export function PageContent() {
             <span className="lbl">United States</span>
             <span>2 ACO pilots completed in Florida and New York</span>
             <span>No new CPT code required</span>
-            <span>FDA 510(k) filing targeted Q2 2027</span>
+            <span>FDA 510(k) filing targeted Q1 2027</span>
             <span className="go">→</span>
           </a>
         </div>

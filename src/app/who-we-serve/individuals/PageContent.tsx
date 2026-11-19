@@ -5,7 +5,7 @@ export function PageContent() {
         <div className="wrap">
           <div>
             <div className="crumb">
-              <a href="/who-we-serve/">Who we serve</a> · 05
+              <a href="/who-we-serve/">Whom We Serve</a> · 05
             </div>
             <h1>Monitoring between visits,
               <br />
@@ -74,7 +74,7 @@ export function PageContent() {
               <span>AI Body Score and 40+ metabolic indicators</span>
               <em>Learn more →</em>
             </a>
-            <a className="plink" href="/platform/scanbo-emr/">
+            <a className="plink" href="/platform/scanbo-ehr/">
               <i>06</i>
               <b>Scanbo® EMR</b>
               <span>The operational hub for connected care</span>
@@ -91,7 +91,7 @@ export function PageContent() {
       </section>
       <section className="white tight">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>Six audiences. One platform.</h2>
           <div className="six">
             <a href="/who-we-serve/hospitals-clinics/">
@@ -138,4 +138,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/individuals/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/individuals/\", \"name\": \"Health Monitoring Between Visits | Scanbo\", \"description\": \"Measure at home, see your results in the Scanbo® app and stay connected to your care team, with readings flowing into the record they use.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Who we serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Health Monitoring Between Visits\", \"item\": \"https://www.scanbo.com/who-we-serve/individuals/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/individuals/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/individuals/\", \"name\": \"Health Monitoring Between Visits | Scanbo\", \"description\": \"Measure at home, see your results in the Scanbo® app and stay connected to your care team, with readings flowing into the record they use.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Whom We Serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Health Monitoring Between Visits\", \"item\": \"https://www.scanbo.com/who-we-serve/individuals/\"}]}]}";

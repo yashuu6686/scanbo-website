@@ -5,7 +5,7 @@ export function PageContent() {
         <div className="wrap">
           <div>
             <div className="crumb">
-              <a href="/who-we-serve/">Who we serve</a> · 04
+              <a href="/who-we-serve/">Whom We Serve</a> · 04
             </div>
             <h1>Portable screening
               <br />
@@ -66,8 +66,8 @@ export function PageContent() {
               <span>per full assessment</span>
             </div>
             <div>
-              <b>1,100+</b>
-              <span>devices operating in India</span>
+              <b>750+</b>
+              <span>devices deployed</span>
             </div>
           </div>
           <div className="pgap"></div>
@@ -92,7 +92,7 @@ export function PageContent() {
             </a>
             <a className="plink" href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
               <span>AI that reads every ECG in real time</span>
               <em>Learn more →</em>
             </a>
@@ -107,7 +107,7 @@ export function PageContent() {
       </section>
       <section className="white tight">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>Six audiences. One platform.</h2>
           <div className="six">
             <a href="/who-we-serve/hospitals-clinics/">
@@ -154,4 +154,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/community-health-workers/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/community-health-workers/\", \"name\": \"For Community Health Workers | Portable Screening | Scanbo\", \"description\": \"Portable, clinical-grade screening for frontline and rural care, with no lab, no specialist and no cold chain. Built for community health workers.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Who we serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For Community Health Workers\", \"item\": \"https://www.scanbo.com/who-we-serve/community-health-workers/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/community-health-workers/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/community-health-workers/\", \"name\": \"For Community Health Workers | Portable Screening | Scanbo\", \"description\": \"Portable, clinical-grade screening for frontline and rural care, with no lab, no specialist and no cold chain. Built for community health workers.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Whom We Serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For Community Health Workers\", \"item\": \"https://www.scanbo.com/who-we-serve/community-health-workers/\"}]}]}";

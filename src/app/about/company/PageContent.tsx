@@ -16,7 +16,7 @@ export function PageContent() {
             </p>
             <div className="pstat">
               <span className="chip">United States · Canada · India</span>
-              <span className="chip">FDA 510(k) filing targeted Q2 2027</span>
+              <span className="chip">FDA 510(k) filing targeted Q1 2027</span>
             </div>
           </div>
           <div className="part ringpart">
@@ -58,8 +58,8 @@ export function PageContent() {
           <div className="pcards">
             <div className="pcard">
               <div className="k">Deployed</div>
-              <h4>1,100+ devices</h4>
-              <p>Operating in India, with 8M+ assessments completed.</p>
+              <h4>750+ devices</h4>
+              <p>Deployed across 650+ clinical settings, with 7M+ vital tests completed.</p>
             </div>
             <div className="pcard">
               <div className="k">Revenue</div>
@@ -74,7 +74,7 @@ export function PageContent() {
             <div className="pcard">
               <div className="k">North America</div>
               <h4>FDA 510(k) · Health Canada</h4>
-              <p>FDA 510(k) filing targeted Q2 2027. Health Canada clearance expected Q2 2027.</p>
+              <p>FDA 510(k) filing targeted Q1 2027. Health Canada clearance expected Q1 2027.</p>
             </div>
             <div className="pcard">
               <div className="k">Operating across</div>
@@ -110,7 +110,7 @@ export function PageContent() {
             <div>
               <div className="eyebrow">The next chapter</div>
               <h3>The U.S. and Canada are next. The platform is ready.</h3>
-              <p>The Health Canada application is scheduled for Q4 2026, with clearance expected in Q2 2027, and the FDA 510(k) filing is targeted for Q2 2027. The same intelligence architecture running on 1,100+ devices in India is being brought to ACOs, health systems and value-based care programs in North America, without rebuilding from scratch.
+              <p>The Health Canada application is scheduled for Q4 2026, with clearance expected in Q1 2027, and the FDA 510(k) filing is targeted for Q1 2027. The same intelligence architecture running on 750+ devices across 650+ clinical settings is being brought to ACOs, health systems and value-based care programs in North America, without rebuilding from scratch.
               </p>
             </div>
             <a className="btn btn-lime" href="/about/contact/#investors">Investor briefing →</a>

@@ -13,8 +13,8 @@ export function PageContent() {
             </h1>
             <p className="lede">How real organizations turn point-of-care intelligence into clinical and operational outcomes.</p>
             <div className="pstat">
-              <span className="chip">1,100+ devices in India</span>
-              <span className="chip">8M+ assessments</span>
+              <span className="chip">750+ devices deployed</span>
+              <span className="chip">250K+ patients screened</span>
             </div>
           </div>
           <div className="part">
@@ -61,7 +61,7 @@ export function PageContent() {
                 <h3>OPD and IPD documentation time reduced across a multispecialty hospital deployment.</h3>
                 <p>Scanbo® D8 captures eight vital parameters in minutes and pushes data directly into the EMR. Supraja eliminated manual transcription across OPD and IPD, and the time recovered goes back to patient care.
                 </p>
-                <div className="pmeta">Live deployment · Scanbo® D8 + EMR</div>
+                <div className="pmeta">Live deployment · Scanbo® D8 + EHR</div>
               </div>
               <div className="sstats">
                 <div>
@@ -120,7 +120,7 @@ export function PageContent() {
                 <h3>Instant point-of-consultation vitals with zero manual entry, improving clinical note quality in a neurology OPD.</h3>
                 <p>In a high-volume neurology outpatient setting, Scanbo® D8 delivers reliable multiparameter vitals at the moment of consultation. Every reading is recorded instantly into the EMR, with no transcription lag and no manual errors.
                 </p>
-                <div className="pmeta">Live deployment · Scanbo® D8 + EMR</div>
+                <div className="pmeta">Live deployment · Scanbo® D8 + EHR</div>
               </div>
               <div className="sstats">
                 <div>
@@ -139,19 +139,19 @@ export function PageContent() {
           <div className="pgap"></div>
           <div className="pstats n4" style={{ marginTop: 0 }}>
             <div>
-              <b>1,100+</b>
-              <span>devices operating in India</span>
+              <b>750+</b>
+              <span>devices deployed</span>
             </div>
             <div>
-              <b>8M+</b>
-              <span>assessments completed</span>
+              <b>7M+</b>
+              <span>vital tests completed</span>
             </div>
             <div>
-              <b>1.2M+</b>
-              <span>AI ECG analyses</span>
+              <b>1M+</b>
+              <span>ECG AI analyses</span>
             </div>
             <div>
-              <b>1B+</b>
+              <b>150M+</b>
               <span>health signals captured</span>
             </div>
           </div>
@@ -193,7 +193,7 @@ export function PageContent() {
               <div className="k">Primary care · Hyderabad</div>
               <h4>Supraja Hospitals</h4>
               <p>OPD and IPD documentation time reduced. Manual entry eliminated across all wards.</p>
-              <span>Scanbo® D8 + EMR</span>
+              <span>Scanbo® D8 + EHR</span>
             </div>
             <div className="sl">
               <div className="k">Chronic care · Pune</div>
@@ -205,18 +205,18 @@ export function PageContent() {
               <div className="k">Neurology OPD · India</div>
               <h4>SGPGI MS · Dr. Bastia</h4>
               <p>Point-of-consultation vitals with instant EMR push. Zero manual errors. Improved note quality.</p>
-              <span>Scanbo® D8 + EMR</span>
+              <span>Scanbo® D8 + EHR</span>
             </div>
             <div className="sl">
               <div className="k">Multispecialty · Hyderabad</div>
               <h4>Rushcare Hospitals</h4>
               <p>Documentation delays reduced. Clinical data flows from device to record without manual entry.</p>
-              <span>Scanbo® D8 + EMR</span>
+              <span>Scanbo® D8 + EHR</span>
             </div>
             <div className="sl">
               <div className="k">Cardiology · India</div>
               <h4>Cardiac screening initiative</h4>
-              <p>1.2M+ ECG AI analyses. Routine arrhythmia detection embedded in the point-of-care workflow.</p>
+              <p>1M+ ECG AI analyses. Routine arrhythmia detection embedded in the point-of-care workflow.</p>
               <span>HridayTaal® Cardiac Agent</span>
             </div>
           </div>

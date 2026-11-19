@@ -1,58 +1,60 @@
+import Link from "next/link";
+
 export function MobileNav() {
   return (
     <div id="mnav" className="mnav" hidden>
       <details>
         <summary>Platform</summary>
-        <a className="all" href="/platform/">
+        <Link className="all" href="/platform/">
           Platform overview →
-        </a>
-        <a href="/platform/scanbo-d8/">Scanbo® D8</a>
-        <a href="/platform/hridaytaal-ecg-ai/">HridayTaal®</a>
-        <a href="/platform/smart-scale/">Scanbo® Smart Scale</a>
-        <a href="/platform/ambient-documentation/">Ambient Documentation</a>
-        <a href="/platform/rxshield/">RxShield</a>
-        <a href="/platform/scanbo-emr/">Scanbo® EMR</a>
+        </Link>
+        <Link href="/platform/scanbo-d8/">Scanbo® D8 (D8–D19)</Link>
+        <Link href="/platform/hridaytaal-ecg-ai/">HridayTaal® Cardiac Agent</Link>
+        <Link href="/platform/smart-scale/">Scanbo® Smart Scale</Link>
+        <Link href="/platform/ambient-documentation/">Ambient Documentation</Link>
+        <Link href="/platform/rxshield/">RxShield</Link>
+        <Link href="/platform/scanbo-ehr/">Scanbo® EMR</Link>
       </details>
       <details>
-        <summary>Who we serve</summary>
-        <a className="all" href="/who-we-serve/">
+        <summary>Whom We Serve</summary>
+        <Link className="all" href="/who-we-serve/">
           All audiences →
-        </a>
-        <a href="/who-we-serve/hospitals-clinics/">Hospitals & clinics</a>
-        <a href="/who-we-serve/physicians/">Physicians</a>
-        <a href="/who-we-serve/pharmacists/">Pharmacists</a>
-        <a href="/who-we-serve/community-health-workers/">
+        </Link>
+        <Link href="/who-we-serve/hospitals-clinics/">Hospitals & clinics</Link>
+        <Link href="/who-we-serve/physicians/">Physicians</Link>
+        <Link href="/who-we-serve/pharmacists/">Pharmacists</Link>
+        <Link href="/who-we-serve/community-health-workers/">
           Community health workers
-        </a>
-        <a href="/who-we-serve/individuals/">Individuals</a>
-        <a href="/who-we-serve/accountable-care-organizations/">
+        </Link>
+        <Link href="/who-we-serve/individuals/">Individuals</Link>
+        <Link href="/who-we-serve/accountable-care-organizations/">
           Accountable care organizations
-        </a>
+        </Link>
       </details>
       <details>
         <summary>Insights</summary>
-        <a className="all" href="/insights/">
+        <Link className="all" href="/insights/">
           Insights overview →
-        </a>
-        <a href="/insights/clinical-studies/">Clinical studies</a>
-        <a href="/insights/customer-stories/">Customer stories</a>
-        <a href="/insights/reimbursement-guide/">Reimbursement guide</a>
+        </Link>
+        <Link href="/insights/clinical-studies/">Clinical studies</Link>
+        <Link href="/insights/customer-stories/">Customer stories</Link>
+        <Link href="/insights/reimbursement-guide/">Reimbursement guide</Link>
       </details>
       <details>
         <summary>Company</summary>
-        <a className="all" href="/about/">
+        <Link className="all" href="/about/">
           About overview →
-        </a>
-        <a href="/about/company/">Who we are</a>
-        <a href="/about/manufacturing-quality/">Manufacturing & quality</a>
-        <a href="/about/data-philosophy/">Data philosophy</a>
-        <a href="/about/newsroom/">Newsroom</a>
-        <a href="/about/careers/">Careers</a>
-        <a href="/about/contact/">Contact</a>
+        </Link>
+        <Link href="/about/company/">Who we are</Link>
+        <Link href="/about/manufacturing-quality/">Manufacturing & quality</Link>
+        <Link href="/about/data-philosophy/">Data philosophy</Link>
+        <Link href="/about/newsroom/">Newsroom</Link>
+        <Link href="/about/careers/">Careers</Link>
+        <Link href="/about/contact/">Contact</Link>
       </details>
-      <a className="btn btn-lime mcta" href="/about/contact/">
+      <Link className="btn btn-lime mcta" href="/about/contact/">
         Book a walkthrough
-      </a>
+      </Link>
     </div>
   );
 }

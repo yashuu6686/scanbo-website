@@ -17,7 +17,7 @@ export function PageContent() {
               <span className="live">Live</span>
               <span className="chip">8 parameters · 1 device</span>
               <span className="chip">CDSCO approved</span>
-              <span className="chip">FDA 510(k) filing targeted Q2 2027</span>
+              <span className="chip">FDA 510(k) filing targeted Q1 2027</span>
             </div>
             <div className="ctas">
               <a className="btn btn-lime" href="/about/contact/">Book a demo →</a>
@@ -251,7 +251,7 @@ export function PageContent() {
             </a>
             <a href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
             </a>
             <a href="/platform/smart-scale/">
               <i>03</i>
@@ -265,7 +265,7 @@ export function PageContent() {
               <i>05</i>
               <b>RxShield</b>
             </a>
-            <a href="/platform/scanbo-emr/">
+            <a href="/platform/scanbo-ehr/">
               <i>06</i>
               <b>Scanbo® EMR</b>
             </a>

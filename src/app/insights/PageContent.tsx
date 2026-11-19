@@ -13,20 +13,20 @@ export function PageContent() {
       <div className="stats">
         <div className="wrap">
           <div className="stat">
-            <b>1,100+</b>
-            <span>devices in use</span>
+            <b>750+</b>
+            <span>devices deployed</span>
           </div>
           <div className="stat">
-            <b>8M+</b>
-            <span>assessments completed</span>
+            <b>7M+</b>
+            <span>vital tests completed</span>
           </div>
           <div className="stat">
-            <b>1B+</b>
+            <b>150M+</b>
             <span>health signals captured</span>
           </div>
           <div className="stat">
-            <b>1.2M+</b>
-            <span>AI ECG analyses</span>
+            <b>1M+</b>
+            <span>ECG AI analyses</span>
           </div>
         </div>
       </div>

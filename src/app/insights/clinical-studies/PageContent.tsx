@@ -100,7 +100,7 @@ export function PageContent() {
             </a>
             <a className="plink" href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
               <span>AI that reads every ECG in real time</span>
               <em>Learn more →</em>
             </a>

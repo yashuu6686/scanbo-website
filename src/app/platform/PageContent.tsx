@@ -119,7 +119,7 @@ export function PageContent() {
             <span className="tag">Biomarkers 
               <span className="live">Live</span>
             </span>
-            <h2 style={{ marginTop: "14px" }}>Scanbo® D8</h2>
+            <h2 style={{ marginTop: "14px" }}>Scanbo® D8 (D8–D19)</h2>
             <p className="lede" style={{ marginTop: "16px" }}>Clinical-grade assessments at the point of care, with no lab, no specialist and no cold chain. Designed and manufactured in-house, with proprietary test strips.
             </p>
             <div className="ticks">
@@ -135,7 +135,7 @@ export function PageContent() {
             <div className="facts">
               <span>Under 5 minutes</span>
               <span>CDSCO approved</span>
-              <span>1,100+ devices in use</span>
+              <span>750+ devices deployed</span>
             </div>
             <a className="btn btn-lime" style={{ marginTop: "26px" }} href="/platform/scanbo-d8/">Explore Scanbo D8 →</a>
           </div>
@@ -148,7 +148,7 @@ export function PageContent() {
             <span className="tag" style={{ color: "var(--mid)" }}>Cardiac AI 
               <span className="live">Live</span>
             </span>
-            <h2 style={{ marginTop: "14px" }}>HridayTaal®</h2>
+            <h2 style={{ marginTop: "14px" }}>HridayTaal® Cardiac Agent</h2>
             <p className="lede" style={{ marginTop: "16px" }}>AI that interprets every single-lead ECG in real time, so cardiac risk is caught at the first visit, not the fifth.</p>
             <div className="ticks">
               <div>Atrial fibrillation</div>
@@ -158,10 +158,10 @@ export function PageContent() {
               <div>Heart-rate variability</div>
               <div>Heart-rate type</div>
             </div>
-            <a className="btn btn-ghost" style={{ marginTop: "26px", borderColor: "var(--mid)", color: "var(--mid)" }} href="/platform/hridaytaal-ecg-ai/">Explore HridayTaal →</a>
+            <a className="btn btn-ghost" style={{ marginTop: "26px", borderColor: "var(--mid)", color: "var(--mid)" }} href="/platform/hridaytaal-ecg-ai/">Explore HridayTaal® Cardiac Agent →</a>
           </div>
           <div>
-            <div className="bigstat">1.2M+</div>
+            <div className="bigstat">1M+</div>
             <p className="lede" style={{ marginTop: "10px" }}>ECG analyses completed in the field.</p>
             <svg className="ecg" viewBox="0 0 400 64" preserveAspectRatio="none" style={{ marginTop: "26px" }}>
               <path style={{ stroke: "var(--mid)" }} d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" />
@@ -192,7 +192,7 @@ export function PageContent() {
               <p>Checks drug interactions at the moment of prescribing, before they reach the patient.</p>
               <span className="lm">Learn more →</span>
             </a>
-            <a className="layer" href="/platform/scanbo-emr/">
+            <a className="layer" href="/platform/scanbo-ehr/">
               <div className="n">WORKFLOW</div>
               <h4>Scanbo® EMR</h4>
               <p>Scheduling, telehealth and queuing on one FHIR R5-native record.</p>

@@ -33,9 +33,13 @@
   }
   document.addEventListener('click', function (e) {
     var btn = e.target && e.target.closest && e.target.closest('.menu-btn');
-    if (!btn) return;
-    e.preventDefault();
-    setMenu(btn.getAttribute('aria-expanded') !== 'true');
+    if (btn) {
+      e.preventDefault();
+      setMenu(btn.getAttribute('aria-expanded') !== 'true');
+      return;
+    }
+    // Close mobile menu after in-app navigation (next/link still renders <a>)
+    if (e.target && e.target.closest && e.target.closest('#mnav a')) setMenu(false);
   });
   document.addEventListener('keydown', function (e) {
     var mnav = document.getElementById('mnav');

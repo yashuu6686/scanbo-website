@@ -5,7 +5,7 @@ export function PageContent() {
         <div className="wrap">
           <div>
             <div className="crumb">
-              <a href="/who-we-serve/">Who we serve</a> · 06
+              <a href="/who-we-serve/">Whom We Serve</a> · 06
             </div>
             <h1>Scalable screening
               <br />
@@ -15,7 +15,7 @@ export function PageContent() {
             </p>
             <div className="pstat">
               <span className="chip">2 ACO pilots completed · FL &amp; NY</span>
-              <span className="chip">FDA 510(k) filing targeted Q2 2027</span>
+              <span className="chip">FDA 510(k) filing targeted Q1 2027</span>
             </div>
           </div>
           <div className="part">
@@ -127,11 +127,11 @@ export function PageContent() {
             </a>
             <a className="plink" href="/platform/hridaytaal-ecg-ai/">
               <i>02</i>
-              <b>HridayTaal®</b>
+              <b>HridayTaal® Cardiac Agent</b>
               <span>AI that reads every ECG in real time</span>
               <em>Learn more →</em>
             </a>
-            <a className="plink" href="/platform/scanbo-emr/">
+            <a className="plink" href="/platform/scanbo-ehr/">
               <i>06</i>
               <b>Scanbo® EMR</b>
               <span>The operational hub for connected care</span>
@@ -142,7 +142,7 @@ export function PageContent() {
       </section>
       <section className="light tight">
         <div className="wrap">
-          <div className="eyebrow">Who we serve</div>
+          <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>Six audiences. One platform.</h2>
           <div className="six">
             <a href="/who-we-serve/hospitals-clinics/">
@@ -189,4 +189,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/accountable-care-organizations/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/accountable-care-organizations/\", \"name\": \"For U.S. ACOs | Screening for Value-Based Care | Scanbo\", \"description\": \"Early detection that existing U.S. codes already reimburse. How accountable care organizations use Scanbo for scalable screening in value-based care.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Who we serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For U.S. ACOs\", \"item\": \"https://www.scanbo.com/who-we-serve/accountable-care-organizations/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/who-we-serve/accountable-care-organizations/#webpage\", \"url\": \"https://www.scanbo.com/who-we-serve/accountable-care-organizations/\", \"name\": \"For U.S. ACOs | Screening for Value-Based Care | Scanbo\", \"description\": \"Early detection that existing U.S. codes already reimburse. How accountable care organizations use Scanbo for scalable screening in value-based care.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Whom We Serve\", \"item\": \"https://www.scanbo.com/who-we-serve/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"For U.S. ACOs\", \"item\": \"https://www.scanbo.com/who-we-serve/accountable-care-organizations/\"}]}]}";
