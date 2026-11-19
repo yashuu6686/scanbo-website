@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./HospitalsClinicsPageContent";
 
 export const metadata: Metadata = {
   title: "Point-of-Care Diagnostics for Hospitals &amp; Clinics | Scanbo",

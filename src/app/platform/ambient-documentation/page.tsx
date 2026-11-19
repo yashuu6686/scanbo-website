@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./AmbientDocumentationPageContent";
 
 export const metadata: Metadata = {
   title: "Ambient Documentation Agent | AI Clinical Notes | Scanbo",

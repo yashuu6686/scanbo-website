@@ -1,3 +1,5 @@
+import { PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -35,11 +37,24 @@ export function PageContent() {
         <div className="wrap">
           <div className="eyebrow">Deployed across</div>
           <h2 style={{ marginTop: "14px" }}>In daily use.</h2>
-          <div className="pchips">
-            <span>Supraja Hospitals</span>
-            <span>Rushcare Hospitals</span>
-            <span>WWC Clinics — DIMBHA · Pune</span>
-            <span>SGPGI MS · Neurology</span>
+          <div className="pchips" aria-label="Deployed partners">
+            <span>
+              <img src="/assets/logo_supraja.png" alt="" width={110} height={30} />
+              Supraja Hospitals
+            </span>
+            <span>
+              <img src="/assets/logo_rushcare.png" alt="" width={110} height={30} />
+              Rushcare Hospitals
+            </span>
+            <span>
+              <img src="/assets/logo_dimbha.png" alt="" width={110} height={30} />
+              WWC Clinics — DIMBHA
+            </span>
+            <span>
+              <em className="pchip-badge">SGPGI MS</em>
+              Neurology
+            </span>
+            <span className="pchips-more">+ 650 clinical settings</span>
           </div>
         </div>
       </section>
@@ -81,7 +96,7 @@ export function PageContent() {
                 <div className="shead">
                   <img className="slog" src="/assets/logo_dimbha.png" alt="DIMBHA — WWC Clinics" width={120} height={40} />
                   <div>
-                    <h4>WWC Clinics — DIMBHA</h4>
+                    <h4>WWC Clinics — DIMBHA - Clinic Partner</h4>
                     <div className="splace">Diabetes reversal clinics · Pune, India</div>
                   </div>
                 </div>
@@ -93,7 +108,7 @@ export function PageContent() {
               </div>
               <div className="sstats">
                 <div>
-                  <b>50</b>
+                  <b>75+</b>
                   <span>devices deployed</span>
                   <em>Single connected system</em>
                 </div>
@@ -143,16 +158,31 @@ export function PageContent() {
               <span>devices deployed</span>
             </div>
             <div>
-              <b>7M+</b>
-              <span>vital tests completed</span>
+              <b>250K+</b>
+              <span>Patients screened</span>
             </div>
             <div>
               <b>1M+</b>
               <span>ECG AI analyses</span>
             </div>
             <div>
+              <b>7M+</b>
+              <span>vital tests completed</span>
+            </div>
+
+            <div>
               <b>150M+</b>
               <span>health signals captured</span>
+            </div>
+            <div>
+              <b>5</b>
+              <span>Peer-reviewed
+              publications</span>
+            </div>
+
+            <div>
+              <b>650+</b>
+              <span>Clinical settings</span>
             </div>
           </div>
         </div>
@@ -249,10 +279,7 @@ export function PageContent() {
             <br />in your care setting?
           </h2>
           <p className="lede">We work with health systems, chronic care providers, diagnostic programs and community health organizations.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./PlatformPageContent";
 
 export const metadata: Metadata = {
   title: "The Scanbo Platform | Diagnostics, AI and Workflow",

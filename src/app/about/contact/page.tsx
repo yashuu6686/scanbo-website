@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./ContactPageContent";
 
 export const metadata: Metadata = {
   title: "Contact Scanbo | Book a Walkthrough",

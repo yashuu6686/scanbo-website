@@ -173,9 +173,19 @@ export function Header({ active }: HeaderProps) {
             </div>
           </div>
         </div>
-        <Link className="btn btn-lime nav-cta" href="/about/contact/">
-          Book a walkthrough
-        </Link>
+        <div className="nav-actions">
+          <a
+            className="btn btn-signin nav-signin"
+            href="https://app.scanbo.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sign in
+          </a>
+          <Link className="btn btn-lime nav-cta" href="/about/contact/">
+            Book a walkthrough
+          </Link>
+        </div>
         <button
           className="menu-btn"
           type="button"

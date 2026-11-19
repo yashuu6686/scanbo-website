@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./ScanboEhrPageContent";
 
 export const metadata: Metadata = {
   title: "Scanbo® EMR | Connected Clinical Workflow",

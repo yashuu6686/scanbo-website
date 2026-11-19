@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function NotFoundContent() {
   return (
     <main id="main">
@@ -9,10 +11,10 @@ export function NotFoundContent() {
           </h1>
           <p className="lede">The page you are looking for has moved or no longer exists. These are good places to start.</p>
           <div className="nf">
-            <a className="btn btn-lime" href="/">Home →</a>
-            <a className="btn btn-ghost" href="/platform/">Platform</a>
-            <a className="btn btn-ghost" href="/insights/">Insights</a>
-            <a className="btn btn-ghost" href="/about/contact/">Contact</a>
+            <Link className="btn btn-lime" href="/">Home →</Link>
+            <Link className="btn btn-ghost" href="/platform/">Platform</Link>
+            <Link className="btn btn-ghost" href="/insights/">Insights</Link>
+            <Link className="btn btn-ghost" href="/about/contact/">Contact</Link>
           </div>
         </div>
       </header>

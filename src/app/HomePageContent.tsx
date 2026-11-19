@@ -1,3 +1,5 @@
+import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -11,16 +13,20 @@ export function PageContent() {
             </h1>
             <p className="lede">From real-time patient data acquisition to intelligent interpretation, decision making and clinical action, integrated directly at the point of care, this marks the shift toward agentic AI in healthcare.
             </p>
-            <div className="ctas">
-              <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-              <a className="btn btn-ghost" href="/platform/">Explore the platform</a>
-            </div>
+            <HeroCtas
+              primaryLabel="Book a platform walkthrough →"
+              secondary={{ href: "/platform/", label: "Explore the platform" }}
+            />
             <p className="status">
               <em>
                 <i></i>CDSCO approved in India
               </em>
               <span>·</span>
               <em>FDA 510(k) filing targeted Q1 2027</em>
+              <span>·</span>
+              <em>Health Canada — Q1 2027</em>
+              <span>·</span>
+              <em>2 US ACO Pilots — FL &amp; NY</em>
             </p>
           </div>
           <div className="hero-art">
@@ -52,13 +58,19 @@ export function PageContent() {
           </div>
         </div>
       </div>
-      <div className="field">
+      <div className="hwbar">
         <div className="wrap">
-          <span className="lbl">In the field with</span>
-          <span className="nm">Supraja Hospitals</span>
-          <span className="nm">Rushcare Hospitals</span>
-          <span className="nm">Diabetes reversal network, Pune</span>
-          <span className="nm">U.S. ACO pilots, Florida &amp; New York</span>
+          <p className="hwbar-copy">
+            <span>Hardware-innovated</span>
+            <span className="dot" aria-hidden="true">·</span>
+            <span>Proprietary strips</span>
+            <span className="dot" aria-hidden="true">·</span>
+            <span>Designed &amp; manufactured in-house</span>
+          </p>
+          <span className="hwbar-badge">
+            <i></i>
+            In D12 — CDSCO approval in progress
+          </span>
         </div>
       </div>
       <section id="platform" className="light">
@@ -302,8 +314,8 @@ export function PageContent() {
                 </h3>
                 <p className="obody">Documentation time eliminated across 50 devices in a diabetes reversal network.</p>
                 <div className="ocite">
-                  <b>Clinic partner CEO</b>
-                  <span>Diabetes reversal network · Pune, India</span>
+                  <b>Raj Kumar, CEO — WWC Clinics</b>
+                  <span>Diabetes Reversal · Pune, India</span>
                 </div>
               </div>
               <div className="ocard">
@@ -318,6 +330,15 @@ export function PageContent() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="livedep" aria-label="Live deployments">
+            <span className="livedep-lbl">Live deployments</span>
+            <div className="livedep-logos">
+              <img src="/assets/logo_supraja.png" alt="Supraja Hospitals" width={140} height={40} />
+              <img src="/assets/logo_rushcare.png" alt="Rushcare Hospitals" width={140} height={40} />
+              <img src="/assets/logo_dimbha.png" alt="DIMBHA" width={140} height={40} />
+            </div>
+            <span className="livedep-badge">+ 650 clinical settings</span>
           </div>
         </div>
       </section>
@@ -407,10 +428,7 @@ export function PageContent() {
             <br />One connected record.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

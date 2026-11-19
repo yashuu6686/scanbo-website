@@ -1,11 +1,19 @@
 import { NextResponse } from "next/server";
-import { sendCareerMail, sendContactMail } from "@/lib/mail";
+import {
+  MailConfigError,
+  MailValidationError,
+  sendCareerMail,
+  sendContactMail,
+} from "@/lib/mail";
+
+export const runtime = "nodejs";
 
 /**
- * Matches the production form endpoint contract used by /assets/site.js:
- * success responses must be JSON with `{ ok: true }`.
+ * Matches the production Express /api/forms/submit contract:
+ * success → `{ ok: true, message }`
+ * failure → `{ ok: false, message, errors? }`
  *
- * Contact + careers submissions are emailed via SMTP (see .env.local).
+ * Uses per-form SMTP profiles from env (CAREER_*, CONTACT_*, DEMO_*, …).
  */
 export async function POST(request: Request) {
   try {
@@ -13,34 +21,51 @@ export async function POST(request: Request) {
 
     if (contentType.includes("multipart/form-data")) {
       const form = await request.formData();
-      const formType = String(form.get("formType") || "");
+      const formType = String(form.get("formType") || "")
+        .trim()
+        .toLowerCase();
+
       if (formType !== "career") {
         return NextResponse.json(
-          { ok: false, error: "Unsupported form type" },
+          { ok: false, message: "Unsupported form type." },
           { status: 400 },
         );
       }
 
+      // Honeypot — silently accept bots
+      if (String(form.get("website_hp") || "").trim()) {
+        return NextResponse.json({ ok: true, message: "Submitted successfully." });
+      }
+
       const resume = form.get("resume");
       await sendCareerMail({
-        name: String(form.get("name") || ""),
-        email: String(form.get("email") || ""),
-        position: String(form.get("position") || "General Application"),
-        countryCode: String(form.get("countryCode") || ""),
-        phone: String(form.get("phone") || ""),
-        note: String(form.get("note") || ""),
+        name: form.get("name"),
+        email: form.get("email"),
+        position: form.get("position"),
+        positionMeta: form.get("positionMeta"),
+        countryCode: form.get("countryCode"),
+        phone: form.get("phone"),
+        note: form.get("note"),
         resume: resume instanceof File ? resume : null,
       });
 
-      return NextResponse.json({ ok: true });
+      return NextResponse.json({ ok: true, message: "Submitted successfully." });
     }
 
     const body = await request.json().catch(() => null);
-    if (!body || body.formType !== "contact") {
+    const formType = String(body?.formType || "")
+      .trim()
+      .toLowerCase();
+
+    if (!body || formType !== "contact") {
       return NextResponse.json(
-        { ok: false, error: "Unsupported form type" },
+        { ok: false, message: "Unsupported form type." },
         { status: 400 },
       );
+    }
+
+    if (String(body.website_hp || "").trim()) {
+      return NextResponse.json({ ok: true, message: "Submitted successfully." });
     }
 
     await sendContactMail({
@@ -55,9 +80,35 @@ export async function POST(request: Request) {
       country: body.country,
     });
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, message: "Submitted successfully." });
   } catch (err) {
-    console.error("[forms/submit]", err);
-    return NextResponse.json({ ok: false, error: "failed" }, { status: 500 });
+    if (err instanceof MailValidationError) {
+      return NextResponse.json(
+        {
+          ok: false,
+          message: err.message,
+          errors: err.errors,
+        },
+        { status: 400 },
+      );
+    }
+
+    if (err instanceof MailConfigError) {
+      console.error("[forms/submit] mail config:", err.message);
+      return NextResponse.json({ ok: false, message: err.message }, { status: 500 });
+    }
+
+    const detail = err instanceof Error ? err.message : String(err);
+    console.error("[forms/submit]", detail);
+    const authFailed = /invalid login|badcredentials|eauth|username and password/i.test(detail);
+    return NextResponse.json(
+      {
+        ok: false,
+        message: authFailed
+          ? "Mail service login failed. Please check SMTP credentials."
+          : "Unable to submit right now. Please try again.",
+      },
+      { status: 500 },
+    );
   }
 }

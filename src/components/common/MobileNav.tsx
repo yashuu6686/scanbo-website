@@ -52,6 +52,14 @@ export function MobileNav() {
         <Link href="/about/careers/">Careers</Link>
         <Link href="/about/contact/">Contact</Link>
       </details>
+      <a
+        className="btn btn-signin msignin"
+        href="https://app.scanbo.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Sign in
+      </a>
       <Link className="btn btn-lime mcta" href="/about/contact/">
         Book a walkthrough
       </Link>

@@ -1,3 +1,5 @@
+import { PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -40,50 +42,75 @@ export function PageContent() {
           <div className="eyebrow">Published research</div>
           <h2 style={{ marginTop: "14px" }}>The evidence, source by source.</h2>
           <div className="pubs">
-            <div className="pub">
+            <a
+              className="pub"
+              href="https://pubmed.ncbi.nlm.nih.gov/40771298/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="psrc">PubMed · 2025</div>
               <div className="k">Primary validation study</div>
               <h4>BP and blood glucose accuracy validated in an urban field setting</h4>
               <p>Confirms Scanbo® D8 measures blood pressure and glucose to clinical standards in a low-resource urban deployment, with no lab and no specialist infrastructure.
               </p>
               <div className="pmeta">Karthikeyan, Narayan et al. · PMID 40771298</div>
-              <a href="https://pubmed.ncbi.nlm.nih.gov/40771298/" rel="noopener">Read on PubMed →</a>
-            </div>
-            <div className="pub">
+              <span className="pub-go">Read on PubMed →</span>
+            </a>
+            <a
+              className="pub"
+              href="https://www.sciencedirect.com/science/article/pii/S2514664525000505"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="psrc">ScienceDirect · 2025</div>
               <div className="k">Lancet-family journal publication</div>
               <h4>Clinical performance across diverse patient populations</h4>
-              <p>Peer-reviewed publication in a Lancet-family digital health journal, examining outcomes across real healthcare environments.</p>
+              <p>Peer-reviewed publication in a Lancet-family digital health journal — the highest-credibility venue for point-of-care diagnostic research. Examines outcomes across real healthcare environments.</p>
               <div className="pmeta">DOI: 10.1016/S2514-6645(25)00050-5</div>
-              <a href="https://www.sciencedirect.com/science/article/pii/S2514664525000505" rel="noopener">Read the study →</a>
-            </div>
-            <div className="pub">
+              <span className="pub-go">Read the study →</span>
+            </a>
+            <a
+              className="pub"
+              href="https://www.semanticscholar.org/paper/Evaluation-of-the-Bluetooth-enabled-Scanbo%C2%AE-device-A-Karthikeyan-Narayan/1acc53abce4c61e83b5816c53301e27d62c608e0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="psrc">Semantic Scholar · 2025</div>
               <div className="k">Research indexing · global discovery</div>
               <h4>Indexed across global academic research databases</h4>
               <p>The research is independently indexed, citable and discoverable across global academic platforms: a signal of reproducible, peer-traceable clinical science.
               </p>
               <div className="pmeta">Karthikeyan, Narayan et al.</div>
-              <a href="https://www.semanticscholar.org/paper/Evaluation-of-the-Bluetooth-enabled-Scanbo%C2%AE-device-A-Karthikeyan-Narayan/1acc53abce4c61e83b5816c53301e27d62c608e0" rel="noopener">Read the study →</a>
-            </div>
-            <div className="pub">
+              <span className="pub-go">Read the study →</span>
+            </a>
+            <a
+              className="pub"
+              href="https://www.path.org/who-we-are/programs/diagnostics/advancing-next-generation-phc-tools-ai-and-smartphone-sensors/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="psrc">PATH · 2024</div>
               <div className="k">WHO-aligned program recognition</div>
               <h4>Featured by PATH in next-generation primary care diagnostics</h4>
               <p>PATH, a WHO-aligned global health organization, selected Scanbo® as a featured technology in its evaluation of AI-powered diagnostic tools for next-generation primary healthcare.
               </p>
               <div className="pmeta">PATH Diagnostics Program · Global health initiative</div>
-              <a href="https://www.path.org/who-we-are/programs/diagnostics/advancing-next-generation-phc-tools-ai-and-smartphone-sensors/" rel="noopener">View on PATH →</a>
-            </div>
-            <div className="pub">
+              <span className="pub-go">View on PATH →</span>
+            </a>
+            <a
+              className="pub"
+              href="https://media.path.org/documents/Innovations_for_Primary_Health_Care.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="psrc">PATH report · 2024</div>
               <div className="k">Investor and partner reference</div>
               <h4>PATH: Innovations for Primary Health Care</h4>
-              <p>PATH's report on AI-powered diagnostic innovation in global primary care: a credible third-party reference for investors, health system partners and procurement leads.
+              <p>Authoritative PATH's report on AI-powered diagnostic innovation in global primary care: a credible third-party reference for investors, health system partners and procurement leads.
               </p>
               <div className="pmeta">PATH · Innovations for Primary Health Care report</div>
-              <a href="https://media.path.org/documents/Innovations_for_Primary_Health_Care.pdf" rel="noopener">Download the PDF →</a>
-            </div>
+              <span className="pub-go">Download the PDF →</span>
+            </a>
           </div>
         </div>
       </section>
@@ -134,10 +161,7 @@ export function PageContent() {
             <br />in your workflow.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

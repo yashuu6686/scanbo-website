@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -11,7 +14,7 @@ export function PageContent() {
               <br />
               <span>entry point.</span>
             </h1>
-            <p className="lede">The deployed foundation of Vitals Intelligence. One connected device captures eight clinical parameters at the point of care, with no lab, no manual entry and no specialist infrastructure. The first layer of the Scanbo® platform.
+            <p className="lede">The deployed foundation of Vitals Intelligence. One connected device capturing 8 clinical parameters at the point of care — no lab, no manual entry, no specialist infrastructure. Already running across 650+ clinical settings as the first layer of the Scanbo® platform.
             </p>
             <div className="pstat">
               <span className="live">Live</span>
@@ -19,10 +22,12 @@ export function PageContent() {
               <span className="chip">CDSCO approved</span>
               <span className="chip">FDA 510(k) filing targeted Q1 2027</span>
             </div>
-            <div className="ctas">
-              <a className="btn btn-lime" href="/about/contact/">Book a demo →</a>
-              <a className="btn btn-ghost" href="/insights/reimbursement-guide/">US Reimbursement Guide</a>
-            </div>
+            <HeroCtas
+              secondary={{
+                href: "/insights/reimbursement-guide/",
+                label: "US Reimbursement Guide",
+              }}
+            />
           </div>
           <div className="part">
             <img src="/assets/device.png" alt="Scanbo D8" />
@@ -209,7 +214,7 @@ export function PageContent() {
             <div className="pcard">
               <div className="k">ACOs & RPM programs</div>
               <h4>Remote monitoring with billing fit</h4>
-              <p>D8 qualifies under existing Medicare SMBP and RPM billing frameworks. No new CPT code required. A strong fit for ACOs and value-based care programs.
+              <p>D8 qualifies under existing Medicare SMBP and RPM billing frameworks. No new CPT code required. A strong fit for ACOs and value-based care programs deploying remote monitoring..
               </p>
             </div>
             <div className="pcard">
@@ -223,11 +228,12 @@ export function PageContent() {
           <div className="callout">
             <div>
               <div className="eyebrow">Clinical validation</div>
-              <h3>Validated in real-world settings.</h3>
+              <h3>5 peer-reviewed studies.</h3>
+              <h3 style={{ color: "var(--lime)" }}>Validated in real-world settings.</h3>
               <p>Independent, peer-reviewed research confirms Scanbo® D8's diagnostic accuracy in actual clinical environments, not controlled lab conditions. Published across PubMed, PMC, ScienceDirect and Semantic Scholar.
               </p>
             </div>
-            <a className="btn btn-lime" href="/insights/clinical-studies/">View the clinical evidence →</a>
+            <Link className="btn btn-lime" href="/insights/clinical-studies/">View the clinical evidence →</Link>
           </div>
           <div className="pgap"></div>
           <div className="pquote" style={{ marginTop: 0 }}>
@@ -279,10 +285,7 @@ export function PageContent() {
             <br />in action.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

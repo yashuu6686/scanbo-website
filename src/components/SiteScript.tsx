@@ -3,5 +3,5 @@
 import Script from "next/script";
 
 export function SiteScript() {
-  return <Script src="/assets/site.js?v=mobile-menu-2" strategy="afterInteractive" />;
+  return <Script src="/assets/site.js?v=name-phone-1" strategy="afterInteractive" />;
 }

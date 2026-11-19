@@ -1,3 +1,5 @@
+import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -18,6 +20,7 @@ export function PageContent() {
               <span className="chip">FHIR R5 native</span>
               <span className="chip">HIPAA-compliant</span>
             </div>
+            <HeroCtas secondary={{ href: "#fhir", label: "FHIR R5 interoperability" }} />
           </div>
           <div className="part">
             <div className="screen">
@@ -140,7 +143,7 @@ export function PageContent() {
           </div>
         </div>
       </section>
-      <section className="white">
+      <section id="fhir" className="white">
         <div className="wrap">
           <div className="eyebrow">Interoperability by design</div>
           <h2 style={{ marginTop: "14px" }}>FHIR R5 built in,
@@ -191,9 +194,20 @@ export function PageContent() {
               </dl>
             </div>
           </div>
-          <p className="pfoot">Modernization becomes a product capability, not an IT project.</p>
-          <div className="pgap"></div>
-          <div className="pquote" style={{ marginTop: 0 }}>
+          <div className="fhirnote">
+            <span className="fhirnote-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2 4.5 6.5v11L12 22l7.5-4.5v-11L12 2z" />
+                <path d="M4.5 6.5 12 11l7.5-4.5" />
+                <path d="M12 11v11" />
+              </svg>
+            </span>
+            <div>
+              <b>FHIR R5 — the current standard for health data interoperability</b>
+              <p>Scanbo® EMR is built to FHIR R5 natively. For organizations on older versions, built-in tooling supports structured conversion — making modernization a product capability, not an IT project.</p>
+            </div>
+          </div>
+          <div className="pquote">
             <blockquote>“Vitals at the point of consultation, already in the EMR before I finish the examination.”</blockquote>
             <cite>Dr. Jogendra Kumar Bastia, MD 
               <span>· Consultant Neurologist, SGPGI MS</span>
@@ -240,10 +254,7 @@ export function PageContent() {
             <br />in your workflow.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

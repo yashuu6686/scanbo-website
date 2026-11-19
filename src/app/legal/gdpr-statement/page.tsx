@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./GdprStatementPageContent";
 
 export const metadata: Metadata = {
   title: "GDPR Statement | Scanbo",

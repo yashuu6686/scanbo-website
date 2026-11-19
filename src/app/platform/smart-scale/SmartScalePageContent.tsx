@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -14,10 +17,16 @@ export function PageContent() {
             <p className="lede">The Metabolic Intelligence layer. Every measurement generates an AI Body Score, a single trackable signal informed by visceral fat, skeletal muscle, subcutaneous fat and metabolic indicators, building insight over time inside the Scanbo® platform.
             </p>
             <div className="pstat">
-              <span className="live">Deployed</span>
+              <span className="live">Platform-Connected</span>
               <span className="chip">AI Body Score · 40+ metrics</span>
               <span className="chip">CDSCO approved</span>
             </div>
+            <HeroCtas
+              secondary={{
+                href: "/insights/reimbursement-guide/",
+                label: "RPM Reimbursement Guide",
+              }}
+            />
           </div>
           <div className="part scalepart">
             <img src="/assets/smart_scale.png" alt="Scanbo Smart Scale" />
@@ -114,30 +123,34 @@ export function PageContent() {
                 </div>
               </dl>
             </div>
-            <div className="spec">
-              <h4>Connected features</h4>
-              <dl>
-                <div className="row">
-                  <dt>Bluetooth sync</dt>
-                  <dd>Straight to Scanbo® EMR</dd>
-                </div>
-                <div className="row">
-                  <dt>Multi-user recognition</dt>
-                  <dd>Up to 8 users per scale</dd>
-                </div>
-                <div className="row">
-                  <dt>Automatic trend tracking</dt>
-                  <dd>Changes over time, with no extra steps</dd>
-                </div>
-                <div className="row">
-                  <dt>Patient visibility</dt>
-                  <dd>Results in the Scanbo® app</dd>
-                </div>
-                <div className="row">
-                  <dt>RPM eligible</dt>
-                  <dd>Fits existing remote patient monitoring billing</dd>
-                </div>
-              </dl>
+            <div className="specs-side">
+              <div className="spec">
+                <h4>Connected features</h4>
+                <ul className="spec-ticks">
+                  <li>Bluetooth sync to Scanbo® EMR</li>
+                  <li>Multi-user recognition (up to 8 users)</li>
+                  <li>Automatic trend tracking over time</li>
+                  <li>Scanbo® app visibility for patients</li>
+                  <li>RPM billing pathway eligible</li>
+                </ul>
+              </div>
+              <div className="spec deploy">
+                <h4>Scale traction</h4>
+                <dl>
+                  <div className="row">
+                    <dt>Total scans</dt>
+                    <dd>1M+</dd>
+                  </div>
+                  <div className="row">
+                    <dt>Connected to platform</dt>
+                    <dd>Yes</dd>
+                  </div>
+                  <div className="row">
+                    <dt>RPM eligible</dt>
+                    <dd>Yes</dd>
+                  </div>
+                </dl>
+              </div>
             </div>
           </div>
           <div className="pgap"></div>
@@ -198,7 +211,7 @@ export function PageContent() {
               <p>CMS recognizes body weight as a billable RPM parameter. Smart Scale deployments qualify under the same 99453, 99454 and 99457 pathways used by Scanbo® D8.
               </p>
             </div>
-            <a className="btn btn-lime" href="/insights/reimbursement-guide/">See the reimbursement guide →</a>
+            <Link className="btn btn-lime" href="/insights/reimbursement-guide/">See the reimbursement guide →</Link>
           </div>
         </div>
       </section>
@@ -241,10 +254,7 @@ export function PageContent() {
             <br />in your workflow.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

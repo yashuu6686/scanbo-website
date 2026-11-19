@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./AccountableCareOrganizationsPageContent";
 
 export const metadata: Metadata = {
   title: "For U.S. ACOs | Screening for Value-Based Care | Scanbo",

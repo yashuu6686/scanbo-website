@@ -1,3 +1,5 @@
+import { PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -555,10 +557,7 @@ export function PageContent() {
             <br />inquiries.
           </h2>
           <p className="lede">Reach our team at press@scanbo.com.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./HipaaNoticePageContent";
 
 export const metadata: Metadata = {
   title: "HIPAA Notice of Privacy Practices | Scanbo",

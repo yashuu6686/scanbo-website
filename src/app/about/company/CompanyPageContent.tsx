@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -110,10 +113,10 @@ export function PageContent() {
             <div>
               <div className="eyebrow">The next chapter</div>
               <h3>The U.S. and Canada are next. The platform is ready.</h3>
-              <p>The Health Canada application is scheduled for Q4 2026, with clearance expected in Q1 2027, and the FDA 510(k) filing is targeted for Q1 2027. The same intelligence architecture running on 750+ devices across 650+ clinical settings is being brought to ACOs, health systems and value-based care programs in North America, without rebuilding from scratch.
+              <p>The Health Canada review is scheduled for Q4 2026, with clearance expected in Q1 2027, and the FDA 510(k) filing is targeted for Q1 2027. The same intelligence architecture running on 750+ devices across 650+ clinical settings is being brought to ACOs, health systems and value-based care programs in North America, without rebuilding from scratch.
               </p>
             </div>
-            <a className="btn btn-lime" href="/about/contact/#investors">Investor briefing →</a>
+            <Link className="btn btn-lime" href="/about/contact/#investors">Investor briefing →</Link>
           </div>
         </div>
       </section>
@@ -156,10 +159,7 @@ export function PageContent() {
             <br />reaches a decision. Ours does.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

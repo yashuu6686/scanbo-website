@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./InstructionsForUsePageContent";
 
 export const metadata: Metadata = {
   title: "Instructions for Use | Scanbo",

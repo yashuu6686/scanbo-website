@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./DpdpCompliancePageContent";
 
 export const metadata: Metadata = {
   title: "DPDP Compliance Statement | Scanbo",

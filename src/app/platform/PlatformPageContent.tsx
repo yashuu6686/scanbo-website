@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -137,7 +140,7 @@ export function PageContent() {
               <span>CDSCO approved</span>
               <span>750+ devices deployed</span>
             </div>
-            <a className="btn btn-lime" style={{ marginTop: "26px" }} href="/platform/scanbo-d8/">Explore Scanbo D8 →</a>
+            <Link className="btn btn-lime" style={{ marginTop: "26px" }} href="/platform/scanbo-d8/">Explore Scanbo D8 →</Link>
           </div>
           <img loading="lazy" decoding="async" src="/assets/hand.jpg" alt="Scanbo D8 with a test strip" />
         </div>
@@ -158,7 +161,7 @@ export function PageContent() {
               <div>Heart-rate variability</div>
               <div>Heart-rate type</div>
             </div>
-            <a className="btn btn-ghost" style={{ marginTop: "26px", borderColor: "var(--mid)", color: "var(--mid)" }} href="/platform/hridaytaal-ecg-ai/">Explore HridayTaal® Cardiac Agent →</a>
+            <Link className="btn btn-ghost" style={{ marginTop: "26px", borderColor: "var(--mid)", color: "var(--mid)" }} href="/platform/hridaytaal-ecg-ai/">Explore HridayTaal® Cardiac Agent →</Link>
           </div>
           <div>
             <div className="bigstat">1M+</div>
@@ -234,10 +237,7 @@ export function PageContent() {
             <br />One connected record.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./HridaytaalEcgAiPageContent";
 
 export const metadata: Metadata = {
   title: "HridayTaal® Cardiac Agent | AI ECG Analysis | Scanbo",

@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -87,7 +90,7 @@ export function PageContent() {
             <div className="pcard">
               <div className="k">Regulatory discipline</div>
               <h4>Built for regulated market entry.</h4>
-              <p>Scanbo®'s regulatory program supports market access in India, Canada and the United States, aligned to CDSCO approval, the Health Canada application and FDA 510(k) submission.
+              <p>Scanbo®'s regulatory program supports market access in India, Canada and the United States, aligned to CDSCO approval, the Health Canada review and FDA 510(k) submission.
               </p>
             </div>
           </div>
@@ -125,7 +128,7 @@ export function PageContent() {
               <p>For healthcare providers, enterprise buyers and institutional partners, Scanbo®'s manufacturing and quality infrastructure is the operational assurance behind every device and deployment.
               </p>
             </div>
-            <a className="btn btn-lime" href="/about/contact/">Talk to our team →</a>
+            <Link className="btn btn-lime" href="/about/contact/">Talk to our team →</Link>
           </div>
         </div>
       </section>
@@ -168,10 +171,7 @@ export function PageContent() {
             <br />Built to standard.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

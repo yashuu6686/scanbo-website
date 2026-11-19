@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { PageContent, jsonLd } from "./PageContent";
+import { PageContent, jsonLd } from "./ManufacturingQualityPageContent";
 
 export const metadata: Metadata = {
   title: "Manufacturing and Quality | ISO 13485, MDSAP | Scanbo",

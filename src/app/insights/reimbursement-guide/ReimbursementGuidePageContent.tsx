@@ -1,3 +1,5 @@
+import { PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -11,7 +13,7 @@ export function PageContent() {
               <br />
               <span>U.S. reimbursement.</span>
             </h1>
-            <p className="lede">Scanbo® D8 and Smart Scale qualify under existing Medicare SMBP and RPM billing frameworks. Deploy using established pathways, with no new code required.
+            <p className="lede">Scanbo® D8 and Smart Scale qualify under existing Medicare SMBP and RPM billing frameworks. Deploy now using established pathways, with no new code required.
             </p>
             <div className="pstat">
               <span className="chip">No new CPT code required</span>
@@ -319,10 +321,7 @@ export function PageContent() {
             <br />in your ACO or clinic?
           </h2>
           <p className="lede">Talk to our U.S. healthcare team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>

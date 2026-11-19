@@ -1,3 +1,5 @@
+import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -7,7 +9,7 @@ export function PageContent() {
             <div className="crumb">
               <a href="/platform/">Platform</a> · 02 · Cardiac intelligence
             </div>
-            <h1>Cardiac intelligence,
+            <h1>HridayTaal® is<br></br>Cardiac intelligence,
               <br />
               <span>at the point of care.</span>
             </h1>
@@ -18,10 +20,12 @@ export function PageContent() {
               <span className="chip">1M+ ECG analyses</span>
               <span className="chip">CDSCO approved</span>
             </div>
-            <div className="ctas">
-              <a className="btn btn-lime" href="/about/contact/">Book a demo →</a>
-              <a className="btn btn-ghost" href="/insights/clinical-studies/">Clinical evidence</a>
-            </div>
+            <HeroCtas
+              secondary={{
+                href: "/insights/clinical-studies/",
+                label: "Clinical evidence",
+              }}
+            />
           </div>
           <div className="part">
             <div className="artcard ro">
@@ -246,10 +250,22 @@ export function PageContent() {
             <a className="btn btn-soft" href="/platform/scanbo-d8/">See Scanbo® D8 →</a>
           </div>
           <div className="pgap"></div>
-          <div className="pnote">
+          <div className="cpos">
             <b>Clinical positioning</b>
-            <p>HridayTaal® is a decision-support layer. It provides structured rhythm output to assist clinically trained professionals and does not replace physician judgment. Outputs are structured for clinical documentation and review: designed to augment, not automate, cardiac assessment.
-            </p>
+            <div className="cpos-grid">
+              <div>
+                <h4>AI Interpretation Layer</h4>
+                <p>HridayTaal® is a decision-support layer. It provides structured rhythm output to assist clinically trained professionals — it does not replace physician judgement.</p>
+              </div>
+              <div>
+                <h4>Point-of-Care Relevance</h4>
+                <p>Running on every Scanbo® D8 ECG capture across 650+ clinical settings in India. Over 1M+ ECG analyses completed in active deployment.</p>
+              </div>
+              <div>
+                <h4>Responsible Workflow Design</h4>
+                <p>Interpretation outputs are structured for clinical documentation and review. HridayTaal® is designed to augment, not automate, clinical cardiac assessment.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -292,10 +308,7 @@ export function PageContent() {
             <br />in your workflow.
           </h2>
           <p className="lede">Book a live walkthrough of the Scanbo platform with our team.</p>
-          <div className="ctas">
-            <a className="btn btn-lime" href="/about/contact/">Book a platform walkthrough →</a>
-            <a className="btn btn-ghost" href="/about/contact/#investors">Investor inquiries</a>
-          </div>
+          <PlatformCtas />
         </div>
       </section>
     </main>
