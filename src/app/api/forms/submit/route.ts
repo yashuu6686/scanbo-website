@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
+import { sendCareerMail, sendContactMail } from "@/lib/mail";
 
 /**
  * Matches the production form endpoint contract used by /assets/site.js:
  * success responses must be JSON with `{ ok: true }`.
  *
- * Wire this to your real backend / CRM when ready. Until then submissions are
- * accepted so contact and careers forms behave like the live site UI flow.
+ * Contact + careers submissions are emailed via SMTP (see .env.local).
  */
 export async function POST(request: Request) {
   try {
@@ -20,7 +20,18 @@ export async function POST(request: Request) {
           { status: 400 },
         );
       }
-      // Acknowledge career application (resume included in formData).
+
+      const resume = form.get("resume");
+      await sendCareerMail({
+        name: String(form.get("name") || ""),
+        email: String(form.get("email") || ""),
+        position: String(form.get("position") || "General Application"),
+        countryCode: String(form.get("countryCode") || ""),
+        phone: String(form.get("phone") || ""),
+        note: String(form.get("note") || ""),
+        resume: resume instanceof File ? resume : null,
+      });
+
       return NextResponse.json({ ok: true });
     }
 
@@ -32,8 +43,21 @@ export async function POST(request: Request) {
       );
     }
 
+    await sendContactMail({
+      firstName: body.firstName,
+      lastName: body.lastName,
+      email: body.email,
+      countryCode: body.countryCode,
+      phone: body.phone,
+      organisation: body.organisation,
+      role: body.role,
+      message: body.message,
+      country: body.country,
+    });
+
     return NextResponse.json({ ok: true });
-  } catch {
+  } catch (err) {
+    console.error("[forms/submit]", err);
     return NextResponse.json({ ok: false, error: "failed" }, { status: 500 });
   }
 }

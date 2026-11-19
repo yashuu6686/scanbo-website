@@ -14,19 +14,42 @@
 
   function track(name, params) { if (window.gtag) window.gtag('event', name, params || {}); }
 
-  // Mobile menu
-  var btn = document.querySelector('.menu-btn'), mnav = document.getElementById('mnav');
+  // Mobile menu — event delegation so it still works after Next.js remounts the nav
+  function menuEls() {
+    return {
+      btn: document.querySelector('.menu-btn'),
+      mnav: document.getElementById('mnav')
+    };
+  }
   function setMenu(open) {
+    var els = menuEls(), btn = els.btn, mnav = els.mnav;
+    if (!btn || !mnav) return;
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) mnav.removeAttribute('hidden');
+    else mnav.setAttribute('hidden', '');
     mnav.hidden = !open;
     document.body.classList.toggle('menu-open', open);
   }
-  if (btn && mnav) {
-    btn.addEventListener('click', function () { setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mnav.hidden) { setMenu(false); btn.focus(); } });
-    window.addEventListener('resize', function () { if (window.innerWidth > 980 && !mnav.hidden) setMenu(false); });
-  }
+  document.addEventListener('click', function (e) {
+    var btn = e.target && e.target.closest && e.target.closest('.menu-btn');
+    if (btn) {
+      e.preventDefault();
+      setMenu(btn.getAttribute('aria-expanded') !== 'true');
+      return;
+    }
+    // Close mobile menu after in-app navigation (next/link still renders <a>)
+    if (e.target && e.target.closest && e.target.closest('#mnav a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    var mnav = document.getElementById('mnav');
+    var btn = document.querySelector('.menu-btn');
+    if (e.key === 'Escape' && mnav && !mnav.hidden) { setMenu(false); if (btn) btn.focus(); }
+  });
+  window.addEventListener('resize', function () {
+    var mnav = document.getElementById('mnav');
+    if (window.innerWidth > 980 && mnav && !mnav.hidden) setMenu(false);
+  });
 
   // Forms
   function setErr(el, msg) {

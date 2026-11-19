@@ -9,13 +9,13 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/platform/scanbo-ehr",
-        destination: "/platform/scanbo-emr/",
+        source: "/platform/scanbo-emr",
+        destination: "/platform/scanbo-ehr/",
         permanent: true,
       },
       {
-        source: "/platform/scanbo-ehr/",
-        destination: "/platform/scanbo-emr/",
+        source: "/platform/scanbo-emr/",
+        destination: "/platform/scanbo-ehr/",
         permanent: true,
       },
       {

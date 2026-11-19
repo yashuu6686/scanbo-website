@@ -1,6 +1,7 @@
-import { SiteHtml } from "@/components/SiteHtml";
-import { buildSkipLinkHtml } from "@/components/shell/navHtml";
-
 export function SkipLink() {
-  return <SiteHtml html={buildSkipLinkHtml()} />;
+  return (
+    <a className="skip" href="#main">
+      Skip to content
+    </a>
+  );
 }

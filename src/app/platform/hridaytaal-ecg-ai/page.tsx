@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/SitePage";
-import { html, jsonLd } from "./content";
+import { PageContent, jsonLd } from "./PageContent";
 
 export const metadata: Metadata = {
   title: "HridayTaal® Cardiac Agent | AI ECG Analysis | Scanbo",
@@ -24,5 +24,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <SitePage mainHtml={html} jsonLd={jsonLd} activeNav="platform" />;
+  return (
+    <SitePage jsonLd={jsonLd} activeNav="platform">
+      <PageContent />
+    </SitePage>
+  );
 }
