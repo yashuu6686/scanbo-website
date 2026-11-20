@@ -101,7 +101,7 @@ export function PageContent() {
             </p>
             <HeroCtas
               primaryLabel="Book a platform walkthrough →"
-              secondary={{ href: "/platform/", label: "Explore the Ecosystem" }}
+              secondary={{ href: "/platform/", label: "Explore the platform" }}
             />
             <p className="status">
               {heroStatusChips.map((chip, i) => (

@@ -492,8 +492,8 @@ section.tight{padding:84px 0}
 .grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--lime)}
 .ohead2 .grad{color:var(--mid)}
 .gnum{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--ink);font-size:56px}
-.gnum-yoy{color:var(--mid)}
-.gnum-yoy .gx{color:var(--lime)}
+.gnum-yoy{color:#000}
+.gnum-yoy .gx{color:#000}
 .mrow span{color:var(--mid);font-size:18px}
 .sic,.sic.lime,.sic.teal{width:44px;height:44px;border-radius:12px;background:var(--navy);border:0}
 .sic svg,.sic.lime svg,.sic.teal svg{stroke:var(--lime);width:22px;height:22px}
