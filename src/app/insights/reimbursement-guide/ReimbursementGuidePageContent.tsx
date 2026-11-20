@@ -1,4 +1,14 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  reimbursementD8PathwayRows,
+  reimbursementD8RevenueRows,
+  reimbursementHeroChips,
+  reimbursementProductLinks,
+  reimbursementRateGroups,
+  reimbursementRevenueStats,
+  reimbursementSmartScalePathwayRows,
+  reimbursementSmartScaleRevenueRows,
+} from "@/data/reimbursement";
 
 export function PageContent() {
   return (
@@ -16,9 +26,11 @@ export function PageContent() {
             <p className="lede">Scanbo® D8 and Smart Scale qualify under existing Medicare SMBP and RPM billing frameworks. Deploy now using established pathways, with no new code required.
             </p>
             <div className="pstat">
-              <span className="chip">No new CPT code required</span>
-              <span className="chip">SMBP · RPM · ECG pathways</span>
-              <span className="chip">Strong fit for ACOs</span>
+              {reimbursementHeroChips.map((chip) => (
+                <span className="chip" key={chip}>
+                  {chip}
+                </span>
+              ))}
             </div>
           </div>
           <div className="part">
@@ -66,39 +78,23 @@ export function PageContent() {
             <div className="spec">
               <h4>Scanbo® D8 · BP, cardiometabolic and rhythm monitoring</h4>
               <dl>
-                <div className="row">
-                  <dt>SMBP</dt>
-                  <dd>99473 · 99474</dd>
-                </div>
-                <div className="row">
-                  <dt>RPM</dt>
-                  <dd>99453 · 99454 · 99457 · 99458</dd>
-                </div>
-                <div className="row">
-                  <dt>Physician review</dt>
-                  <dd>99091</dd>
-                </div>
-                <div className="row">
-                  <dt>Rhythm ECG</dt>
-                  <dd>93040 · 93041 · 93042</dd>
-                </div>
+                {reimbursementD8PathwayRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
             <div className="spec">
               <h4>Scanbo® Smart Scale · connected weight monitoring</h4>
               <dl>
-                <div className="row">
-                  <dt>RPM</dt>
-                  <dd>99453 · 99454 · 99457 · 99458</dd>
-                </div>
-                <div className="row">
-                  <dt>Physician review</dt>
-                  <dd>99091</dd>
-                </div>
-                <div className="row">
-                  <dt>Why it fits</dt>
-                  <dd>CMS materials specifically cite weight as a remote physiologic monitoring parameter — perfect positioning.</dd>
-                </div>
+                {reimbursementSmartScalePathwayRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
           </div>
@@ -111,75 +107,19 @@ export function PageContent() {
           <h2 style={{ marginTop: "14px" }}>What each code pays.</h2>
           <p className="lede pintro">National average non-facility rates · Source: CMS Physician Fee Schedule · Effective January 1, 2026</p>
           <div className="rates">
-            <div className="rgrp">
-              <h4>Step 1 · SMBP: self-measured blood pressure · Scanbo® D8</h4>
-              <div className="rrow">
-                <b>CPT 99473</b>
-                <span>SMBP device setup and patient education, one-time per device</span>
-                <em>One-time</em>
-                <strong>$11.90</strong>
+            {reimbursementRateGroups.map((group) => (
+              <div className="rgrp" key={group.id}>
+                <h4>{group.title}</h4>
+                {group.rows.map((row) => (
+                  <div className="rrow" key={row.id}>
+                    <b>{row.code}</b>
+                    <span>{row.description}</span>
+                    <em>{row.cadence}</em>
+                    <strong>{row.amount}</strong>
+                  </div>
+                ))}
               </div>
-              <div className="rrow">
-                <b>CPT 99474</b>
-                <span>SMBP readings review and treatment management, min. 12 readings/month</span>
-                <em>Monthly</em>
-                <strong>~$14.46</strong>
-              </div>
-            </div>
-            <div className="rgrp">
-              <h4>Step 2 · RPM: remote physiologic monitoring · Scanbo® D8 and Smart Scale</h4>
-              <div className="rrow">
-                <b>CPT 99453</b>
-                <span>RPM device setup and patient education, one-time per device</span>
-                <em>One-time</em>
-                <strong>$22.00</strong>
-              </div>
-              <div className="rrow">
-                <b>CPT 99454</b>
-                <span>Device supply, data collection and transmission, min. 16 days/month</span>
-                <em>Monthly</em>
-                <strong>$47.06</strong>
-              </div>
-              <div className="rrow">
-                <b>CPT 99457</b>
-                <span>RPM clinical management, first 20 min/month, live interaction required</span>
-                <em>Monthly</em>
-                <strong>$51.77</strong>
-              </div>
-              <div className="rrow">
-                <b>CPT 99458</b>
-                <span>RPM add-on, each additional 20 min/month, up to 2× per month</span>
-                <em>Monthly</em>
-                <strong>$41.00</strong>
-              </div>
-              <div className="rrow">
-                <b>CPT 99091</b>
-                <span>Physician data review and interpretation, 30 min/month</span>
-                <em>Monthly</em>
-                <strong>$38.21</strong>
-              </div>
-            </div>
-            <div className="rgrp">
-              <h4>Step 3 · ECG: rhythm ECG billing pathways · Scanbo® D8 + HridayTaal®</h4>
-              <div className="rrow">
-                <b>CPT 93040</b>
-                <span>Rhythm ECG with interpretation and report</span>
-                <em>Per use</em>
-                <strong>~$18.00</strong>
-              </div>
-              <div className="rrow">
-                <b>CPT 93041</b>
-                <span>Rhythm ECG tracing only, without interpretation</span>
-                <em>Per use</em>
-                <strong>~$25.00</strong>
-              </div>
-              <div className="rrow">
-                <b>CPT 93042</b>
-                <span>Rhythm ECG interpretation and report only</span>
-                <em>Per use</em>
-                <strong>~$30.00</strong>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -193,72 +133,34 @@ export function PageContent() {
             <div className="spec">
               <h4>Scanbo® D8 · per patient, per year</h4>
               <dl>
-                <div className="row">
-                  <dt>99453 · RPM setup</dt>
-                  <dd>$22.00 × 1</dd>
-                </div>
-                <div className="row">
-                  <dt>99454 · Device supply</dt>
-                  <dd>$47.06 × 12 = $564.72</dd>
-                </div>
-                <div className="row">
-                  <dt>99457 · RPM management</dt>
-                  <dd>$51.77 × 12 = $621.24</dd>
-                </div>
-                <div className="row">
-                  <dt>Core RPM per patient / year</dt>
-                  <dd>~$1,208</dd>
-                </div>
-                <div className="row">
-                  <dt>Optional</dt>
-                  <dd>99458 ($492/yr) · 99091 ($458/yr) · SMBP codes · ECG adjuncts</dd>
-                </div>
+                {reimbursementD8RevenueRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
             <div className="spec">
               <h4>Scanbo® Smart Scale · per patient, per year</h4>
               <dl>
-                <div className="row">
-                  <dt>99453 · RPM setup</dt>
-                  <dd>$22.00 × 1</dd>
-                </div>
-                <div className="row">
-                  <dt>99454 · Device supply</dt>
-                  <dd>$47.06 × 12 = $564.72</dd>
-                </div>
-                <div className="row">
-                  <dt>99457 · RPM management</dt>
-                  <dd>$51.77 × 12 = $621.24</dd>
-                </div>
-                <div className="row">
-                  <dt>Core RPM per patient / year</dt>
-                  <dd>~$1,208</dd>
-                </div>
-                <div className="row">
-                  <dt>Optional</dt>
-                  <dd>99458 ($492/yr) · 99091 ($458/yr)</dd>
-                </div>
+                {reimbursementSmartScaleRevenueRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
           </div>
           <div className="pgap"></div>
           <div className="pstats n4" style={{ marginTop: 0 }}>
-            <div>
-              <b>~$121k</b>
-              <span>D8 · 100 patients · Year 1 incl. setup</span>
-            </div>
-            <div>
-              <b>~$121k</b>
-              <span>Smart Scale · 100 patients · Year 1 incl. setup</span>
-            </div>
-            <div>
-              <b>~$242k</b>
-              <span>Both · 200 patients · Year 1 combined</span>
-            </div>
-            <div>
-              <b>~$238k/yr</b>
-              <span>Year 2+ recurring · 200 patients</span>
-            </div>
+            {reimbursementRevenueStats.map((stat) => (
+              <div key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pnote">
@@ -273,24 +175,14 @@ export function PageContent() {
           <div className="eyebrow">Reimbursable products</div>
           <h2 style={{ marginTop: "14px" }}>The layers that bill.</h2>
           <div className="plinks n3">
-            <a className="plink" href="/platform/scanbo-d8/">
-              <i>01</i>
-              <b>Scanbo® D8</b>
-              <span>Eight measurements in under five minutes</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/smart-scale/">
-              <i>03</i>
-              <b>Scanbo® Smart Scale</b>
-              <span>AI Body Score and 40+ metabolic indicators</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/hridaytaal-ecg-ai/">
-              <i>02</i>
-              <b>HridayTaal® Cardiac Agent</b>
-              <span>AI that reads every ECG in real time</span>
-              <em>Learn more →</em>
-            </a>
+            {reimbursementProductLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

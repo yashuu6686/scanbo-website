@@ -1,3 +1,5 @@
+import { LegalNav } from "@/components/common/LegalNav";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -12,22 +14,7 @@ export function PageContent() {
       </header>
       <section className="white">
         <div className="wrap lwrap">
-          <aside className="lnav">
-            <b>Legal</b>
-            <a href="/legal/privacy-policy/" className="on">Privacy Policy</a>
-            <a href="/legal/terms-conditions/">Terms &amp; Conditions</a>
-            <a href="/legal/cookie-preferences/">Cookie Preferences</a>
-            <a href="/legal/hipaa-notice/">HIPAA Notice of Privacy Practices</a>
-            <a href="/legal/gdpr-statement/">GDPR Statement</a>
-            <a href="/legal/dpdp-compliance/">DPDP Compliance Statement</a>
-            <a href="/legal/data-request/">Data Request</a>
-            <a href="/legal/instructions-for-use/">Instructions for Use</a>
-            <a href="/legal/telehealth/">Telehealth Policy</a>
-            <a href="/legal/responsible-disclosure/">Responsible Disclosure</a>
-            <a href="/legal/non-discrimination/">Non-Discrimination Policy</a>
-            <a href="/legal/disclaimer/">Disclaimer</a>
-            <a href="/legal/sitemap/">Sitemap</a>
-          </aside>
+          <LegalNav activeHref="/legal/privacy-policy/" />
           <article className="lbody">
             <h3>1. Who We Are</h3> 
             <p>Scanbo® Holdings Inc. ("Scanbo®", "we", "us", or "our") is a point-of-care health technology company headquartered in Canada with operations across India, the US, North America, and the EU. We develop medical devices, clinical AI software, and connected health platforms.

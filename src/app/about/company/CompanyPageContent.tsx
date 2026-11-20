@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PlatformCtas } from "@/components/common/Ctas";
+import { companyGlanceCards } from "@/data/about";
 
 export function PageContent() {
   return (
@@ -59,46 +60,13 @@ export function PageContent() {
           </h2>
           <p className="lede pintro">This is not a hypothesis. It is a deployed, revenue-generating platform with clinical evidence and commercial traction.</p>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">Deployed</div>
-              <h4>750+ devices</h4>
-              <p>Deployed across 650+ clinical settings, with 7M+ vital tests completed.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Revenue</div>
-              <h4>3 active revenue streams</h4>
-              <p>Hardware · SaaS · AI licensing.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">YoY revenue growth</div>
-              <h4>2× </h4>
-              <p>Profitable unit economics .</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Mitacs Canada grant</div>
-              <h4>$1.5M</h4>
-              <p>Government-backed innovation .</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Clinical evidence</div>
-              <h4>Peer-reviewed research</h4>
-              <p>Indexed on PubMed and ScienceDirect, and recognized by PATH.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">North America</div>
-              <h4>FDA 510(k) · Health Canada</h4>
-              <p>FDA 510(k) · Health Canada · Q1 2027 launch .</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Operating across</div>
-              <h4>Three countries</h4>
-              <p>United States · Canada · India.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Platform</div>
-              <h4>Six intelligence layers</h4>
-              <p>Device, AI and workflow on one FHIR R5-native record.</p>
-            </div>
+            {companyGlanceCards.map((card) => (
+              <div key={card.id} className="pcard">
+                <div className="k">{card.kicker}</div>
+                <h4>{card.title}</h4>
+                <p>{card.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

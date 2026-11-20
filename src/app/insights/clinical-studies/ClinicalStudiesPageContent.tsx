@@ -1,4 +1,9 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  clinicalStudiesHeroChips,
+  clinicalStudiesProductLinks,
+  clinicalStudiesPublications,
+} from "@/data/clinicalStudies";
 
 export function PageContent() {
   return (
@@ -16,10 +21,11 @@ export function PageContent() {
             <p className="lede">Five peer-reviewed studies confirm Scanbo®'s diagnostic accuracy in real-world deployments, indexed on PubMed and ScienceDirect, and recognized by PATH and WHO-aligned global health programs.
             </p>
             <div className="pstat">
-              <span className="chip">5 peer-reviewed studies</span>
-              <span className="chip">PubMed · PMC · ScienceDirect</span>
-              <span className="chip">PATH · WHO global health</span>
-              <span className="chip">2024–2025</span>
+              {clinicalStudiesHeroChips.map((chip) => (
+                <span className="chip" key={chip}>
+                  {chip}
+                </span>
+              ))}
             </div>
           </div>
           <div className="part">
@@ -42,75 +48,23 @@ export function PageContent() {
           <div className="eyebrow">Published research</div>
           <h2 style={{ marginTop: "14px" }}>The evidence, source by source.</h2>
           <div className="pubs">
-            <a
-              className="pub"
-              href="https://pubmed.ncbi.nlm.nih.gov/40771298/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="psrc">PubMed · 2025</div>
-              <div className="k">Primary validation study</div>
-              <h4>BP and blood glucose accuracy validated in an urban field setting</h4>
-              <p>Confirms Scanbo® D8 measures blood pressure and glucose to clinical standards in a low-resource urban deployment, with no lab and no specialist infrastructure.
-              </p>
-              <div className="pmeta">Karthikeyan, Narayan et al. · PMID 40771298</div>
-              <span className="pub-go">Read on PubMed →</span>
-            </a>
-            <a
-              className="pub"
-              href="https://www.sciencedirect.com/science/article/pii/S2514664525000505"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="psrc">ScienceDirect · 2025</div>
-              <div className="k">Lancet-family journal publication</div>
-              <h4>Clinical performance across diverse patient populations</h4>
-              <p>Peer-reviewed publication in a Lancet-family digital health journal — the highest-credibility venue for point-of-care diagnostic research. Examines outcomes across real healthcare environments.</p>
-              <div className="pmeta">DOI: 10.1016/S2514-6645(25)00050-5</div>
-              <span className="pub-go">Read the study →</span>
-            </a>
-            <a
-              className="pub"
-              href="https://www.semanticscholar.org/paper/Evaluation-of-the-Bluetooth-enabled-Scanbo%C2%AE-device-A-Karthikeyan-Narayan/1acc53abce4c61e83b5816c53301e27d62c608e0"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="psrc">Semantic Scholar · 2025</div>
-              <div className="k">Research indexing · global discovery</div>
-              <h4>Indexed across global academic research databases</h4>
-              <p>The research is independently indexed, citable and discoverable across global academic platforms: a signal of reproducible, peer-traceable clinical science.
-              </p>
-              <div className="pmeta">Karthikeyan, Narayan et al.</div>
-              <span className="pub-go">Read the study →</span>
-            </a>
-            <a
-              className="pub"
-              href="https://www.path.org/who-we-are/programs/diagnostics/advancing-next-generation-phc-tools-ai-and-smartphone-sensors/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="psrc">PATH · 2024</div>
-              <div className="k">WHO-aligned program recognition</div>
-              <h4>Featured by PATH in next-generation primary care diagnostics</h4>
-              <p>PATH, a WHO-aligned global health organization, selected Scanbo® as a featured technology in its evaluation of AI-powered diagnostic tools for next-generation primary healthcare.
-              </p>
-              <div className="pmeta">PATH Diagnostics Program · Global health initiative</div>
-              <span className="pub-go">View on PATH →</span>
-            </a>
-            <a
-              className="pub"
-              href="https://media.path.org/documents/Innovations_for_Primary_Health_Care.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="psrc">PATH report · 2024</div>
-              <div className="k">Investor and partner reference</div>
-              <h4>PATH: Innovations for Primary Health Care</h4>
-              <p>Authoritative PATH's report on AI-powered diagnostic innovation in global primary care: a credible third-party reference for investors, health system partners and procurement leads.
-              </p>
-              <div className="pmeta">PATH · Innovations for Primary Health Care report</div>
-              <span className="pub-go">Download the PDF →</span>
-            </a>
+            {clinicalStudiesPublications.map((pub) => (
+              <a
+                className="pub"
+                href={pub.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={pub.id}
+              >
+                <div className="psrc">{pub.source}</div>
+                <div className="k">{pub.k}</div>
+                <h4>{pub.title}</h4>
+                <p>{pub.description}
+                </p>
+                <div className="pmeta">{pub.meta}</div>
+                <span className="pub-go">{pub.cta}</span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -119,18 +73,14 @@ export function PageContent() {
           <div className="eyebrow">Validated products</div>
           <h2 style={{ marginTop: "14px" }}>The layers behind the evidence.</h2>
           <div className="plinks n2">
-            <a className="plink" href="/platform/scanbo-d8/">
-              <i>01</i>
-              <b>Scanbo® D8</b>
-              <span>Eight measurements in under five minutes</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/hridaytaal-ecg-ai/">
-              <i>02</i>
-              <b>HridayTaal® Cardiac Agent</b>
-              <span>AI that reads every ECG in real time</span>
-              <em>Learn more →</em>
-            </a>
+            {clinicalStudiesProductLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

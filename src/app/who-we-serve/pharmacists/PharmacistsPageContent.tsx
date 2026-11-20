@@ -1,4 +1,10 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  pharmacistsCards,
+  pharmacistsHeroChips,
+  pharmacistsLinks,
+  pharmacistsStats,
+} from "@/data/whoWeServe";
 
 export function PageContent() {
   return (
@@ -16,8 +22,22 @@ export function PageContent() {
             <p className="lede">Check interactions in seconds, see the exact source behind every finding, and keep an auditable record of every decision. Plus point-of-care screening at the pharmacy counter.
             </p>
             <div className="pstat">
-              <a className="chip link" href="https://scanbo.ai/rxshield" rel="noopener">Try RxShield →</a>
-              <span className="chip">Free for HCPs · U.S. &amp; Canada</span>
+              {pharmacistsHeroChips.map((chip) =>
+                chip.link && chip.href ? (
+                  <a
+                    key={chip.id}
+                    className="chip link"
+                    href={chip.href}
+                    rel={chip.rel}
+                  >
+                    {chip.label}
+                  </a>
+                ) : (
+                  <span key={chip.id} className="chip">
+                    {chip.label}
+                  </span>
+                ),
+              )}
             </div>
           </div>
           <div className="part">
@@ -41,43 +61,23 @@ export function PageContent() {
             <br />that hold up.
           </h2>
           <div className="pcards n4">
-            <div className="pcard">
-              <div className="k">Interaction checks</div>
-              <h4>Fewer adverse events, faster evidence.</h4>
-              <p>Interaction analysis from FDA-approved prescribing information, clinical guidelines and peer-reviewed literature, source-linked in under two seconds.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Audit trail</div>
-              <h4>Defend every decision.</h4>
-              <p>Every check generates a unique Decision ID: an immutable snapshot of what was shown, when, and from which sources.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Alternatives</div>
-              <h4>Alternatives with full context.</h4>
-              <p>Where alternatives exist, RxShield shows them with contraindication data inline. Black-box warnings are always displayed.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">At the counter</div>
-              <h4>Screening where patients already are.</h4>
-              <p>Scanbo® D8 is purpose-built for pharmacies, and HridayTaal® delivers AI ECG interpretation in pharmacy settings, with no specialist on site.
-              </p>
-            </div>
+            {pharmacistsCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}
+                </p>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pstats n3" style={{ marginTop: 0 }}>
-            <div>
-              <b>&lt;2s</b>
-              <span>from drug entry to complete evidence</span>
-            </div>
-            <div>
-              <b>100%</b>
-              <span>of findings linked to the exact source passage</span>
-            </div>
-            <div>
-              <b>0</b>
-              <span>autonomous clinical decisions by AI</span>
-            </div>
+            {pharmacistsStats.map((stat) => (
+              <div key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pnote">
@@ -92,24 +92,14 @@ export function PageContent() {
           <div className="eyebrow">Built on</div>
           <h2 style={{ marginTop: "14px" }}>The layers pharmacists use.</h2>
           <div className="plinks n3">
-            <a className="plink" href="/platform/rxshield/">
-              <i>05</i>
-              <b>RxShield</b>
-              <span>Drug interaction evidence you can defend</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/scanbo-d8/">
-              <i>01</i>
-              <b>Scanbo® D8</b>
-              <span>Eight measurements in under five minutes</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/hridaytaal-ecg-ai/">
-              <i>02</i>
-              <b>HridayTaal® Cardiac Agent</b>
-              <span>AI that reads every ECG in real time</span>
-              <em>Learn more →</em>
-            </a>
+            {pharmacistsLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import { chwCards, chwHeroChips, chwLinks, chwStats } from "@/data/whoWeServe";
 
 export function PageContent() {
   return (
@@ -16,8 +17,11 @@ export function PageContent() {
             <p className="lede">The people closest to patients have the fewest diagnostic tools. Scanbo puts a clinical-grade assessment in their hands, with no lab, no specialist and no cold chain.
             </p>
             <div className="pstat">
-              <span className="chip">Urban and rural</span>
-              <span className="chip">No cold chain</span>
+              {chwHeroChips.map((chip) => (
+                <span className="chip" key={chip}>
+                  {chip}
+                </span>
+              ))}
             </div>
           </div>
           <div className="part">
@@ -41,36 +45,22 @@ export function PageContent() {
             <br />in one device.
           </h2>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">Portable screening</div>
-              <h4>Screening in the field.</h4>
-              <p>Validated in low-resource urban and rural deployments. Health workers screen patients and capture data directly into the clinical record.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Cardiac insight</div>
-              <h4>Cardiology intelligence without a cardiologist.</h4>
-              <p>HridayTaal® gives community health workers structured cardiac interpretation once available only in specialist settings.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Metabolic care</div>
-              <h4>Built for chronic-disease programs.</h4>
-              <p>Smart Scale and D8 together support diabetes and chronic-disease management, with trends visible to the clinical team over time.</p>
-            </div>
+            {chwCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}</p>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pstats n3" style={{ marginTop: 0 }}>
-            <div>
-              <b>8</b>
-              <span>measurements per assessment</span>
-            </div>
-            <div>
-              <b>&lt;5 min</b>
-              <span>per full assessment</span>
-            </div>
-            <div>
-              <b>750+</b>
-              <span>devices deployed</span>
-            </div>
+            {chwStats.map((stat) => (
+              <div key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pquote" style={{ marginTop: 0 }}>
@@ -86,24 +76,14 @@ export function PageContent() {
           <div className="eyebrow">Built on</div>
           <h2 style={{ marginTop: "14px" }}>The layers community programs use.</h2>
           <div className="plinks n3">
-            <a className="plink" href="/platform/scanbo-d8/">
-              <i>01</i>
-              <b>Scanbo® D8</b>
-              <span>Eight measurements in under five minutes</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/hridaytaal-ecg-ai/">
-              <i>02</i>
-              <b>HridayTaal® Cardiac Agent</b>
-              <span>AI that reads every ECG in real time</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/smart-scale/">
-              <i>03</i>
-              <b>Scanbo® Smart Scale</b>
-              <span>AI Body Score and 40+ metabolic indicators</span>
-              <em>Learn more →</em>
-            </a>
+            {chwLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

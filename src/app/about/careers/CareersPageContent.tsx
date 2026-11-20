@@ -1,5 +1,6 @@
 import { PlatformCtas } from "@/components/common/Ctas";
 import { CountryPhoneFields } from "@/components/forms/CountryPhoneFields";
+import { careerJobs, careerRoleOptions } from "@/data/careers";
 
 export function PageContent() {
   return (
@@ -40,54 +41,14 @@ export function PageContent() {
           <div className="eyebrow">Open positions</div>
           <h2 style={{ marginTop: "14px" }}>Eight roles, one mission.</h2>
           <div className="jobs">
-            <a className="job" href="#apply" data-position="AI Engineer">
-              <b>AI Engineer</b>
-              <span>2+ years · 5 positions open</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
-            <a className="job" href="#apply" data-position="Junior Android Developer">
-              <b>Junior Android Developer</b>
-              <span>2+ years · Must know Kotlin</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
-            <a className="job" href="#apply" data-position="Senior Bio-Chemist">
-              <b>Senior Bio-Chemist</b>
-              <span>3–5 years · Basic biochemistry knowledge</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
-            <a className="job" href="#apply" data-position="Customer Technical Support">
-              <b>Customer Technical Support</b>
-              <span>2–5 years · Excellent English communication</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
-            <a className="job" href="#apply" data-position="HR Admin Manager">
-              <b>HR Admin Manager</b>
-              <span>2–3 years · Strong English communication</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
-            <a className="job" href="#apply" data-position="Jr. iOS Developer">
-              <b>Jr. iOS Developer</b>
-              <span>1–3 years · Swift, UIKit, Xcode</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
-            <a className="job" href="#apply" data-position="Sr. QA Tester">
-              <b>Sr. QA Tester</b>
-              <span>3+ years · Manual and automation testing</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
-            <a className="job" href="#apply" data-position="Sr. Social Media Specialist">
-              <b>Sr. Social Media Specialist</b>
-              <span>3+ years · Content strategy and campaigns</span>
-              <small>Surat, Gujarat, India · On-site</small>
-              <em>Apply →</em>
-            </a>
+            {careerJobs.map((job) => (
+              <a key={job.id} className="job" href="#apply" data-position={job.title}>
+                <b>{job.title}</b>
+                <span>{job.detail}</span>
+                <small>{job.location}</small>
+                <em>Apply →</em>
+              </a>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="callout">
@@ -113,15 +74,9 @@ export function PageContent() {
                 <label htmlFor="position">Role *</label>
                 <select id="position" name="position" required>
                   <option value="">Select a role</option>
-                  <option>AI Engineer</option>
-                  <option>Junior Android Developer</option>
-                  <option>Senior Bio-Chemist</option>
-                  <option>Customer Technical Support</option>
-                  <option>HR Admin Manager</option>
-                  <option>Jr. iOS Developer</option>
-                  <option>Sr. QA Tester</option>
-                  <option>Sr. Social Media Specialist</option>
-                  <option>General application</option>
+                  {careerRoleOptions.map((role) => (
+                    <option key={role}>{role}</option>
+                  ))}
                 </select>
                 <div className="err" role="alert"></div>
               </div>

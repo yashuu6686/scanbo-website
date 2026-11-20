@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFoundRecoveryLinks } from "@/data/notFound";
 
 export function NotFoundContent() {
   return (
@@ -11,10 +12,11 @@ export function NotFoundContent() {
           </h1>
           <p className="lede">The page you are looking for has moved or no longer exists. These are good places to start.</p>
           <div className="nf">
-            <Link className="btn btn-lime" href="/">Home →</Link>
-            <Link className="btn btn-ghost" href="/platform/">Platform</Link>
-            <Link className="btn btn-ghost" href="/insights/">Insights</Link>
-            <Link className="btn btn-ghost" href="/about/contact/">Contact</Link>
+            {notFoundRecoveryLinks.map((link) => (
+              <Link className={link.className} href={link.href} key={link.id}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </header>

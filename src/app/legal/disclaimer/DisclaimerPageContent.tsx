@@ -1,3 +1,5 @@
+import { LegalNav } from "@/components/common/LegalNav";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -11,22 +13,7 @@ export function PageContent() {
       </header>
       <section className="white">
         <div className="wrap lwrap">
-          <aside className="lnav">
-            <b>Legal</b>
-            <a href="/legal/privacy-policy/">Privacy Policy</a>
-            <a href="/legal/terms-conditions/">Terms &amp; Conditions</a>
-            <a href="/legal/cookie-preferences/">Cookie Preferences</a>
-            <a href="/legal/hipaa-notice/">HIPAA Notice of Privacy Practices</a>
-            <a href="/legal/gdpr-statement/">GDPR Statement</a>
-            <a href="/legal/dpdp-compliance/">DPDP Compliance Statement</a>
-            <a href="/legal/data-request/">Data Request</a>
-            <a href="/legal/instructions-for-use/">Instructions for Use</a>
-            <a href="/legal/telehealth/">Telehealth Policy</a>
-            <a href="/legal/responsible-disclosure/">Responsible Disclosure</a>
-            <a href="/legal/non-discrimination/">Non-Discrimination Policy</a>
-            <a href="/legal/disclaimer/" className="on">Disclaimer</a>
-            <a href="/legal/sitemap/">Sitemap</a>
-          </aside>
+          <LegalNav activeHref="/legal/disclaimer/" />
           <article className="lbody">
             <h3>1. Disclaimer of Liability</h3> 
             <p>In no event shall Scanbo™ be liable for any damages (including, without limitation, lost profits, business interruption, or lost information) arising out of your use of or inability to use the product, even if Scanbo™ has been advised of the possibility of such damages. No distributor, dealer or other party is authorized to make any warranty on behalf of Scanbo™, or to assume for Scanbo™ any other liability with respect to its products, services, data storage and protection.

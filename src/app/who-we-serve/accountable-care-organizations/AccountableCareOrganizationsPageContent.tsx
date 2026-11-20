@@ -1,4 +1,10 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  acosCards,
+  acosHeroChips,
+  acosLinks,
+  acosReimbursementRows,
+} from "@/data/whoWeServe";
 
 export function PageContent() {
   return (
@@ -16,8 +22,11 @@ export function PageContent() {
             <p className="lede">Value-based care needs early detection that existing codes already reimburse. Two U.S. ACOs evaluated the full clinical stack and chose to pilot before FDA clearance.
             </p>
             <div className="pstat">
-              <span className="chip">2 ACO pilots completed · FL &amp; NY</span>
-              <span className="chip">FDA 510(k) filing targeted Q1 2027</span>
+              {acosHeroChips.map((chip) => (
+                <span className="chip" key={chip}>
+                  {chip}
+                </span>
+              ))}
             </div>
           </div>
           <div className="part">
@@ -61,22 +70,13 @@ export function PageContent() {
           <p className="lede pintro">Accountable care organizations in Florida and New York evaluated the full clinical stack (data security, integration and outcomes) and chose to pilot before regulatory clearance.
           </p>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">Remote monitoring</div>
-              <h4>RPM with billing fit.</h4>
-              <p>Scanbo® D8 and Smart Scale qualify under existing Medicare SMBP and RPM billing frameworks. No new CPT code required.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Cardiac screening</div>
-              <h4>Population-level AFib screening.</h4>
-              <p>In high-volume primary care, AFib detection at the point of consultation has real population-health value. HridayTaal® makes routine ECG screening clinically useful.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Earlier detection</div>
-              <h4>AI flags high-risk patients earlier.</h4>
-              <p>Readings and AI interpretations sit in one FHIR R5 record, so care teams see risk building across visits.</p>
-            </div>
+            {acosCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -89,22 +89,12 @@ export function PageContent() {
             <div className="spec">
               <h4>Established pathways</h4>
               <dl>
-                <div className="row">
-                  <dt>RPM setup and supply · 99453, 99454</dt>
-                  <dd>Device setup, patient education and monthly device supply</dd>
-                </div>
-                <div className="row">
-                  <dt>RPM management · 99457, 99458</dt>
-                  <dd>Clinical staff time reviewing data and managing care</dd>
-                </div>
-                <div className="row">
-                  <dt>Blood pressure · 99473, 99474</dt>
-                  <dd>Self-measured blood pressure education and review</dd>
-                </div>
-                <div className="row">
-                  <dt>ECG · 93040–93042</dt>
-                  <dd>Rhythm ECG with interpretation and report</dd>
-                </div>
+                {acosReimbursementRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
           </div>
@@ -115,30 +105,14 @@ export function PageContent() {
           <div className="eyebrow">Built on</div>
           <h2 style={{ marginTop: "14px" }}>The layers ACOs use.</h2>
           <div className="plinks n4">
-            <a className="plink" href="/platform/scanbo-d8/">
-              <i>01</i>
-              <b>Scanbo® D8</b>
-              <span>Eight measurements in under five minutes</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/smart-scale/">
-              <i>03</i>
-              <b>Scanbo® Smart Scale</b>
-              <span>AI Body Score and 40+ metabolic indicators</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/hridaytaal-ecg-ai/">
-              <i>02</i>
-              <b>HridayTaal® Cardiac Agent</b>
-              <span>AI that reads every ECG in real time</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/scanbo-ehr/">
-              <i>06</i>
-              <b>Scanbo® EMR</b>
-              <span>The operational hub for connected care</span>
-              <em>Learn more →</em>
-            </a>
+            {acosLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

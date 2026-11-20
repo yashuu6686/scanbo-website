@@ -1,4 +1,12 @@
 import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
+import {
+  ehrAppointmentSpecRows,
+  ehrCommunicationCards,
+  ehrFhirSpecRows,
+  ehrMigrationSpecRows,
+  ehrQueueSpecRows,
+  ehrWorkflowCards,
+} from "@/data/platform";
 
 export function PageContent() {
   return (
@@ -16,7 +24,7 @@ export function PageContent() {
             <p className="lede">Scheduling, communication and interoperability in one connected platform. Scanbo® EMR is the workflow layer that helps care actually run, with FHIR R5-native interoperability built in.
             </p>
             <div className="pstat">
-              <span className="live">Deployed</span>
+              <span className="live">Platform-Connected</span>
               <span className="chip">FHIR R5 native</span>
               <span className="chip">HIPAA-compliant</span>
             </div>
@@ -44,22 +52,13 @@ export function PageContent() {
           <p className="lede pintro">Most EHR systems are built around documentation. Scanbo® EMR is built around workflow: the scheduling, communication and visibility that keep care running, connected to every other layer of the platform.
           </p>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">Scheduling intelligence</div>
-              <h4>Appointments managed end to end.</h4>
-              <p>Booking, rescheduling, cancellation and waitlisting in one platform. No handoffs to external scheduling tools.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Operational visibility</div>
-              <h4>Real-time patient flow.</h4>
-              <p>A live queue dashboard shows who is waiting, who is in consultation and what is delayed, improving throughput.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Connected platform</div>
-              <h4>Workflow connected to clinical data.</h4>
-              <p>D8 vitals, HridayTaal® ECG interpretations and Smart Scale body composition all flow into the record. Every encounter is connected and documented.
-              </p>
-            </div>
+            {ehrWorkflowCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -74,43 +73,23 @@ export function PageContent() {
             <div className="spec">
               <h4>Appointment management</h4>
               <dl>
-                <div className="row">
-                  <dt>Online and in-clinic booking</dt>
-                  <dd>Patient- and admin-initiated appointments</dd>
-                </div>
-                <div className="row">
-                  <dt>Rescheduling and cancellation</dt>
-                  <dd>Managed in the platform, with notifications</dd>
-                </div>
-                <div className="row">
-                  <dt>Waitlisting</dt>
-                  <dd>Cancelled slots filled from an active waitlist</dd>
-                </div>
-                <div className="row">
-                  <dt>Multi-department scheduling</dt>
-                  <dd>Across specialties, departments and sites</dd>
-                </div>
+                {ehrAppointmentSpecRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
             <div className="spec">
               <h4>Queue & patient flow</h4>
               <dl>
-                <div className="row">
-                  <dt>Live queue dashboard</dt>
-                  <dd>Waiting, in consultation and completed, in real time</dd>
-                </div>
-                <div className="row">
-                  <dt>Status tracking</dt>
-                  <dd>Active, waiting, delayed and completed states</dd>
-                </div>
-                <div className="row">
-                  <dt>TeleCall queue integration</dt>
-                  <dd>Remote patients in the same queue view</dd>
-                </div>
-                <div className="row">
-                  <dt>Throughput visibility</dt>
-                  <dd>Daily and session-level patient flow</dd>
-                </div>
+                {ehrQueueSpecRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
           </div>
@@ -124,22 +103,13 @@ export function PageContent() {
           </h2>
           <p className="lede pintro">Clinical communication shouldn't live in a separate app. Audio, video and secure chat are built into the same workflow.</p>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">Audio TeleCall</div>
-              <h4>Browser-based audio consultation.</h4>
-              <p>WebRTC audio calling with no app download. Patients connect from any device, and every call is logged against the patient record.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Video TeleCall</div>
-              <h4>Video consultation in the EHR.</h4>
-              <p>Clinicians see D8 vitals and ECG interpretations while they consult, in the same screen, without switching tools.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Secure Chat</div>
-              <h4>HIPAA-compliant clinical messaging.</h4>
-              <p>Encrypted messaging between clinicians, care teams and patients, replacing insecure workarounds like SMS, with messages logged in the record.
-              </p>
-            </div>
+            {ehrCommunicationCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -154,43 +124,23 @@ export function PageContent() {
             <div className="spec">
               <h4>FHIR R5 native</h4>
               <dl>
-                <div className="row">
-                  <dt>FHIR R5-native interoperability</dt>
-                  <dd>Built to the current standard from the ground up</dd>
-                </div>
-                <div className="row">
-                  <dt>Structured data exchange</dt>
-                  <dd>FHIR-formatted data in and out across connected systems</dd>
-                </div>
-                <div className="row">
-                  <dt>API-first architecture</dt>
-                  <dd>Connects to payers, labs, devices and external systems</dd>
-                </div>
-                <div className="row">
-                  <dt>Real-time data availability</dt>
-                  <dd>Clinical data where and when it is needed</dd>
-                </div>
+                {ehrFhirSpecRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
             <div className="spec">
               <h4>Legacy migration & modernization</h4>
               <dl>
-                <div className="row">
-                  <dt>Built-in migration tooling</dt>
-                  <dd>Converts older FHIR environments to FHIR R5</dd>
-                </div>
-                <div className="row">
-                  <dt>Conversion support</dt>
-                  <dd>Maps and transforms legacy FHIR data</dd>
-                </div>
-                <div className="row">
-                  <dt>Enterprise-ready</dt>
-                  <dd>Designed for larger health organizations</dd>
-                </div>
-                <div className="row">
-                  <dt>Manageable transition</dt>
-                  <dd>Phased migration without disrupting care</dd>
-                </div>
+                {ehrMigrationSpecRows.map((row) => (
+                  <div className="row" key={row.id}>
+                    <dt>{row.dt}</dt>
+                    <dd>{row.dd}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
           </div>
@@ -205,6 +155,16 @@ export function PageContent() {
             <div>
               <b>FHIR R5 — the current standard for health data interoperability</b>
               <p>Scanbo® EMR is built to FHIR R5 natively. For organizations on older versions, built-in tooling supports structured conversion — making modernization a product capability, not an IT project.</p>
+            </div>
+          </div>
+          <div className="pint fhir-integration">
+            <div>
+              <div className="eyebrow">Platform integration</div>
+              <h3>The workflow layer
+                <br />
+                <span className="gradline">connecting every intelligence layer.</span>
+              </h3>
+              <p>D8 Vitals Intelligence, HridayTaal® Cardiac Intelligence, and Smart Scale Metabolic Intelligence all feed directly into Scanbo® EMR. Every reading, every interpretation, every measurement — connected, documented, and longitudinally visible in one place.</p>
             </div>
           </div>
           <div className="pquote">

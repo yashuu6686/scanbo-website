@@ -1,4 +1,14 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  insightsBurdenStats,
+  insightsEvidenceRows,
+  insightsExploreLinks,
+  insightsHeroStats,
+  insightsReimbursementCodes,
+  insightsReimbursementStats,
+  insightsSettingChips,
+  insightsStoryTeasers,
+} from "@/data/insights";
 
 export function PageContent() {
   return (
@@ -14,22 +24,12 @@ export function PageContent() {
       </header>
       <div className="stats">
         <div className="wrap">
-          <div className="stat">
-            <b>750+</b>
-            <span>devices deployed</span>
-          </div>
-          <div className="stat">
-            <b>7M+</b>
-            <span>vital tests completed</span>
-          </div>
-          <div className="stat">
-            <b>150M+</b>
-            <span>health signals captured</span>
-          </div>
-          <div className="stat">
-            <b>1M+</b>
-            <span>ECG AI analyses</span>
-          </div>
+          {insightsHeroStats.map((stat) => (
+            <div className="stat" key={stat.id}>
+              <b>{stat.value}</b>
+              <span>{stat.label}</span>
+            </div>
+          ))}
         </div>
       </div>
       <section className="light">
@@ -37,24 +37,14 @@ export function PageContent() {
           <div className="eyebrow">Explore insights</div>
           <h2 style={{ marginTop: "14px" }}>Three ways to evaluate Scanbo.</h2>
           <div className="plinks n3">
-            <a className="plink" href="/insights/clinical-studies/">
-              <i>01</i>
-              <b>Clinical studies</b>
-              <span>Clinical evidence and published research</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/insights/customer-stories/">
-              <i>02</i>
-              <b>Customer stories</b>
-              <span>Real outcomes from clinical deployments</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/insights/reimbursement-guide/">
-              <i>03</i>
-              <b>Reimbursement guide</b>
-              <span>Medicare CPT, RPM and SMBP pathways</span>
-              <em>Learn more →</em>
-            </a>
+            {insightsExploreLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -64,31 +54,13 @@ export function PageContent() {
           <h2 style={{ marginTop: "14px" }}>Validated at the point of care.</h2>
           <p className="lede pintro">Peer-reviewed research indexed on PubMed and ScienceDirect, and recognition from PATH and WHO-aligned global health programs.</p>
           <div className="evlist">
-            <a className="evrow" href="https://pubmed.ncbi.nlm.nih.gov/40771298/" rel="noopener">
-              <span className="evs">PubMed · 2025</span>
-              <b>BP and blood glucose accuracy validated in an urban field setting</b>
-              <em>Read on PubMed →</em>
-            </a>
-            <a className="evrow" href="https://www.sciencedirect.com/science/article/pii/S2514664525000505" rel="noopener">
-              <span className="evs">ScienceDirect · 2025</span>
-              <b>Clinical performance across diverse patient populations</b>
-              <em>Read the study →</em>
-            </a>
-            <a className="evrow" href="https://www.semanticscholar.org/paper/Evaluation-of-the-Bluetooth-enabled-Scanbo%C2%AE-device-A-Karthikeyan-Narayan/1acc53abce4c61e83b5816c53301e27d62c608e0" rel="noopener">
-              <span className="evs">Semantic Scholar · 2025</span>
-              <b>Indexed across global academic research databases</b>
-              <em>Read the study →</em>
-            </a>
-            <a className="evrow" href="https://www.path.org/who-we-are/programs/diagnostics/advancing-next-generation-phc-tools-ai-and-smartphone-sensors/" rel="noopener">
-              <span className="evs">PATH · 2024</span>
-              <b>Featured by PATH in next-generation primary care diagnostics</b>
-              <em>View on PATH →</em>
-            </a>
-            <a className="evrow" href="https://media.path.org/documents/Innovations_for_Primary_Health_Care.pdf" rel="noopener">
-              <span className="evs">PATH report · 2024</span>
-              <b>PATH: Innovations for Primary Health Care</b>
-              <em>Download the PDF →</em>
-            </a>
+            {insightsEvidenceRows.map((row) => (
+              <a className="evrow" href={row.href} rel="noopener" key={row.id}>
+                <span className="evs">{row.source}</span>
+                <b>{row.title}</b>
+                <em>{row.cta}</em>
+              </a>
+            ))}
           </div>
           <a className="evmore" href="/insights/clinical-studies/">All clinical studies →</a>
         </div>
@@ -98,33 +70,17 @@ export function PageContent() {
           <div className="eyebrow">Customer stories</div>
           <h2 style={{ marginTop: "14px" }}>In their words.</h2>
           <div className="stories">
-            <div className="story dark">
-              <div className="res">Zero diagnostic lag.</div>
-              <div>
-                <blockquote>“We eliminated transcription entirely. The device reads, the AI interprets, the EMR records. We just see the patient.”</blockquote>
-                <cite>Supraja Hospitals · Rushcare Hospitals 
-                  <span>· Multispecialty networks, Hyderabad</span>
-                </cite>
+            {insightsStoryTeasers.map((story) => (
+              <div className={story.dark ? "story dark" : "story"} key={story.id}>
+                <div className="res">{story.result}</div>
+                <div>
+                  <blockquote>{story.quote}</blockquote>
+                  <cite>{story.cite} 
+                    <span>{story.citeDetail}</span>
+                  </cite>
+                </div>
               </div>
-            </div>
-            <div className="story">
-              <div className="res">4,000 hours recovered.</div>
-              <div>
-                <blockquote>“Documentation time is gone. That time is back with our doctors.”</blockquote>
-                <cite>Clinic partner CEO 
-                  <span>· Diabetes reversal network across 50 devices, Pune</span>
-                </cite>
-              </div>
-            </div>
-            <div className="story">
-              <div className="res">Instant. No errors.</div>
-              <div>
-                <blockquote>“Vitals at the point of consultation, already in the EMR before I finish the examination.”</blockquote>
-                <cite>Dr. Jogendra Kumar Bastia, MD 
-                  <span>· Consultant Neurologist</span>
-                </cite>
-              </div>
-            </div>
+            ))}
           </div>
           <a className="evmore" href="/insights/customer-stories/">All customer stories →</a>
         </div>
@@ -136,35 +92,21 @@ export function PageContent() {
           <p className="lede pintro">Scanbo® D8 and Smart Scale qualify under existing Medicare SMBP and RPM billing frameworks. No new CPT code required.</p>
           <div className="pgap"></div>
           <div className="pstats n3" style={{ marginTop: 0 }}>
-            <div>
-              <b>10</b>
-              <span>established CPT codes across SMBP, RPM and ECG</span>
-            </div>
-            <div>
-              <b>~$1,208</b>
-              <span>core RPM revenue per patient, per year</span>
-            </div>
-            <div>
-              <b>2</b>
-              <span>U.S. ACO pilots completed: Florida and New York</span>
-            </div>
+            {insightsReimbursementStats.map((stat) => (
+              <div key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
           <div className="codes">
-            <div className="code">
-              <b>SMBP · Scanbo® D8</b>
-              <h4>99473 · 99474</h4>
-              <p>Self-measured blood pressure setup, education and review.</p>
-            </div>
-            <div className="code">
-              <b>RPM · D8 and Smart Scale</b>
-              <h4>99453 · 99454 · 99457 · 99458</h4>
-              <p>Device setup, monthly supply and clinical management time.</p>
-            </div>
-            <div className="code">
-              <b>ECG · D8 + HridayTaal®</b>
-              <h4>93040 · 93041 · 93042</h4>
-              <p>Rhythm ECG tracing, interpretation and report.</p>
-            </div>
+            {insightsReimbursementCodes.map((code) => (
+              <div className="code" key={code.id}>
+                <b>{code.category}</b>
+                <h4>{code.codes}</h4>
+                <p>{code.description}</p>
+              </div>
+            ))}
           </div>
           <p className="fine2">Based on 2026 CMS national average non-facility rates. Subject to FDA clearance and payer coverage; for orientation, not billing advice.</p>
           <a className="evmore" href="/insights/reimbursement-guide/">Read the reimbursement guide →</a>
@@ -175,18 +117,12 @@ export function PageContent() {
           <div className="eyebrow">The global burden</div>
           <h2 style={{ marginTop: "14px" }}>A global problem, growing fastest where labs are scarce.</h2>
           <div className="burden3">
-            <div className="bt">
-              <b>74%</b>
-              <span>of deaths worldwide are from chronic disease</span>
-            </div>
-            <div className="bt">
-              <b>589M</b>
-              <span>adults living with diabetes, 3 in 4 in low- and middle-income countries</span>
-            </div>
-            <div className="bt hi">
-              <b>~4 in 10</b>
-              <span>don't know they have it: 252M people undiagnosed</span>
-            </div>
+            {insightsBurdenStats.map((stat) => (
+              <div className={stat.highlight ? "bt hi" : "bt"} key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
           <p className="src">Sources: World Health Organization, noncommunicable diseases fact sheet; IDF Diabetes Atlas, 11th edition (2025).</p>
         </div>
@@ -196,12 +132,9 @@ export function PageContent() {
           <div className="eyebrow">Where Scanbo works today</div>
           <h2 style={{ marginTop: "14px" }}>Wherever care happens.</h2>
           <div className="pchips">
-            <span>Hospitals</span>
-            <span>Multispecialty clinics</span>
-            <span>Community health programs</span>
-            <span>Chronic-disease networks</span>
-            <span>Public health programs</span>
-            <span>U.S. ACO pilots</span>
+            {insightsSettingChips.map((chip) => (
+              <span key={chip}>{chip}</span>
+            ))}
           </div>
         </div>
       </section>

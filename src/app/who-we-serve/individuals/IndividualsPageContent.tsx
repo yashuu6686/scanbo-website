@@ -1,4 +1,9 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  individualsCards,
+  individualsHeroChips,
+  individualsLinks,
+} from "@/data/whoWeServe";
 
 export function PageContent() {
   return (
@@ -16,8 +21,11 @@ export function PageContent() {
             <p className="lede">Measure at home, see your results in the Scanbo® app, and stay connected to your care team, with your readings flowing into the record they use.
             </p>
             <div className="pstat">
-              <span className="chip">Scanbo® app</span>
-              <span className="chip">Patient data is never sold</span>
+              {individualsHeroChips.map((chip) => (
+                <span className="chip" key={chip}>
+                  {chip}
+                </span>
+              ))}
             </div>
           </div>
           <div className="part">
@@ -42,26 +50,13 @@ export function PageContent() {
             <br />between appointments.
           </h2>
           <div className="pcards n4">
-            <div className="pcard">
-              <div className="k">At home</div>
-              <h4>Between-visit data that matters.</h4>
-              <p>Measure with Scanbo® Smart Scale at home. Data flows automatically into the clinical record, so your clinician sees trends between visits.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">In the app</div>
-              <h4>Your results, in one place.</h4>
-              <p>Readings appear in the Scanbo® app, with automatic trend tracking over time. The scale recognizes up to eight users.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Stay in touch</div>
-              <h4>Consultations from any device.</h4>
-              <p>Audio and video TeleCall and secure chat connect you with your care team, with no app download required for calls.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Your data</div>
-              <h4>Patient data is never sold.</h4>
-              <p>Every reading is stored securely in a HIPAA-compliant record, with AES encryption.</p>
-            </div>
+            {individualsCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -70,24 +65,14 @@ export function PageContent() {
           <div className="eyebrow">Built on</div>
           <h2 style={{ marginTop: "14px" }}>The layers patients use.</h2>
           <div className="plinks n3">
-            <a className="plink" href="/platform/smart-scale/">
-              <i>03</i>
-              <b>Scanbo® Smart Scale</b>
-              <span>AI Body Score and 40+ metabolic indicators</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/scanbo-ehr/">
-              <i>06</i>
-              <b>Scanbo® EMR</b>
-              <span>The operational hub for connected care</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/scanbo-d8/">
-              <i>01</i>
-              <b>Scanbo® D8</b>
-              <span>Eight measurements in under five minutes</span>
-              <em>Learn more →</em>
-            </a>
+            {individualsLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

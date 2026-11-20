@@ -1,3 +1,5 @@
+import { LegalNav } from "@/components/common/LegalNav";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -12,22 +14,7 @@ export function PageContent() {
       </header>
       <section className="white">
         <div className="wrap lwrap">
-          <aside className="lnav">
-            <b>Legal</b>
-            <a href="/legal/privacy-policy/">Privacy Policy</a>
-            <a href="/legal/terms-conditions/">Terms &amp; Conditions</a>
-            <a href="/legal/cookie-preferences/">Cookie Preferences</a>
-            <a href="/legal/hipaa-notice/">HIPAA Notice of Privacy Practices</a>
-            <a href="/legal/gdpr-statement/">GDPR Statement</a>
-            <a href="/legal/dpdp-compliance/">DPDP Compliance Statement</a>
-            <a href="/legal/data-request/">Data Request</a>
-            <a href="/legal/instructions-for-use/">Instructions for Use</a>
-            <a href="/legal/telehealth/">Telehealth Policy</a>
-            <a href="/legal/responsible-disclosure/" className="on">Responsible Disclosure</a>
-            <a href="/legal/non-discrimination/">Non-Discrimination Policy</a>
-            <a href="/legal/disclaimer/">Disclaimer</a>
-            <a href="/legal/sitemap/">Sitemap</a>
-          </aside>
+          <LegalNav activeHref="/legal/responsible-disclosure/" />
           <article className="lbody">
             <h3>Our Commitment to Security</h3> 
             <p>We welcome reports from security researchers and clinicians about potential vulnerabilities in our products and systems. We take security of medical devices and patient data extremely seriously.

@@ -1,3 +1,9 @@
+import {
+  aboutCertBadges,
+  leadershipPeople,
+  medicalAdvisoryTeam,
+} from "@/data/about";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -25,21 +31,13 @@ export function PageContent() {
           <div className="eyebrow">Leadership</div>
           <h2 style={{ marginTop: "14px" }}>The team.</h2>
           <div className="people">
-            <div className="person">
-              <div className="role">Founder &amp; CEO</div>
-              <h4>Ashissh Raichura</h4>
-              <p>30+ years in technology, with successful exits. Double PhD in cloud computing and AI, Simon Fraser University.</p>
-            </div>
-            <div className="person">
-              <div className="role">Co-founder, Asia</div>
-              <h4>Arvind Rajan</h4>
-              <p>20+ years operating in Southeast Asia. Former President Director, Toll Global Logistics Indonesia.</p>
-            </div>
-            <div className="person">
-              <div className="role">CIO &amp; Director</div>
-              <h4>Sokhie Puar</h4>
-              <p>35+ years in capital markets. Leads investment and corporate governance.</p>
-            </div>
+            {leadershipPeople.map((person) => (
+              <div key={person.id} className="person">
+                <div className="role">{person.role}</div>
+                <h4>{person.name}</h4>
+                <p>{person.bio}</p>
+              </div>
+            ))}
           </div>
           <div className="boardline">
             <b>BOARD</b>Ashissh Raichura, Chair · Sokhie Puar · Nancy Goertzen, ICD.D · Patricia Steadman · Dr. Charles Garrison, MD
@@ -51,26 +49,13 @@ export function PageContent() {
           <div className="eyebrow">Medical advisory team</div>
           <h2 style={{ marginTop: "14px" }}>Clinical expertise guiding the platform.</h2>
           <div className="people four">
-            <div className="person">
-              <div className="role">Urology</div>
-              <h4>Dr. Jaime Landman</h4>
-              <p>Chair of Urology, UC Irvine. 360+ peer-reviewed publications.</p>
-            </div>
-            <div className="person">
-              <div className="role">Urology</div>
-              <h4>Dr. Dean Elterman</h4>
-              <p>Associate Professor of Urology, University of Toronto.</p>
-            </div>
-            <div className="person">
-              <div className="role">Endocrinology</div>
-              <h4>Dr. Tom Elliott</h4>
-              <p>Endocrinology &amp; Metabolism, UBC. Founder of BC Diabetes.</p>
-            </div>
-            <div className="person">
-              <div className="role">Cardiology</div>
-              <h4>Dr. Krishna Sudhir</h4>
-              <p>30+ years in cardiovascular medicine; MedTech leadership at Abbott and J&amp;J.</p>
-            </div>
+            {medicalAdvisoryTeam.map((person) => (
+              <div key={person.id} className="person">
+                <div className="role">{person.role}</div>
+                <h4>{person.name}</h4>
+                <p>{person.bio}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -84,13 +69,14 @@ export function PageContent() {
             <a className="amore" href="/about/manufacturing-quality/">Manufacturing &amp; quality →</a>
           </div>
           <div className="certs" style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-            <span style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}>CDSCO</span>
-            <span style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}>ISO 13485</span>
-            <span style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}>MDSAP</span>
-            <span style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}>ISO 27001</span>
-            <span style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}>SOC 2 Type II</span>
-            <span style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}>HIPAA</span>
-            <span style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}>GDPR</span>
+            {aboutCertBadges.map((badge) => (
+              <span
+                key={badge.id}
+                style={{ border: "1px solid rgba(255,255,255,.2)", borderRadius: "12px", padding: "12px 16px", fontWeight: 700 }}
+              >
+                {badge.label}
+              </span>
+            ))}
           </div>
         </div>
       </section>

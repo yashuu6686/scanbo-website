@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef } from "react";
-import type { ConsentCategories } from "@/lib/consent";
+import { cookiePreferenceRows } from "@/data/cookies";
 
 type DraftCategories = {
   functional: boolean;
@@ -18,39 +18,6 @@ type CookiePreferencesModalProps = {
   onAcceptAll: () => void;
   onRejectAll: () => void;
 };
-
-const ROWS: Array<{
-  key: keyof ConsentCategories;
-  title: string;
-  description: string;
-  locked?: boolean;
-}> = [
-  {
-    key: "necessary",
-    title: "Strictly Necessary",
-    description:
-      "Required for the website to function securely. These cannot be disabled.",
-    locked: true,
-  },
-  {
-    key: "functional",
-    title: "Functional Cookies",
-    description:
-      "Remember preferences such as language and region to improve your experience.",
-  },
-  {
-    key: "analytics",
-    title: "Analytics Cookies",
-    description:
-      "Help us understand how visitors use the site. Data is aggregated where possible.",
-  },
-  {
-    key: "marketing",
-    title: "Marketing Cookies",
-    description:
-      "Used to measure campaigns and show relevant content. Requires explicit consent.",
-  },
-];
 
 export function CookiePreferencesModal({
   open,
@@ -137,14 +104,14 @@ export function CookiePreferencesModal({
         </p>
 
         <ul className="cc-cats">
-          {ROWS.map((row) => {
+          {cookiePreferenceRows.map((row) => {
             const checked =
               row.key === "necessary"
                 ? true
                 : draft[row.key as keyof DraftCategories];
             const disabled = Boolean(row.locked);
             return (
-              <li key={row.key} className="cc-cat">
+              <li key={row.id} className="cc-cat">
                 <div className="cc-cat-copy">
                   <b>{row.title}</b>
                   <span>{row.description}</span>

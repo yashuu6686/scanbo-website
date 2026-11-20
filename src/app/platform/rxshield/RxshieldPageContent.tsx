@@ -1,4 +1,12 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  rxshieldAiBullets,
+  rxshieldClinicianBullets,
+  rxshieldHeroChips,
+  rxshieldPlatformCards,
+  rxshieldPstats,
+  rxshieldRegulatoryChips,
+} from "@/data/platform";
 
 export function PageContent() {
   return (
@@ -16,9 +24,22 @@ export function PageContent() {
             <p className="lede">Check interactions, verify against sources, and defend every decision with a complete, auditable evidence trail. Built for U.S. and Canadian healthcare professionals.
             </p>
             <div className="pstat">
-              <a className="chip link" href="https://scanbo.ai/rxshield" rel="noopener">Try it →</a>
-              <span className="chip">Non-device CDS · FDA §520(o)(1)(E)</span>
-              <span className="chip">Free for HCPs · U.S. &amp; Canada</span>
+              {rxshieldHeroChips.map((chip) =>
+                chip.link && chip.href ? (
+                  <a
+                    key={chip.id}
+                    className="chip link"
+                    href={chip.href}
+                    rel={chip.rel}
+                  >
+                    {chip.label}
+                  </a>
+                ) : (
+                  <span key={chip.id} className="chip">
+                    {chip.label}
+                  </span>
+                ),
+              )}
             </div>
           </div>
           <div className="part">
@@ -62,43 +83,29 @@ export function PageContent() {
             <div className="col">
               <h4>The clinician does</h4>
               <ul>
-                <li>Reviews evidence independently via source-passage links</li>
-                <li>Applies clinical judgment to the individual patient</li>
-                <li>Weighs risk and benefit in the full clinical context</li>
-                <li>Verifies against current official prescribing information</li>
-                <li>Makes and owns every prescribing decision</li>
+                {rxshieldClinicianBullets.map((bullet) => (
+                  <li key={bullet.id}>{bullet.label}</li>
+                ))}
               </ul>
             </div>
             <div className="col dark">
               <h4>Scanbo AI does</h4>
               <ul>
-                <li>Retrieves published regulatory and clinical evidence</li>
-                <li>Applies deterministic rules to classify interaction severity</li>
-                <li>Discloses source conflicts and uncertainty flags</li>
-                <li>Links every output to its exact source passage</li>
-                <li>Generates an immutable Decision ID for every check</li>
+                {rxshieldAiBullets.map((bullet) => (
+                  <li key={bullet.id}>{bullet.label}</li>
+                ))}
               </ul>
             </div>
           </div>
           <p className="pfoot">RxShield never prescribes, recommends or directs clinical action. All automation stops at information display.</p>
           <div className="pgap"></div>
           <div className="pstats n4" style={{ marginTop: 0 }}>
-            <div>
-              <b>&lt;2s</b>
-              <span>from drug entry to complete evidence</span>
-            </div>
-            <div>
-              <b>100%</b>
-              <span>of findings linked to the exact source passage</span>
-            </div>
-            <div>
-              <b>4×</b>
-              <span>evidence sources cross-checked per interaction</span>
-            </div>
-            <div>
-              <b>0</b>
-              <span>autonomous clinical decisions by AI</span>
-            </div>
+            {rxshieldPstats.map((stat) => (
+              <div key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -108,29 +115,14 @@ export function PageContent() {
           <h2 style={{ marginTop: "14px" }}>Meet RxShield.</h2>
           <p className="lede pintro">A drug decision engine that combines AI evidence retrieval with full auditability, purpose-built for clinical defensibility.</p>
           <div className="pcards n4">
-            <div className="pcard">
-              <div className="k">Core engine</div>
-              <h4>Fewer adverse events, faster evidence.</h4>
-              <p>Interaction analysis from FDA-approved prescribing information, clinical guidelines and peer-reviewed literature, cross-referenced and source-linked in under two seconds.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Auditability</div>
-              <h4>Defend every decision you make.</h4>
-              <p>Every check generates a unique Decision ID: an immutable snapshot of what was shown, when, and from which sources. Ready for peer review or audit.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Evidence transparency</div>
-              <h4>Source passages, not just citations.</h4>
-              <p>Every finding links to the exact passage in the source document, with source disagreements, uncertainty flags and conflict scores disclosed.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Clinical alternatives</div>
-              <h4>Alternatives with full context.</h4>
-              <p>Where alternatives exist, RxShield shows them with contraindication data inline. Black-box warnings are always displayed.</p>
-            </div>
+            {rxshieldPlatformCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -139,11 +131,9 @@ export function PageContent() {
           <div className="eyebrow">Regulatory and security</div>
           <h2 style={{ marginTop: "14px" }}>Certified for compliance, security and clinical integrity.</h2>
           <div className="pchips">
-            <span>FDA §520(o)(1)(E) non-device CDS</span>
-            <span>Health Canada CDS compliant</span>
-            <span>HIPAA compliant</span>
-            <span>SOC 2 Type II</span>
-            <span>21st Century Cures Act</span>
+            {rxshieldRegulatoryChips.map((chip) => (
+              <span key={chip.id}>{chip.label}</span>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pnote">

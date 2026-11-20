@@ -1,7 +1,92 @@
+import { Fragment } from "react";
 import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
 import { HomeStatsBar } from "@/components/common/HomeStatsBar";
+import {
+  audienceTiles,
+  hardwareBarPhrases,
+  heroStatusChips,
+  liveDeploymentLogos,
+  moatChips,
+  moatStats,
+  outcomeCards,
+  platformDuoCards,
+  revenueCards,
+  stackCards,
+  timeToResultRows,
+  trustCerts,
+  usBandFacts,
+  type AudienceTile,
+  type StackCard,
+} from "@/data/homepage";
+
+function StackIcon({ icon }: { icon: StackCard["icon"] }) {
+  switch (icon) {
+    case "scale":
+      return (
+        <svg viewBox="0 0 24 24">
+          <path d="M4 16a8 8 0 0 1 16 0z" />
+          <path d="M3 16h18v3H3z" />
+          <path d="M12 12l2-3" />
+        </svg>
+      );
+    case "ambient":
+      return (
+        <svg viewBox="0 0 24 24">
+          <rect x="9" y="3" width="6" height="11" rx="3" />
+          <path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6" />
+        </svg>
+      );
+    case "rxshield":
+      return (
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+          <path d="M8.5 12l2.5 2.5 4.5-5" />
+        </svg>
+      );
+    case "emr":
+      return (
+        <svg viewBox="0 0 24 24">
+          <rect x="5" y="3" width="14" height="18" rx="2" />
+          <path d="M9 8h6M9 12h6M9 16h4" />
+        </svg>
+      );
+  }
+}
+
+function AudienceIcon({ icon }: { icon: AudienceTile["icon"] }) {
+  switch (icon) {
+    case "hospitals":
+      return (
+        <svg viewBox="0 0 24 24">
+          <path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16M9 8h6M12 5v6M8 21v-4h8v4" />
+        </svg>
+      );
+    case "chw":
+      return (
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="7" r="4" />
+          <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+        </svg>
+      );
+    case "employers":
+      return (
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" />
+        </svg>
+      );
+    case "acos":
+      return (
+        <svg viewBox="0 0 24 24">
+          <path d="M3 12h4l3-8 4 16 3-8h4" />
+        </svg>
+      );
+  }
+}
 
 export function PageContent() {
+  const bigOutcome = outcomeCards.find((c) => c.variant === "big")!;
+  const cardOutcomes = outcomeCards.filter((c) => c.variant === "card");
+
   return (
     <main id="main">
       <header className="hero">
@@ -16,18 +101,18 @@ export function PageContent() {
             </p>
             <HeroCtas
               primaryLabel="Book a platform walkthrough →"
-              secondary={{ href: "/platform/", label: "Explore the platform" }}
+              secondary={{ href: "/platform/", label: "Explore the Ecosystem" }}
             />
             <p className="status">
-              <em>
-                <i></i>CDSCO approved in India
-              </em>
-              <span>·</span>
-              <em>FDA 510(k) filing targeted Q1 2027</em>
-              <span>·</span>
-              <em>Health Canada — Q1 2027</em>
-              <span>·</span>
-              <em>2 US ACO Pilots — FL &amp; NY</em>
+              {heroStatusChips.map((chip, i) => (
+                <Fragment key={chip.id}>
+                  {i > 0 ? <span>·</span> : null}
+                  <em>
+                    {chip.live ? <i></i> : null}
+                    {chip.label}
+                  </em>
+                </Fragment>
+              ))}
             </p>
           </div>
           <div className="hero-art">
@@ -39,11 +124,14 @@ export function PageContent() {
       <div className="hwbar">
         <div className="wrap">
           <p className="hwbar-copy">
-            <span>Hardware-innovated</span>
-            <span className="dot" aria-hidden="true">·</span>
-            <span>Proprietary strips</span>
-            <span className="dot" aria-hidden="true">·</span>
-            <span>Designed &amp; manufactured in-house</span>
+            {hardwareBarPhrases.map((phrase, i) => (
+              <Fragment key={phrase.id}>
+                {i > 0 ? (
+                  <span className="dot" aria-hidden="true">·</span>
+                ) : null}
+                <span>{phrase.text}</span>
+              </Fragment>
+            ))}
           </p>
           <span className="hwbar-badge">
             <i></i>
@@ -59,137 +147,65 @@ export function PageContent() {
           </h2>
           <p className="lede" style={{ marginTop: "18px", maxWidth: "900px" }}>The device captures, the AI interprets, the record keeps it. All six layers share one FHIR R5 patient record.</p>
           <div className="duo">
-            <div className="card lean">
-              <div>
-                <span className="tag">01 · Biomarkers 
-                  <span className="live">Live</span>
-                </span>
-                <h3>
-                  <a href="/platform/scanbo-d8/">Scanbo® D8 (D8–D19)</a>
-                </h3>
-                <p>19 lab-grade parameters at the point of care, including ECG and blood glucose, in under five minutes.</p>
+            {platformDuoCards.map((card) => (
+              <div className="card lean" key={card.id}>
+                <div>
+                  <span className="tag">{card.tag}{" "}
+                    {card.live ? <span className="live">Live</span> : null}
+                  </span>
+                  <h3>
+                    <a href={card.href}>{card.title}</a>
+                  </h3>
+                  <p>{card.description}</p>
+                </div>
+                {card.media === "device" ? (
+                  <img loading="lazy" decoding="async" className="dev" src={card.imgSrc} alt={card.imgAlt} />
+                ) : (
+                  <svg className="ecg ecg-live" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true">
+                    <g className="ecg-trace">
+                      <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" />
+                      <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" transform="translate(400 0)" />
+                    </g>
+                  </svg>
+                )}
               </div>
-              <img loading="lazy" decoding="async" className="dev" src="/assets/device.png" alt="Scanbo D8 point-of-care device" />
-            </div>
-            <div className="card lean">
-              <div>
-                <span className="tag">02 · Cardiac AI 
-                  <span className="live">Live</span>
-                </span>
-                <h3>
-                  <a href="/platform/hridaytaal-ecg-ai/">HridayTaal® Cardiac Agent</a>
-                </h3>
-                <p>AI that reads every single-lead ECG in real time and flags the patients who need attention.</p>
-              </div>
-              <svg className="ecg ecg-live" viewBox="0 0 400 64" preserveAspectRatio="none" aria-hidden="true">
-                <g className="ecg-trace">
-                  <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" />
-                  <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" transform="translate(400 0)" />
-                </g>
-              </svg>
-            </div>
+            ))}
           </div>
           <div className="stack">
-            <div className="scard">
-              <div className="shead">
-                <div className="sic">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M4 16a8 8 0 0 1 16 0z" />
-                    <path d="M3 16h18v3H3z" />
-                    <path d="M12 12l2-3" />
-                  </svg>
+            {stackCards.map((card) => (
+              <div className="scard" key={card.id}>
+                <div className="shead">
+                  <div className="sic">
+                    <StackIcon icon={card.icon} />
+                  </div>
+                  <div>
+                    <div className="snum">{card.num}</div>
+                    <h4>
+                      <a href={card.href}>{card.title}</a>
+                    </h4>
+                  </div>
                 </div>
-                <div>
-                  <div className="snum">03 · Metabolic intelligence</div>
-                  <h4>
-                    <a href="/platform/smart-scale/">Scanbo® Smart Scale</a>
-                  </h4>
-                </div>
-              </div>
-              <p>Surfaces what mass conceals: visceral fat, skeletal muscle and 40+ metabolic indicators, captured directly into the FHIR R5 clinical record. 1M+ body scans recorded.
-              </p>
-              <div className="sstat">
-                <span className="live">Deployed</span>
-                <span>India</span>
-              </div>
-            </div>
-            <div className="scard">
-              <div className="shead">
-                <div className="sic">
-                  <svg viewBox="0 0 24 24">
-                    <rect x="9" y="3" width="6" height="11" rx="3" />
-                    <path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="snum">04 · Summarization intelligence</div>
-                  <h4>
-                    <a href="/platform/ambient-documentation/">Ambient Documentation Agent</a>
-                  </h4>
+                <p>{card.description}
+                </p>
+                <div className="sstat">
+                  {card.status.kind === "live" ? (
+                    <>
+                      <span className="live">{card.status.label}</span>
+                      {card.status.location ? <span>{card.status.location}</span> : null}
+                    </>
+                  ) : (
+                    <a
+                      className="try"
+                      href={card.status.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {card.status.label}
+                    </a>
+                  )}
                 </div>
               </div>
-              <p>Autonomous conversion of clinical encounters into structured documentation. Zero transcription overhead, so clinicians focus on the patient.
-              </p>
-              <div className="sstat">
-                <a
-                  className="try"
-                  href="https://scanbo.ai/ambient"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Try it →
-                </a>
-              </div>
-            </div>
-            <div className="scard">
-              <div className="shead">
-                <div className="sic">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
-                    <path d="M8.5 12l2.5 2.5 4.5-5" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="snum">05 · Defensive intelligence</div>
-                  <h4>
-                    <a href="/platform/rxshield/">RxShield Safety Agent</a>
-                  </h4>
-                </div>
-              </div>
-              <p>Real-time drug interaction analysis and prescribing safety. Catches contraindications before they reach the patient, at the point of prescribing.
-              </p>
-              <div className="sstat">
-                <a
-                  className="try"
-                  href="https://scanbo.ai/rxshield"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Try it →
-                </a>
-              </div>
-            </div>
-            <div className="scard">
-              <div className="shead">
-                <div className="sic">
-                  <svg viewBox="0 0 24 24">
-                    <rect x="5" y="3" width="14" height="18" rx="2" />
-                    <path d="M9 8h6M9 12h6M9 16h4" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="snum">06 · Workflow intelligence</div>
-                  <h4>
-                    <a href="/platform/scanbo-ehr/">Scanbo® EMR</a>
-                  </h4>
-                </div>
-              </div>
-              <p>The FHIR R5-native command center for clinical operations: scheduling, telehealth, queuing and interoperability, all connected to the D8 signal layer and the HridayTaal Cardiac Agent.
-              </p>
-              <div className="sstat">
-                <span className="live">Deployed</span>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="fhirrow">
             <div className="fhirpill">FHIR R5 native · The connective layer across all six</div>
@@ -201,7 +217,7 @@ export function PageContent() {
         <div className="wrap">
           <div className="eyebrow">The data moat</div>
           <h2 style={{ marginTop: "14px" }}>While others aggregate data, we create it.</h2>
-          <p className="lede" style={{ marginTop: "18px", maxWidth: "980px" }}>Our proprietary signal layer gives AI a clinical foundation that is hard to replicate. Every signal comes directly from Scanbo hardware, in the room, at the moment of care.
+          <p className="lede" style={{ marginTop: "18px", maxWidth: "980px" }}>Our proprietary signal layer provides a clinical foundation for AI accuracy that cannot be replicated. Every metric below was generated directly through Scanbo hardware — in the room, at the moment of care.
           </p>
           <div className="moat">
             <div className="mbig">
@@ -210,43 +226,32 @@ export function PageContent() {
               </p>
             </div>
             <div className="mstats">
-              <div className="mstat">
-                <div className="mrow">
-                  <b className="gnum">2M+</b>
-                  <span>Signals added monthly</span>
+              {moatStats.map((stat) => (
+                <div className="mstat" key={stat.id}>
+                  <div className="mrow">
+                    {stat.value.kind === "text" ? (
+                      <b className="gnum">{stat.value.text}</b>
+                    ) : (
+                      <b className="gnum gnum-yoy">
+                        {stat.value.prefix}<span className="gx">{stat.value.multiplier}</span>
+                      </b>
+                    )}
+                    <span>{stat.label}</span>
+                  </div>
+                  <p>{stat.description}</p>
                 </div>
-                <p>Every device in the field is a data acquisition node. The moat widens every month.</p>
-              </div>
-              <div className="mstat">
-                <div className="mrow">
-                  <b className="gnum">100%</b>
-                  <span>Proprietary data</span>
-                </div>
-                <p>Not licensed, not aggregated, not scraped. Generated by Scanbo hardware at the point of care.</p>
-              </div>
-              <div className="mstat">
-                <div className="mrow">
-                  <b className="gnum">8</b>
-                  <span>Measurements per visit</span>
-                </div>
-                <p>Every assessment adds eight clinical-grade readings to the patient record, from our own sensors.</p>
-              </div>
-              <div className="mstat">
-                <div className="mrow">
-                  <b className="gnum gnum-yoy">
-                    2<span className="gx">×</span>
-                  </b>
-                  <span>YoY Growth</span>
-                </div>
-                <p>Signal volume, device count, and revenue all compounding year-on-year.</p>
-              </div>
+              ))}
             </div>
           </div>
           <div className="mchips">
-            <span className="mchip lime">$1.5M Mitacs Canada grant — federal validation</span>
-            <span className="mchip">5 peer-reviewed publications</span>
-            <span className="mchip">3 active revenue streams</span>
-            <span className="mchip">Zero royalties on research IP</span>
+            {moatChips.map((chip) => (
+              <span
+                className={chip.lime ? "mchip lime" : "mchip"}
+                key={chip.id}
+              >
+                {chip.label}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -255,45 +260,20 @@ export function PageContent() {
           <div className="eyebrow">Whom We Serve</div>
           <h2 style={{ marginTop: "14px" }}>One device behind every door into healthcare.</h2>
           <div className="wtiles">
-            <a className="wtile" href="/who-we-serve/hospitals-clinics/">
-              <div className="ic">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16M9 8h6M12 5v6M8 21v-4h8v4" />
-                </svg>
-              </div>
-              <b>Hospitals &amp; clinics</b>
-            </a>
-            <a className="wtile" href="/who-we-serve/community-health-workers/">
-              <div className="ic">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="7" r="4" />
-                  <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
-                </svg>
-              </div>
-              <b>Community health workers</b>
-            </a>
-            <a className="wtile" href="/who-we-serve/#aud-employers-insurers">
-              <div className="ic">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" />
-                </svg>
-              </div>
-              <b>Employers &amp; insurers</b>
-            </a>
-            <a className="wtile" href="/who-we-serve/accountable-care-organizations/">
-              <div className="ic">
-                <svg viewBox="0 0 24 24">
-                  <path d="M3 12h4l3-8 4 16 3-8h4" />
-                </svg>
-              </div>
-              <b>U.S. ACOs</b>
-            </a>
+            {audienceTiles.map((tile) => (
+              <a className="wtile" href={tile.href} key={tile.id}>
+                <div className="ic">
+                  <AudienceIcon icon={tile.icon} />
+                </div>
+                <b>{tile.label}</b>
+              </a>
+            ))}
           </div>
           <a className="usband" href="/who-we-serve/#us">
             <span className="lbl">United States</span>
-            <span>2 ACO pilots completed in Florida and New York</span>
-            <span>No new CPT code required</span>
-            <span>FDA 510(k) filing targeted Q1 2027</span>
+            {usBandFacts.map((fact) => (
+              <span key={fact.id}>{fact.text}</span>
+            ))}
             <span className="go">→</span>
           </a>
         </div>
@@ -304,46 +284,54 @@ export function PageContent() {
           <h2 style={{ marginTop: "14px" }}>Real customers. Real results.</h2>
           <div className="outs">
             <div className="obig">
-              <p className="oq">“We eliminated transcription entirely. The device reads, the AI interprets, the EMR records. We just see the patient.”</p>
-              <h3 className="grad ohead">Zero diagnostic lag.</h3>
-              <p className="obody">Device to EMR in seconds. Every reading captured, interpreted and recorded at the point of consultation. No transcription. No delay. No errors.
+              <p className="oq">{bigOutcome.quote}</p>
+              <h3 className="grad ohead">{bigOutcome.heading}</h3>
+              <p className="obody">{bigOutcome.body}
               </p>
               <div className="ocite">
-                <b>Supraja Hospitals · Rushcare Hospitals</b>
-                <span>Multispecialty networks · Hyderabad, India</span>
+                <b>{bigOutcome.cite.name}</b>
+                <span>{bigOutcome.cite.detail}</span>
               </div>
             </div>
             <div className="ocol">
-              <div className="ocard">
-                <p className="oq">“Documentation time is gone. That time is back with our doctors.”</p>
-                <h3 className="ohead2">4,000 hours 
-                  <span className="grad">recovered.</span>
-                </h3>
-                <p className="obody">Documentation time eliminated across 50 devices in a diabetes reversal network.</p>
-                <div className="ocite">
-                  <b>Raj Kumar, CEO — WWC Clinics</b>
-                  <span>Diabetes Reversal · Pune, India</span>
+              {cardOutcomes.map((card) => (
+                <div className="ocard" key={card.id}>
+                  <p className="oq">{card.quote}</p>
+                  <h3 className="ohead2">{card.headingBefore}{" "}
+                    <span className="grad">{card.headingGrad}</span>
+                  </h3>
+                  <p className="obody">{card.body}</p>
+                  <div className="ocite">
+                    <b>{card.cite.name}</b>
+                    <span>{card.cite.detail}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="ocard">
-                <p className="oq">“Vitals at the point of consultation, already in the EMR before I finish the examination.”</p>
-                <h3 className="ohead2">Instant. 
-                  <span className="grad">No errors.</span>
-                </h3>
-                <p className="obody">Point-of-consultation vitals with auto-push to the EMR. Clinical note quality measurably improved.</p>
-                <div className="ocite">
-                  <b>Dr. Jogendra Kumar Bastia, MD</b>
-                  <span>Consultant Neurologist · SGPGI MS</span>
-                </div>
-              </div>
+              ))}
+            </div>
+          </div>
+          <div className="us-aco-callout">
+            <div className="us-aco-copy">
+              <div className="us-aco-eyebrow"><span>US MARKET ENTRY</span> — ACTIVE</div>
+              <h3>2 ACO Pilots Completed.<br /><span>Pre-FDA clearance.</span></h3>
+              <p>Accountable Care Organisations in Florida and New York evaluated the full clinical stack — data security, integration, and outcomes — and chose to pilot before regulatory clearance. US commercialisation is already in motion.</p>
+            </div>
+            <div className="us-aco-pilots">
+              <div><b><i>•</i> US</b><span>Florida ACO<br />Pilot completed</span></div>
+              <div><b><i>•</i> US</b><span>New York ACO<br />Pilot completed</span></div>
             </div>
           </div>
           <div className="livedep" aria-label="Live deployments">
             <span className="livedep-lbl">Live deployments</span>
             <div className="livedep-logos">
-              <img src="/assets/logo_supraja.png" alt="Supraja Hospitals" width={140} height={40} />
-              <img src="/assets/logo_rushcare.png" alt="Rushcare Hospitals" width={140} height={40} />
-              <img src="/assets/logo_dimbha.png" alt="DIMBHA" width={140} height={40} />
+              {liveDeploymentLogos.map((logo) => (
+                <img
+                  key={logo.id}
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                />
+              ))}
             </div>
             <span className="livedep-badge">+ 650 clinical settings</span>
           </div>
@@ -361,64 +349,47 @@ export function PageContent() {
             Scanbo® generates revenue across hardware consumables, SaaS subscriptions, and proprietary AI — with all three streams active and growing year-on-year.
           </p>
           <div className="revcards">
-            <div className="revcard">
-              <div className="k">Hardware + SaaS</div>
-              <h3>Subscription+</h3>
-              <p>Diagnostic test-based SaaS pricing — clinics and hospitals pay per test volume, not per seat. Scales with usage.</p>
-              <ul>
-                <li>
-                  <b>Scanbo® D8</b>
-                  <span>Multiparameter device</span>
-                </li>
-                <li>
-                  <b>Scanbo® Smart Scale</b>
-                  <span>Body composition</span>
-                </li>
-                <li>
-                  <b>Scanbo® EMR</b>
-                  <span>Connected records</span>
-                </li>
-              </ul>
-              <span className="pill">Recurring · Scalable</span>
+            {revenueCards.map((card) => (
+              <div className="revcard" key={card.id}>
+                <div className="k">{card.kicker}</div>
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+                <ul>
+                  {card.products.map((product) => (
+                    <li key={product.id}>
+                      <b>{product.name}</b>
+                      <span>
+                        {product.detail}
+                        {product.detailEm ? <em>{product.detailEm}</em> : null}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {card.pill ? <span className="pill">{card.pill}</span> : null}
+                {card.cta ? (
+                  <a className="try" href={card.cta.href}>
+                    {card.cta.label}
+                  </a>
+                ) : null}
+              </div>
+            ))}
+          </div>
+          <div className="revenue-followups">
+            <div className="reimbursement-card">
+              <div>
+                <div className="revenue-followup-kicker">US Medicare reimbursement</div>
+                <h3>Built for existing U.S. reimbursement.<br /><span>No new CPT code required.</span></h3>
+                <p>Scanbo® D8 and Scanbo® Smart Scale fit established SMBP and RPM workflows — enabling faster commercialisation without requiring a new CPT code. Strong fit for ACOs and value-based care organisations — the same buyer segment as our two completed US pilots in Florida and New York.</p>
+              </div>
+              <a className="revenue-followup-btn" href="/insights/reimbursement-guide/">View CPT Code Guide →</a>
             </div>
-            <div className="revcard">
-              <div className="k">Recurring strips</div>
-              <h3>Consumables</h3>
-              <p>Like a printer and its cartridges — every diagnostic test requires a proprietary strip, creating a recurring revenue stream tied to each device in the field.</p>
-              <ul>
-                <li>
-                  <b>Scanbo® D8</b>
-                  <span>1 strip · Glucose</span>
-                </li>
-                <li>
-                  <b>Scanbo® D12</b>
-                  <span>
-                    5 strips · <em>Coming soon</em>
-                  </span>
-                </li>
-              </ul>
-            </div>
-            <div className="revcard">
-              <div className="k">Clinical AI</div>
-              <h3>Proprietary AI Licensing</h3>
-              <p>Clinical AI Licensing — 30+ proprietary algorithms licensed to health systems as decision-support tools. The intelligence is the product. Patient data is never sold.</p>
-              <ul>
-                <li>
-                  <b>HridayTaal® Cardiac Agent</b>
-                  <span>Cardiac analysis</span>
-                </li>
-                <li>
-                  <b>RxShield Safety Agent</b>
-                  <span>Drug Interaction</span>
-                </li>
-                <li>
-                  <b>Ambient Documentation Agent</b>
-                  <span>Clinical scribe</span>
-                </li>
-              </ul>
-              <a className="try" href="/platform/hridaytaal-ecg-ai/">
-                30+ algorithms roadmap →
-              </a>
+            <div className="growth-signal-card">
+              <div>
+                <div className="revenue-followup-kicker">Growth signal</div>
+                <h3>Revenue generating across all three streams.</h3>
+                <p>2× revenue growth in FY2025. <span>North America next.</span></p>
+              </div>
+              <a className="growth-signal-btn" href="/about/contact/">Request investor briefing →</a>
             </div>
           </div>
         </div>
@@ -427,13 +398,9 @@ export function PageContent() {
         <div className="wrap">
           <div className="lbl">Quality, security and regulatory</div>
           <div className="certs">
-            <span>CDSCO</span>
-            <span>ISO 13485</span>
-            <span>ISO 27001</span>
-            <span>SOC 2 Type II</span>
-            <span>MDSAP</span>
-            <span>HIPAA</span>
-            <span>GDPR</span>
+            {trustCerts.map((cert) => (
+              <span key={cert.id}>{cert.label}</span>
+            ))}
           </div>
         </div>
       </div>
@@ -452,46 +419,18 @@ export function PageContent() {
               <span>Time to a routine test result</span>
               <small>log scale</small>
             </div>
-            <div className="trow">
-              <div className="tl">
-                <b>United States</b>
-                <span>to release routine outpatient blood-test results</span>
+            {timeToResultRows.map((row) => (
+              <div className={row.highlight ? "trow s" : "trow"} key={row.id}>
+                <div className="tl">
+                  <b>{row.region}</b>
+                  <span>{row.detail}</span>
+                </div>
+                <div className="tbar">
+                  <i style={{ width: row.barWidth }}></i>
+                </div>
+                <div className="tv">{row.value}</div>
               </div>
-              <div className="tbar">
-                <i style={{ width: "76.3%" }}></i>
-              </div>
-              <div className="tv">24–96+ hours</div>
-            </div>
-            <div className="trow">
-              <div className="tl">
-                <b>United Kingdom</b>
-                <span>to report routine blood tests</span>
-              </div>
-              <div className="tbar">
-                <i style={{ width: "73.4%" }}></i>
-              </div>
-              <div className="tv">~72 hours</div>
-            </div>
-            <div className="trow">
-              <div className="tl">
-                <b>Developing countries</b>
-                <span>median to receive centralized-lab results</span>
-              </div>
-              <div className="tbar">
-                <i style={{ width: "98.2%" }}></i>
-              </div>
-              <div className="tv">~35 days</div>
-            </div>
-            <div className="trow s">
-              <div className="tl">
-                <b>With Scanbo</b>
-                <span>at the point of care, in the first visit</span>
-              </div>
-              <div className="tbar">
-                <i style={{ width: "5.2%" }}></i>
-              </div>
-              <div className="tv">Under 5 minutes</div>
-            </div>
+            ))}
           </div>
           <p className="quote">“In an age of AI, this should take minutes, not days.”
             <small>Ashissh Raichura, Founder &amp; CEO</small>

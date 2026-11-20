@@ -1,4 +1,10 @@
+import { Fragment } from "react";
 import { CountryPhoneFields } from "@/components/forms/CountryPhoneFields";
+import {
+  contactChannels,
+  contactOffices,
+  contactRoleOptions,
+} from "@/data/contact";
 
 export function PageContent() {
   return (
@@ -44,16 +50,9 @@ export function PageContent() {
                 <label htmlFor="role">I am a… *</label>
                 <select id="role" name="role" required>
                   <option value="">Select your role</option>
-                  <option value="Physician / Clinician">Physician / clinician</option>
-                  <option value="Hospital or Health System">Hospital or health system</option>
-                  <option value="Community Health Organisation">Community health organization</option>
-                  <option value="ACO / Value-Based Care Programme">ACO / value-based care program</option>
-                  <option value="Investor">Investor</option>
-                  <option value="Strategic Partner">Strategic partner</option>
-                  <option value="Researcher / Academic">Researcher / academic</option>
-                  <option value="Pharmacist">Pharmacist</option>
-                  <option value="Press / Media">Press / media</option>
-                  <option value="Other">Other</option>
+                  {contactRoleOptions.map((opt) => (
+                    <option key={opt.id} value={opt.value}>{opt.label}</option>
+                  ))}
                 </select>
                 <div className="err" role="alert"></div>
               </div>
@@ -75,34 +74,19 @@ export function PageContent() {
             </div>
           </form>
           <div className="cside">
-            <div className="cbox">
-              <b>General enquiries</b>
-              <h4>
-                <a href="mailto:info@scanbo.com">info@scanbo.com</a>
-              </h4>
-              <p>Questions about Scanbo and the platform.</p>
-            </div>
-            <div className="cbox">
-              <b>Partnerships &amp; clinical</b>
-              <h4>
-                <a href="mailto:partnerships@scanbo.com">partnerships@scanbo.com</a>
-              </h4>
-              <p>Health systems, programs, distributors and walkthroughs.</p>
-            </div>
-            <div className="cbox" id="investors">
-              <b>Investor relations</b>
-              <h4>
-                <a href="mailto:ir@scanbo.com">ir@scanbo.com</a>
-              </h4>
-              <p>Investor materials and briefings with management.</p>
-            </div>
-            <div className="cbox">
-              <b>Press &amp; media</b>
-              <h4>
-                <a href="mailto:press@scanbo.com">press@scanbo.com</a>
-              </h4>
-              <p>Interviews, images and company information.</p>
-            </div>
+            {contactChannels.map((channel) => (
+              <div
+                className="cbox"
+                key={channel.id}
+                {...(channel.anchorId ? { id: channel.anchorId } : {})}
+              >
+                <b>{channel.title}</b>
+                <h4>
+                  <a href={`mailto:${channel.email}`}>{channel.email}</a>
+                </h4>
+                <p>{channel.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -111,45 +95,40 @@ export function PageContent() {
           <div className="eyebrow">Offices</div>
           <h2 style={{ marginTop: "14px" }}>Three countries. One team.</h2>
           <div className="offices">
-            <div className="office hq">
-              <b>
-                <img className="oflag" src="/assets/flags/ca.png" alt="" width={22} height={15} />
-                Canada · Head office
-              </b>
-              <h4>
-                Scanbo
-                <sup className="tm">®</sup> Holdings Inc.
-              </h4>
-              <p>1048 165 Street
-                <br />Surrey, BC V4A 9A2, Canada
-              </p>
-              <span>+1 (855) 472-2626</span>
-            </div>
-            <div className="office">
-              <b>
-                <img className="oflag" src="/assets/flags/us.png" alt="" width={22} height={15} />
-                United States
-              </b>
-              <h4>Scanbo Inc.</h4>
-              <p>4400 Buffalo Gap Rd., Suite 1500
-                <br />Abilene, Texas 79606, USA
-              </p>
-              <span>+1 (855) 472-2626</span>
-            </div>
-            <div className="office">
-              <b>
-                <img className="oflag" src="/assets/flags/in.png" alt="" width={22} height={15} />
-                India
-              </b>
-              <h4>Scanbo India Private Limited</h4>
-              <p>B 403–406, Pragati Empire (IT Park)
-                <br />Sudama Chowk Road, Surat
-                <br />Gujarat 394101, India
-              </p>
-              <span>+91 77788 01292
-                <br />Tech support: +91 93726 00050
-              </span>
-            </div>
+            {contactOffices.map((office) => (
+              <div className={office.isHq ? "office hq" : "office"} key={office.id}>
+                <b>
+                  <img className="oflag" src={office.flagSrc} alt="" width={22} height={15} />
+                  {office.region}
+                </b>
+                <h4>
+                  {office.showTm ? (
+                    <>
+                      {office.company}
+                      <sup className="tm">®</sup> Holdings Inc.
+                    </>
+                  ) : (
+                    office.company
+                  )}
+                </h4>
+                <p>
+                  {office.addressLines.map((line, i) => (
+                    <Fragment key={line}>
+                      {i > 0 ? <br /> : null}
+                      {line}
+                    </Fragment>
+                  ))}
+                </p>
+                <span>
+                  {office.phoneLines.map((line, i) => (
+                    <Fragment key={line}>
+                      {i > 0 ? <br /> : null}
+                      {line}
+                    </Fragment>
+                  ))}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

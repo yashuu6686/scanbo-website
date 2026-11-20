@@ -1,3 +1,5 @@
+import { LegalNav } from "@/components/common/LegalNav";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -12,22 +14,7 @@ export function PageContent() {
       </header>
       <section className="white">
         <div className="wrap lwrap">
-          <aside className="lnav">
-            <b>Legal</b>
-            <a href="/legal/privacy-policy/">Privacy Policy</a>
-            <a href="/legal/terms-conditions/">Terms &amp; Conditions</a>
-            <a href="/legal/cookie-preferences/">Cookie Preferences</a>
-            <a href="/legal/hipaa-notice/">HIPAA Notice of Privacy Practices</a>
-            <a href="/legal/gdpr-statement/">GDPR Statement</a>
-            <a href="/legal/dpdp-compliance/">DPDP Compliance Statement</a>
-            <a href="/legal/data-request/">Data Request</a>
-            <a href="/legal/instructions-for-use/">Instructions for Use</a>
-            <a href="/legal/telehealth/">Telehealth Policy</a>
-            <a href="/legal/responsible-disclosure/">Responsible Disclosure</a>
-            <a href="/legal/non-discrimination/" className="on">Non-Discrimination Policy</a>
-            <a href="/legal/disclaimer/">Disclaimer</a>
-            <a href="/legal/sitemap/">Sitemap</a>
-          </aside>
+          <LegalNav activeHref="/legal/non-discrimination/" />
           <article className="lbody">
             <h3>Our Commitment</h3> 
             <p>Scanbo® is committed to providing equal access to all individuals regardless of race, colour, national origin, age, disability, sex, gender identity, sexual orientation, religion, or any other characteristic protected under applicable law.

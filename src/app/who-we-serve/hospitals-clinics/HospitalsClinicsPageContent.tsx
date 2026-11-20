@@ -1,4 +1,10 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  hospitalsClinicsCards,
+  hospitalsClinicsHeroChips,
+  hospitalsClinicsLinks,
+  hospitalsClinicsStats,
+} from "@/data/whoWeServe";
 
 export function PageContent() {
   return (
@@ -16,8 +22,11 @@ export function PageContent() {
             <p className="lede">Triage still means several devices and manual data entry. Scanbo brings eight measurements, AI interpretation and the patient record into one workflow, from the OPD to the ward.
             </p>
             <div className="pstat">
-              <span className="chip">D8 CDSCO approved</span>
-              <span className="chip">FHIR R5 native</span>
+              {hospitalsClinicsHeroChips.map((chip) => (
+                <span className="chip" key={chip}>
+                  {chip}
+                </span>
+              ))}
             </div>
           </div>
           <div className="part">
@@ -40,38 +49,23 @@ export function PageContent() {
             <br />to the record.
           </h2>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">Vital capture</div>
-              <h4>OPD and ward-level vital capture.</h4>
-              <p>Scanbo® D8 reduces documentation time, eliminates manual entry errors and feeds data directly into Scanbo® EMR. Already deployed in neurology, diabetes and general OPD settings.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Patient flow</div>
-              <h4>Real-time queue and scheduling.</h4>
-              <p>A live queue dashboard shows who is waiting, who is in consultation and what is delayed. Booking, rescheduling and waitlisting happen in the same platform.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Documentation</div>
-              <h4>Notes without transcription.</h4>
-              <p>The Ambient Documentation Agent turns the consultation into structured notes, so clinicians face the patient, not the keyboard.</p>
-            </div>
+            {hospitalsClinicsCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}
+                </p>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pstats n3" style={{ marginTop: 0 }}>
-            <div>
-              <b>750+</b>
-              <span>devices deployed</span>
-            </div>
-            <div>
-              <b>7M+</b>
-              <span>vital tests completed</span>
-            </div>
-            <div>
-              <b>&lt;5 min</b>
-              <span>per full assessment</span>
-            </div>
+            {hospitalsClinicsStats.map((stat) => (
+              <div key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pquote" style={{ marginTop: 0 }}>
@@ -87,30 +81,14 @@ export function PageContent() {
           <div className="eyebrow">Built on</div>
           <h2 style={{ marginTop: "14px" }}>The layers hospitals and clinics use.</h2>
           <div className="plinks n4">
-            <a className="plink" href="/platform/scanbo-d8/">
-              <i>01</i>
-              <b>Scanbo® D8</b>
-              <span>Eight measurements in under five minutes</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/hridaytaal-ecg-ai/">
-              <i>02</i>
-              <b>HridayTaal® Cardiac Agent</b>
-              <span>AI that reads every ECG in real time</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/ambient-documentation/">
-              <i>04</i>
-              <b>Ambient Documentation</b>
-              <span>Clinic-ready notes the moment the visit ends</span>
-              <em>Learn more →</em>
-            </a>
-            <a className="plink" href="/platform/scanbo-ehr/">
-              <i>06</i>
-              <b>Scanbo® EMR</b>
-              <span>The operational hub for connected care</span>
-              <em>Learn more →</em>
-            </a>
+            {hospitalsClinicsLinks.map((link) => (
+              <a className="plink" href={link.href} key={link.id}>
+                <i>{link.num}</i>
+                <b>{link.title}</b>
+                <span>{link.description}</span>
+                <em>{link.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

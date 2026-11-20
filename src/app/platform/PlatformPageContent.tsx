@@ -1,5 +1,12 @@
 import Link from "next/link";
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  platformD8FactChips,
+  platformD8ParameterTicks,
+  platformHridaytaalTicks,
+  platformLayerCards,
+  platformSecurityGrid,
+} from "@/data/platform";
 
 export function PageContent() {
   return (
@@ -126,19 +133,14 @@ export function PageContent() {
             <p className="lede" style={{ marginTop: "16px" }}>Clinical-grade assessments at the point of care, with no lab, no specialist and no cold chain. Designed and manufactured in-house, with proprietary test strips.
             </p>
             <div className="ticks">
-              <div>Blood pressure</div>
-              <div>Heart rate</div>
-              <div>Single-lead ECG</div>
-              <div>Heart-rate variability</div>
-              <div>SpO₂</div>
-              <div>Breath rate</div>
-              <div>Body temperature</div>
-              <div>Blood glucose</div>
+              {platformD8ParameterTicks.map((tick) => (
+                <div key={tick.id}>{tick.label}</div>
+              ))}
             </div>
             <div className="facts">
-              <span>Under 5 minutes</span>
-              <span>CDSCO approved</span>
-              <span>750+ devices deployed</span>
+              {platformD8FactChips.map((chip) => (
+                <span key={chip.id}>{chip.label}</span>
+              ))}
             </div>
             <Link className="btn btn-lime" style={{ marginTop: "26px" }} href="/platform/scanbo-d8/">Explore Scanbo D8 →</Link>
           </div>
@@ -154,12 +156,9 @@ export function PageContent() {
             <h2 style={{ marginTop: "14px" }}>HridayTaal® Cardiac Agent</h2>
             <p className="lede" style={{ marginTop: "16px" }}>AI that interprets every single-lead ECG in real time, so cardiac risk is caught at the first visit, not the fifth.</p>
             <div className="ticks">
-              <div>Atrial fibrillation</div>
-              <div>Sinus arrhythmia</div>
-              <div>Heart rhythm</div>
-              <div>Missing heartbeats</div>
-              <div>Heart-rate variability</div>
-              <div>Heart-rate type</div>
+              {platformHridaytaalTicks.map((tick) => (
+                <div key={tick.id}>{tick.label}</div>
+              ))}
             </div>
             <Link className="btn btn-ghost" style={{ marginTop: "26px", borderColor: "var(--mid)", color: "var(--mid)" }} href="/platform/hridaytaal-ecg-ai/">Explore HridayTaal® Cardiac Agent →</Link>
           </div>
@@ -177,30 +176,14 @@ export function PageContent() {
           <div className="eyebrow">The full stack</div>
           <h2 style={{ marginTop: "14px" }}>Four more layers on the same record.</h2>
           <div className="layers4">
-            <a className="layer" href="/platform/smart-scale/">
-              <div className="n">METABOLIC</div>
-              <h4>Scanbo® Smart Scale</h4>
-              <p>Visceral fat, skeletal muscle and 40+ metabolic indicators, captured straight into the record.</p>
-              <span className="lm">Learn more →</span>
-            </a>
-            <a className="layer" href="/platform/ambient-documentation/">
-              <div className="n">SUMMARIZATION</div>
-              <h4>Ambient Documentation</h4>
-              <p>Turns the consultation into structured notes, so clinicians face the patient, not the keyboard.</p>
-              <span className="lm">Learn more →</span>
-            </a>
-            <a className="layer" href="/platform/rxshield/">
-              <div className="n">SAFETY</div>
-              <h4>RxShield</h4>
-              <p>Checks drug interactions at the moment of prescribing, before they reach the patient.</p>
-              <span className="lm">Learn more →</span>
-            </a>
-            <a className="layer" href="/platform/scanbo-ehr/">
-              <div className="n">WORKFLOW</div>
-              <h4>Scanbo® EMR</h4>
-              <p>Scheduling, telehealth and queuing on one FHIR R5-native record.</p>
-              <span className="lm">Learn more →</span>
-            </a>
+            {platformLayerCards.map((layer) => (
+              <a key={layer.id} className="layer" href={layer.href}>
+                <div className="n">{layer.n}</div>
+                <h4>{layer.h4}</h4>
+                <p>{layer.p}</p>
+                <span className="lm">Learn more →</span>
+              </a>
+            ))}
           </div>
           <div className="fhir">FHIR R5 NATIVE · THE CONNECTIVE LAYER ACROSS THE PLATFORM</div>
         </div>
@@ -210,22 +193,12 @@ export function PageContent() {
           <div className="eyebrow">Security and data</div>
           <h2 style={{ marginTop: "14px" }}>Built secure. Patient data is never sold.</h2>
           <div className="sec4">
-            <div>
-              <b>HIPAA</b>
-              <span>U.S. health-data privacy and security</span>
-            </div>
-            <div>
-              <b>GDPR</b>
-              <span>EU data-protection standard</span>
-            </div>
-            <div>
-              <b>AES encryption</b>
-              <span>Industry-standard encryption for patient data</span>
-            </div>
-            <div>
-              <b>FHIR R5</b>
-              <span>Open, interoperable records</span>
-            </div>
+            {platformSecurityGrid.map((item) => (
+              <div key={item.id}>
+                <b>{item.title}</b>
+                <span>{item.description}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

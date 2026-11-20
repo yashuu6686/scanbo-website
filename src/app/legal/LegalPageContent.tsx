@@ -1,3 +1,5 @@
+import { legalIndexCards } from "@/data/navigation";
+
 export function PageContent() {
   return (
     <main id="main">
@@ -13,66 +15,13 @@ export function PageContent() {
       <section className="white">
         <div className="wrap">
           <div className="lcards">
-            <a className="lcard" href="/legal/privacy-policy/">
-              <small>Legal</small>
-              <b>Privacy Policy</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/terms-conditions/">
-              <small>Legal</small>
-              <b>Terms &amp; Conditions</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/cookie-preferences/">
-              <small>Legal</small>
-              <b>Cookie Preferences</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/hipaa-notice/">
-              <small>Compliance · North America</small>
-              <b>HIPAA Notice of Privacy Practices</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/gdpr-statement/">
-              <small>Compliance · European Union</small>
-              <b>GDPR Statement</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/dpdp-compliance/">
-              <small>Compliance · India</small>
-              <b>DPDP Compliance Statement</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/data-request/">
-              <small>Privacy</small>
-              <b>Data Request</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/instructions-for-use/">
-              <small>Medical Device</small>
-              <b>Instructions for Use</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/telehealth/">
-              <small>Legal · RxShield Safety Agent</small>
-              <b>Telehealth Policy</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/responsible-disclosure/">
-              <small>Security</small>
-              <b>Responsible Disclosure</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/non-discrimination/">
-              <small>Legal</small>
-              <b>Non-Discrimination Policy</b>
-              <em>Read →</em>
-            </a>
-            <a className="lcard" href="/legal/disclaimer/">
-              <small>Legal · Scanbo</small>
-              <b>Disclaimer</b>
-              <em>Read →</em>
-            </a>
+            {legalIndexCards.map((item) => (
+              <a key={item.id} className="lcard" href={item.href}>
+                <small>{item.category}</small>
+                <b>{item.title}</b>
+                <em>{item.cta}</em>
+              </a>
+            ))}
           </div>
         </div>
       </section>

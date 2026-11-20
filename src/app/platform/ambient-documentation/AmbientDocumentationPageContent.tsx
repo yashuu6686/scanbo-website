@@ -1,4 +1,11 @@
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  ambientDemoPstats,
+  ambientFeatureCards,
+  ambientFeatureChips,
+  ambientHeroChips,
+  ambientHowItWorksSteps,
+} from "@/data/platform";
 
 export function PageContent() {
   return (
@@ -16,11 +23,22 @@ export function PageContent() {
             <p className="lede">While you give the patient your full attention, the Ambient Documentation Agent does the heavy lifting: passively listening and delivering clinic-ready clinical notes the moment the consultation ends.
             </p>
             <div className="pstat">
-              <a className="chip link" href="https://scanbo.ai/ambient" rel="noopener">Sign up free →</a>
-              <span className="chip">No credit card required</span>
-              <span className="chip">HIPAA-compliant</span>
-              <span className="chip">Works in any specialty</span>
-              <span className="chip">Set up in 2 minutes</span>
+              {ambientHeroChips.map((chip) =>
+                chip.link && chip.href ? (
+                  <a
+                    key={chip.id}
+                    className="chip link"
+                    href={chip.href}
+                    rel={chip.rel}
+                  >
+                    {chip.label}
+                  </a>
+                ) : (
+                  <span key={chip.id} className="chip">
+                    {chip.label}
+                  </span>
+                ),
+              )}
             </div>
           </div>
           <div className="part">
@@ -109,22 +127,12 @@ export function PageContent() {
           </div>
           <div className="pgap"></div>
           <div className="pstats n4" style={{ marginTop: 0 }}>
-            <div>
-              <b>3 hrs</b>
-              <span>saved per clinician, every day</span>
-            </div>
-            <div>
-              <b>99%</b>
-              <span>transcription accuracy</span>
-            </div>
-            <div>
-              <b>&lt;60s</b>
-              <span>to the first draft note</span>
-            </div>
-            <div>
-              <b>0</b>
-              <span>extra steps in your workflow</span>
-            </div>
+            {ambientDemoPstats.map((stat) => (
+              <div key={stat.id}>
+                <b>{stat.value}</b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -136,26 +144,14 @@ export function PageContent() {
           </h2>
           <p className="lede pintro">Ambient integrates into your existing consultation flow. No new habits. No extra steps. Just show up and see your patient.</p>
           <div className="steps3">
-            <div className="step3">
-              <div className="sn">01</div>
-              <h4>Open the session</h4>
-              <p>Tap “Start encounter” on web or mobile before you walk into the room. Ambient begins listening and separating speaker voices automatically.</p>
-              <span className="st">Instant start · No training required</span>
-            </div>
-            <div className="step3">
-              <div className="sn">02</div>
-              <h4>See your patient normally</h4>
-              <p>Hold the conversation you always would. Ambient transcribes in real time with speaker labels, capturing every clinical detail so you don't have to.
-              </p>
-              <span className="st">Real-time transcription · Speaker separation</span>
-            </div>
-            <div className="step3">
-              <div className="sn">03</div>
-              <h4>Review, approve, export</h4>
-              <p>A structured note is ready within 60 seconds of the session ending. Edit with one click, then push directly to your EHR or download as a PDF.
-              </p>
-              <span className="st">EHR-ready · PDF export · 1-click approve</span>
-            </div>
+            {ambientHowItWorksSteps.map((step) => (
+              <div className="step3" key={step.id}>
+                <div className="sn">{step.sn}</div>
+                <h4>{step.h4}</h4>
+                <p>{step.p}</p>
+                <span className="st">{step.st}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -177,11 +173,9 @@ export function PageContent() {
               <p>Ambient doesn't just transcribe. It reasons. As the conversation unfolds, it continuously structures findings into Subjective, Objective, Assessment and Plan sections, highlighting clinical cues and surfacing relevant differentials.
               </p>
               <div className="fchips">
-                <span>Structured notes</span>
-                <span>Differential alerts</span>
-                <span>ICD-10 suggestion</span>
-                <span>Medication extraction</span>
-                <span>Allergy flagging</span>
+                {ambientFeatureChips.map((chip) => (
+                  <span key={chip.id}>{chip.label}</span>
+                ))}
               </div>
             </div>
             <div className="fprev">
@@ -202,27 +196,13 @@ export function PageContent() {
           </div>
           <div className="pgap"></div>
           <div className="pcards n4" style={{ marginTop: 0 }}>
-            <div className="pcard">
-              <div className="k">Integration</div>
-              <h4>EHR and HIMS integration</h4>
-              <p>Push completed notes directly to your EMR through HL7 FHIR or API integrations with major systems.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Listening</div>
-              <h4>Passive ambient listening</h4>
-              <p>No push-to-talk. No stop-start recording. Place your device on the desk and consult naturally while speaker diarization separates clinician and patient voices.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Speed</div>
-              <h4>Note ready in under 60 seconds</h4>
-              <p>The moment you end a session, Ambient finalizes your note. Average time to first draft is under 60 seconds, regardless of encounter length.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Devices</div>
-              <h4>iOS, Android and web</h4>
-              <p>Use Ambient from any device. The iOS and Android apps sync securely, and the web dashboard works from any browser without installs.</p>
-            </div>
+            {ambientFeatureCards.map((card) => (
+              <div className="pcard" key={card.id}>
+                <div className="k">{card.k}</div>
+                <h4>{card.h4}</h4>
+                <p>{card.p}</p>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="pquote" style={{ marginTop: 0 }}>

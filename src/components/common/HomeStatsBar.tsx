@@ -1,21 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-type StatItem = {
-  value: number;
-  decimals?: number;
-  suffix: string;
-  label: string;
-};
-
-const STATS: StatItem[] = [
-  { value: 750, suffix: "+", label: "devices deployed" },
-  { value: 150, suffix: "M+", label: "verified health signals" },
-  { value: 1, suffix: "M+", label: "ECG AI analyses" },
-  { value: 2, suffix: "×", label: "YoY revenue growth" },
-  { value: 2, suffix: " ACOs", label: "US pilots — FL & NY" },
-];
+import { homeStats } from "@/data/homepage";
 
 const DURATION_MS = 1400;
 
@@ -104,8 +90,8 @@ export function HomeStatsBar() {
   return (
     <div className="stats n5" ref={ref}>
       <div className="wrap">
-        {STATS.map((stat) => (
-          <div className="stat" key={stat.label}>
+        {homeStats.map((stat) => (
+          <div className="stat" key={stat.id}>
             <StatValue
               value={stat.value}
               decimals={stat.decimals}

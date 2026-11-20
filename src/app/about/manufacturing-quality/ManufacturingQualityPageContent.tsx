@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { PlatformCtas } from "@/components/common/Ctas";
+import {
+  manufacturingCapabilities,
+  manufacturingStandards,
+  manufacturingWhyCards,
+} from "@/data/about";
 
 export function PageContent() {
   return (
@@ -14,7 +19,7 @@ export function PageContent() {
               <br />
               <span>Built to standard.</span>
             </h1>
-            <p className="lede">Scanbo® manufactures its own devices under direct quality control, with ISO 13485-aligned systems, MDSAP certification and an active FDA 510(k) program: the operational foundation that makes consistent, scalable deployment possible.
+            <p className="lede">Scanbo® manufactures its own devices under direct quality control, with ISO 13485-aligned systems, MDSAP audit readiness and an active FDA 510(k) program: the operational foundation that makes consistent, scalable deployment possible.
             </p>
             <div className="pstat">
               <span className="chip">In-house manufacturing · Canada &amp; India</span>
@@ -45,26 +50,13 @@ export function PageContent() {
           <p className="lede pintro">In regulated healthcare environments, manufacturing and quality control are foundational, not secondary. Consistency, traceability and audit readiness are what make it possible to deploy at scale, enter new markets and earn the trust of clinical and enterprise partners.
           </p>
           <div className="pcards n4">
-            <div className="pcard">
-              <div className="k">Device traceability</div>
-              <h4>100% unit-level</h4>
-              <p>Every device tracked from component intake to clinical deployment.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">QC checkpoints</div>
-              <h4>End-to-end</h4>
-              <p>Incoming materials, in-process assembly and final release, each stage gated.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Calibration</div>
-              <h4>In-house</h4>
-              <p>Device calibration and validation conducted internally, with no outsourced test loops.</p>
-            </div>
-            <div className="pcard">
-              <div className="k">Iteration loop</div>
-              <h4>Design to field</h4>
-              <p>In-house manufacturing enables faster product iteration and tighter feedback from deployment.</p>
-            </div>
+            {manufacturingWhyCards.map((card) => (
+              <div key={card.id} className="pcard">
+                <div className="k">{card.kicker}</div>
+                <h4>{card.title}</h4>
+                <p>{card.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -75,24 +67,13 @@ export function PageContent() {
             <br />one quality system.
           </h2>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">In-house manufacturing</div>
-              <h4>Production under direct control.</h4>
-              <p>Scanbo® manufactures its own devices in-house, with full control over production quality, component sourcing, traceability and delivery. No external contract manufacturers.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Quality systems</div>
-              <h4>Audited. Traceable. Documented.</h4>
-              <p>Quality management systems cover every stage from incoming components to final device release. Each unit is traceable, each process documented, each deviation controlled.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Regulatory discipline</div>
-              <h4>Built for regulated market entry.</h4>
-              <p>Scanbo®'s regulatory program supports market access in India, Canada and the United States, aligned to CDSCO approval, the Health Canada review and FDA 510(k) submission.
-              </p>
-            </div>
+            {manufacturingCapabilities.map((card) => (
+              <div key={card.id} className="pcard">
+                <div className="k">{card.kicker}</div>
+                <h4>{card.title}</h4>
+                <p>{card.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -101,31 +82,20 @@ export function PageContent() {
           <div className="eyebrow">Facility and quality standards</div>
           <h2 style={{ marginTop: "14px" }}>The standards behind every device.</h2>
           <div className="pcards">
-            <div className="pcard">
-              <div className="k">Quality management</div>
-              <h4>ISO 13485</h4>
-              <p>The international quality management standard for medical devices. Scanbo®'s operations are aligned to ISO 13485 across design, production and post-market processes.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Multi-market audit program</div>
-              <h4>MDSAP</h4>
-              <p>A single audit program covering regulatory requirements across Canada, the United States, Brazil, Australia and Japan. Scanbo® has been MDSAP certified since Q1 2025.
-              </p>
-            </div>
-            <div className="pcard">
-              <div className="k">Regulatory readiness</div>
-              <h4>U.S. FDA</h4>
-              <p>Scanbo® D8's FDA 510(k) filing is targeted for Q1 2027. The quality infrastructure built toward this submission is the same system that governs every Scanbo® device, not a separate process created for regulatory review.
-              </p>
-            </div>
+            {manufacturingStandards.map((card) => (
+              <div key={card.id} className="pcard">
+                <div className="k">{card.kicker}</div>
+                <h4>{card.title}</h4>
+                <p>{card.description}</p>
+              </div>
+            ))}
           </div>
           <div className="pgap"></div>
           <div className="callout">
             <div>
               <div className="eyebrow">For partners and buyers</div>
               <h3>The same rigor that earns regulatory approval earns trust.</h3>
-              <p>For healthcare providers, enterprise buyers and institutional partners, Scanbo®'s manufacturing and quality infrastructure is the operational assurance behind every device and deployment.
+              <p>For healthcare providers, enterprise buyers and institutional partners, Scanbo®'s manufacturing and quality infrastructure is the operational assurance behind every device and deployment . In-house production, ISO 13485-aligned systems, and an active regulatory programme are the foundation that makes consistent, scalable deployment possible.
               </p>
             </div>
             <Link className="btn btn-lime" href="/about/contact/">Talk to our team →</Link>
@@ -178,4 +148,4 @@ export function PageContent() {
   );
 }
 
-export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/about/manufacturing-quality/#webpage\", \"url\": \"https://www.scanbo.com/about/manufacturing-quality/\", \"name\": \"Manufacturing and Quality | ISO 13485, MDSAP | Scanbo\", \"description\": \"Scanbo® manufactures its own devices under direct quality control, with ISO 13485-aligned systems and MDSAP certification.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"About\", \"item\": \"https://www.scanbo.com/about/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Manufacturing and Quality\", \"item\": \"https://www.scanbo.com/about/manufacturing-quality/\"}]}]}";
+export const jsonLd = "{\"@context\": \"https://schema.org\", \"@graph\": [{\"@type\": \"WebPage\", \"@id\": \"https://www.scanbo.com/about/manufacturing-quality/#webpage\", \"url\": \"https://www.scanbo.com/about/manufacturing-quality/\", \"name\": \"Manufacturing and Quality | ISO 13485, MDSAP | Scanbo\", \"description\": \"Scanbo® manufactures its own devices under direct quality control, with ISO 13485-aligned systems and MDSAP audit readiness.\", \"inLanguage\": \"en\", \"isPartOf\": {\"@id\": \"https://www.scanbo.com/#website\"}, \"publisher\": {\"@id\": \"https://www.scanbo.com/#organization\"}}, {\"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.scanbo.com/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"About\", \"item\": \"https://www.scanbo.com/about/\"}, {\"@type\": \"ListItem\", \"position\": 3, \"name\": \"Manufacturing and Quality\", \"item\": \"https://www.scanbo.com/about/manufacturing-quality/\"}]}]}";
