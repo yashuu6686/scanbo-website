@@ -13,7 +13,7 @@ const SOCIAL = [
   },
   {
     label: "X",
-    href: "https://x.com/scanboai",
+    href: "https://x.com/ScanboOfficial",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M17.66 4.5h2.52l-5.51 6.3 6.48 8.7h-5.07l-3.97-5.2-4.54 5.2H5.05l5.9-6.75L4.7 4.5h5.2l3.58 4.76L17.66 4.5Zm-.88 13.5h1.4L7.3 5.9H5.8l10.98 12.1Z" />
@@ -40,7 +40,7 @@ const SOCIAL = [
   },
   {
     label: "Facebook",
-    href: "https://www.facebook.com/ScanboAI",
+    href: "https://www.facebook.com/ScanboOfficial",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M14.2 19.5v-6.3h2.1l.3-2.6h-2.4V9c0-.8.2-1.3 1.4-1.3h1.5V5.4c-.3 0-1.1-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.1H9.1v2.6h2.1v6.3h3Z" />
@@ -160,7 +160,7 @@ export function Footer() {
           approval.
         </p>
         <div className="legal">
-          <span>© 2026 Scanbo Technologies Inc. All rights reserved.</span>
+          <span>© 2026 Scanbo Holdings Inc. All rights reserved.</span>
           <span className="ll">
             <Link href="/legal/privacy-policy/">Privacy</Link>
             <Link href="/legal/terms-conditions/">Terms</Link>

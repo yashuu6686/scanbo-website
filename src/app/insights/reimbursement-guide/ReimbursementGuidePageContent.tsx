@@ -60,7 +60,7 @@ export function PageContent() {
         <div className="wrap">
           <div className="eyebrow">Best-fit code pathways</div>
           <h2 style={{ marginTop: "14px" }}>Two products. Established codes.</h2>
-          <p className="lede pintro">CMS already recognizes weight, blood pressure, pulse oximetry and respiratory rate as billable RPM parameters: the exact parameters Scanbo® captures. Providers deploy Scanbo® inside billing frameworks they already use.
+          <p className="lede pintro">CMS already recognizes weight, blood pressure, pulse oximetry and respiratory flow rate as billable RPM parameters: the exact parameters Scanbo® captures. Providers deploy Scanbo® inside billing frameworks they already use.
           </p>
           <div className="specs">
             <div className="spec">
@@ -97,7 +97,7 @@ export function PageContent() {
                 </div>
                 <div className="row">
                   <dt>Why it fits</dt>
-                  <dd>CMS materials specifically cite weight as a remote physiologic monitoring parameter</dd>
+                  <dd>CMS materials specifically cite weight as a remote physiologic monitoring parameter — perfect positioning.</dd>
                 </div>
               </dl>
             </div>

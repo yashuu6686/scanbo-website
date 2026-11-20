@@ -75,6 +75,11 @@ export function PageContent() {
               <p>Profitable unit economics .</p>
             </div>
             <div className="pcard">
+              <div className="k">Mitacs Canada grant</div>
+              <h4>$1.5M</h4>
+              <p>Government-backed innovation .</p>
+            </div>
+            <div className="pcard">
               <div className="k">Clinical evidence</div>
               <h4>Peer-reviewed research</h4>
               <p>Indexed on PubMed and ScienceDirect, and recognized by PATH.</p>
@@ -118,7 +123,7 @@ export function PageContent() {
             <div>
               <div className="eyebrow">The next chapter</div>
               <h3>The U.S. and Canada are next. The platform is ready.</h3>
-              <p>The Health Canada review is scheduled for Q4 2026, with clearance expected in Q1 2027, and the FDA 510(k) filing is targeted for Q1 2027. The same intelligence architecture running on 750+ devices across 650+ clinical settings is being brought to ACOs, health systems and value-based care programs in North America, without rebuilding from scratch.
+              <p>The Health Canada review is scheduled for Q4 2026, with clearance expected in Q1 2027, and the FDA 510(k) clearance is on track for Q1 2027. The same intelligence architecture running on 750+ devices across 650+ clinical settings is being brought to ACOs, health systems and value-based care programs in North America, without rebuilding from scratch.
               </p>
             </div>
             <Link className="btn btn-lime" href="/about/contact/#investors">Investor briefing →</Link>

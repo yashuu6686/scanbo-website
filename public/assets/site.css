@@ -945,8 +945,10 @@ a.pub:hover{border-color:var(--mid);box-shadow:0 12px 28px rgba(6,32,46,.08)}
 .offices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
 .office{background:#fff;border:1px solid var(--rule);border-radius:22px;padding:28px 30px;color:var(--ink)}
 .office.hq{background:var(--navy);border-color:var(--navy);color:#fff}
-.office b{display:block;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
+.office b{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
 .office.hq b{color:var(--lime)}
+.oflag{display:block;width:22px;height:15px;object-fit:cover;border-radius:3px;flex-shrink:0;box-shadow:0 0 0 1px rgba(6,32,46,.12)}
+.office.hq .oflag{box-shadow:0 0 0 1px rgba(255,255,255,.18)}
 .office h4{font-size:22px;font-weight:800;margin:10px 0 10px}
 .tm{font-size:.55em;font-weight:800;line-height:1;vertical-align:super;position:relative;top:-.15em}
 .office p{font-size:15.5px;line-height:1.55;color:#4A5A66}

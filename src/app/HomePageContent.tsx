@@ -1,4 +1,5 @@
 import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
+import { HomeStatsBar } from "@/components/common/HomeStatsBar";
 
 export function PageContent() {
   return (
@@ -34,30 +35,7 @@ export function PageContent() {
           </div>
         </div>
       </header>
-      <div className="stats n5">
-        <div className="wrap">
-          <div className="stat">
-            <b>750+</b>
-            <span>devices deployed</span>
-          </div>
-          <div className="stat">
-            <b>150M+</b>
-            <span>verified health signals</span>
-          </div>
-          <div className="stat">
-            <b>1M+</b>
-            <span>ECG AI analyses</span>
-          </div>
-          <div className="stat">
-            <b>2×</b>
-            <span>YoY revenue growth</span>
-          </div>
-          <div className="stat">
-            <b>2 ACOs</b>
-            <span>US pilots — FL &amp; NY</span>
-          </div>
-        </div>
-      </div>
+      <HomeStatsBar />
       <div className="hwbar">
         <div className="wrap">
           <p className="hwbar-copy">

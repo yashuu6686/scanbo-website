@@ -112,7 +112,10 @@ export function PageContent() {
           <h2 style={{ marginTop: "14px" }}>Three countries. One team.</h2>
           <div className="offices">
             <div className="office hq">
-              <b>Canada · Head office</b>
+              <b>
+                <img className="oflag" src="/assets/flags/ca.png" alt="" width={22} height={15} />
+                Canada · Head office
+              </b>
               <h4>
                 Scanbo
                 <sup className="tm">®</sup> Holdings Inc.
@@ -123,7 +126,10 @@ export function PageContent() {
               <span>+1 (855) 472-2626</span>
             </div>
             <div className="office">
-              <b>United States</b>
+              <b>
+                <img className="oflag" src="/assets/flags/us.png" alt="" width={22} height={15} />
+                United States
+              </b>
               <h4>Scanbo Inc.</h4>
               <p>4400 Buffalo Gap Rd., Suite 1500
                 <br />Abilene, Texas 79606, USA
@@ -131,7 +137,10 @@ export function PageContent() {
               <span>+1 (855) 472-2626</span>
             </div>
             <div className="office">
-              <b>India</b>
+              <b>
+                <img className="oflag" src="/assets/flags/in.png" alt="" width={22} height={15} />
+                India
+              </b>
               <h4>Scanbo India Private Limited</h4>
               <p>B 403–406, Pragati Empire (IT Park)
                 <br />Sudama Chowk Road, Surat
