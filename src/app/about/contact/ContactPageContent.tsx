@@ -113,7 +113,10 @@ export function PageContent() {
           <div className="offices">
             <div className="office hq">
               <b>Canada · Head office</b>
-              <h4>Scanbo Technologies Inc.</h4>
+              <h4>
+                Scanbo
+                <sup className="tm">®</sup> Holdings Inc.
+              </h4>
               <p>1048 165 Street
                 <br />Surrey, BC V4A 9A2, Canada
               </p>

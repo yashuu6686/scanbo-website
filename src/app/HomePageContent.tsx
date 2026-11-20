@@ -153,7 +153,14 @@ export function PageContent() {
               <p>Autonomous conversion of clinical encounters into structured documentation. Zero transcription overhead, so clinicians focus on the patient.
               </p>
               <div className="sstat">
-                <a className="try" href="/about/contact/">Try it →</a>
+                <a
+                  className="try"
+                  href="https://scanbo.ai/ambient"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Try it →
+                </a>
               </div>
             </div>
             <div className="scard">
@@ -174,7 +181,14 @@ export function PageContent() {
               <p>Real-time drug interaction analysis and prescribing safety. Catches contraindications before they reach the patient, at the point of prescribing.
               </p>
               <div className="sstat">
-                <a className="try" href="/about/contact/">Try it →</a>
+                <a
+                  className="try"
+                  href="https://scanbo.ai/rxshield"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Try it →
+                </a>
               </div>
             </div>
             <div className="scard">
@@ -239,7 +253,22 @@ export function PageContent() {
                 </div>
                 <p>Every assessment adds eight clinical-grade readings to the patient record, from our own sensors.</p>
               </div>
+              <div className="mstat">
+                <div className="mrow">
+                  <b className="gnum gnum-yoy">
+                    2<span className="gx">×</span>
+                  </b>
+                  <span>YoY Growth</span>
+                </div>
+                <p>Signal volume, device count, and revenue all compounding year-on-year.</p>
+              </div>
             </div>
+          </div>
+          <div className="mchips">
+            <span className="mchip lime">$1.5M Mitacs Canada grant — federal validation</span>
+            <span className="mchip">5 peer-reviewed publications</span>
+            <span className="mchip">3 active revenue streams</span>
+            <span className="mchip">Zero royalties on research IP</span>
           </div>
         </div>
       </section>
@@ -339,6 +368,80 @@ export function PageContent() {
               <img src="/assets/logo_dimbha.png" alt="DIMBHA" width={140} height={40} />
             </div>
             <span className="livedep-badge">+ 650 clinical settings</span>
+          </div>
+        </div>
+      </section>
+      <section id="revenue" className="light">
+        <div className="wrap">
+          <div className="eyebrow">Revenue model</div>
+          <h2 style={{ marginTop: "14px" }}>
+            Three revenue streams.
+            <br />
+            <span className="grad">One growing platform.</span>
+          </h2>
+          <p className="lede" style={{ marginTop: "18px", maxWidth: "860px" }}>
+            Scanbo® generates revenue across hardware consumables, SaaS subscriptions, and proprietary AI — with all three streams active and growing year-on-year.
+          </p>
+          <div className="revcards">
+            <div className="revcard">
+              <div className="k">Hardware + SaaS</div>
+              <h3>Subscription+</h3>
+              <p>Diagnostic test-based SaaS pricing — clinics and hospitals pay per test volume, not per seat. Scales with usage.</p>
+              <ul>
+                <li>
+                  <b>Scanbo® D8</b>
+                  <span>Multiparameter device</span>
+                </li>
+                <li>
+                  <b>Scanbo® Smart Scale</b>
+                  <span>Body composition</span>
+                </li>
+                <li>
+                  <b>Scanbo® EMR</b>
+                  <span>Connected records</span>
+                </li>
+              </ul>
+              <span className="pill">Recurring · Scalable</span>
+            </div>
+            <div className="revcard">
+              <div className="k">Recurring strips</div>
+              <h3>Consumables</h3>
+              <p>Like a printer and its cartridges — every diagnostic test requires a proprietary strip, creating a recurring revenue stream tied to each device in the field.</p>
+              <ul>
+                <li>
+                  <b>Scanbo® D8</b>
+                  <span>1 strip · Glucose</span>
+                </li>
+                <li>
+                  <b>Scanbo® D12</b>
+                  <span>
+                    5 strips · <em>Coming soon</em>
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="revcard">
+              <div className="k">Clinical AI</div>
+              <h3>Proprietary AI Licensing</h3>
+              <p>Clinical AI Licensing — 30+ proprietary algorithms licensed to health systems as decision-support tools. The intelligence is the product. Patient data is never sold.</p>
+              <ul>
+                <li>
+                  <b>HridayTaal® Cardiac Agent</b>
+                  <span>Cardiac analysis</span>
+                </li>
+                <li>
+                  <b>RxShield Safety Agent</b>
+                  <span>Drug Interaction</span>
+                </li>
+                <li>
+                  <b>Ambient Documentation Agent</b>
+                  <span>Clinical scribe</span>
+                </li>
+              </ul>
+              <a className="try" href="/platform/hridaytaal-ecg-ai/">
+                30+ algorithms roadmap →
+              </a>
+            </div>
           </div>
         </div>
       </section>

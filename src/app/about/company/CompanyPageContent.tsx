@@ -70,6 +70,11 @@ export function PageContent() {
               <p>Hardware · SaaS · AI licensing.</p>
             </div>
             <div className="pcard">
+              <div className="k">YoY revenue growth</div>
+              <h4>2× </h4>
+              <p>Profitable unit economics .</p>
+            </div>
+            <div className="pcard">
               <div className="k">Clinical evidence</div>
               <h4>Peer-reviewed research</h4>
               <p>Indexed on PubMed and ScienceDirect, and recognized by PATH.</p>
@@ -77,7 +82,7 @@ export function PageContent() {
             <div className="pcard">
               <div className="k">North America</div>
               <h4>FDA 510(k) · Health Canada</h4>
-              <p>FDA 510(k) filing targeted Q1 2027. Health Canada clearance expected Q1 2027.</p>
+              <p>FDA 510(k) · Health Canada · Q1 2027 launch .</p>
             </div>
             <div className="pcard">
               <div className="k">Operating across</div>

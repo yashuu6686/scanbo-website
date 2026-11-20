@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/common/BrandLogo";
 import { NAV_SECTION_HREF } from "@/constants/navigation";
 import type { NavSection } from "@/components/shell/types";
 
@@ -31,8 +32,8 @@ export function Header({ active }: HeaderProps) {
   return (
     <nav>
       <div className="wrap">
-        <Link className="logo" href="/">
-          <img className="logo-h" src="/assets/logo_h.png" alt="Scanbo" />
+        <Link className="logo" href="/" aria-label="Scanbo home">
+          <BrandLogo />
         </Link>
         <div className="navlinks">
           <div className="dd">

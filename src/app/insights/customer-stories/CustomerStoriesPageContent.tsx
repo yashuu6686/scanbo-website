@@ -1,4 +1,4 @@
-import { PlatformCtas } from "@/components/common/Ctas";
+import { HeroCtas, PlatformCtas } from "@/components/common/Ctas";
 
 export function PageContent() {
   return (
@@ -17,7 +17,9 @@ export function PageContent() {
             <div className="pstat">
               <span className="chip">750+ devices deployed</span>
               <span className="chip">250K+ patients screened</span>
+              <span className="chip">650+ clinical settings</span>
             </div>
+            <HeroCtas />
           </div>
           <div className="part">
             <div className="photocard">
@@ -207,7 +209,7 @@ export function PageContent() {
             </div>
             <div className="qw">
               <blockquote>“D8, Smart Scale and EMR work as one system. Patients get continuous monitoring without needing to visit every time.”</blockquote>
-              <cite>Clinic partner CEO
+              <cite>Raj Kumar , CEO
                 <span>Diabetes reversal network · Pune</span>
               </cite>
             </div>

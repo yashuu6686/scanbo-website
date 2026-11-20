@@ -7,7 +7,7 @@ export function PageContent() {
         <div className="wrap">
           <div>
             <div className="crumb">
-              <a href="/platform/">Platform</a> · 02 · Cardiac intelligence
+              <a href="/platform/">Platform</a> · 02 · HridayTaal® Cardiac Agent
             </div>
             <h1>HridayTaal® is<br></br>Cardiac intelligence,
               <br />
@@ -29,7 +29,10 @@ export function PageContent() {
           </div>
           <div className="part">
             <div className="artcard ro">
-              <span className="bign">02 · CARDIAC INTELLIGENCE</span>
+              <span className="bign">
+                02 · HridayTaal
+                <sup className="tm">®</sup> · CARDIAC INTELLIGENCE
+              </span>
               <svg className="ecgbig" viewBox="0 0 400 64" preserveAspectRatio="none">
                 <path d="M0 40 H60 L70 36 L78 40 H110 L118 8 L126 58 L134 40 H170 L182 30 L196 40 H250 L258 36 L266 40 H298 L306 8 L314 58 L322 40 H358 L370 30 L384 40 H400" />
               </svg>

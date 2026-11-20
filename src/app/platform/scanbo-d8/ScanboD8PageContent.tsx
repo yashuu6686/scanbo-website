@@ -20,7 +20,8 @@ export function PageContent() {
               <span className="live">Live</span>
               <span className="chip">8 parameters · 1 device</span>
               <span className="chip">CDSCO approved</span>
-              <span className="chip">FDA 510(k) filing targeted Q1 2027</span>
+              <span className="chip">CDSCO Approved · FDA 510(k) Q1 2027
+              </span>
             </div>
             <HeroCtas
               secondary={{
